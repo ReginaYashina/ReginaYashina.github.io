@@ -47,7 +47,7 @@
 		color: '#000',
 		hidden: false,
 		animation: {
-			duration: 1500,
+			duration: 500,
 			easing: 'linear',
 			delay: 0,
 			direction: 'TopBottom'
