@@ -1,10 +1,7 @@
-@import url(decolines.css);
-body {
+html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  --def: #96B7C4;
-  --inv: #fff;
 }
 
 .main {
@@ -15,11 +12,9 @@ body {
           background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  /*height: 100vh*/
 }
 
 .maintext {
-  /* display: flex  flex-direction: row  flex-wrap: wrap  justify-content: center  height: 100%  align-items: center*/
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -148,8 +143,8 @@ body {
 }
 
 #L_1 {
-  width: 5px;
-  height: 5px;
+  width: 3px;
+  height: 3px;
   background-color: #000;
   top: -1%;
   left: 4%;
@@ -157,8 +152,8 @@ body {
 }
 
 #L_2 {
-  width: 5px;
-  height: 5px;
+  width: 3px;
+  height: 3px;
   background-color: #000;
   top: 8%;
   left: -1%;
@@ -166,7 +161,6 @@ body {
 }
 
 .all {
-  width: 100%;
   height: 100%;
   background: teal url(../img/1.png);
   background-blend-mode: screen;
@@ -174,15 +168,16 @@ body {
   -webkit-background-size: cover;
           background-size: cover;
   background-position: center center;
+  background-repeat: no-repeat;
   overflow-x: hidden;
   position: absolute;
 }
 
 .about {
-  position: absolute;
-  width: 95vw;
-  top: 10%;
-  left: 5.5%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.2)));
   background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
   background: -o-linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
@@ -190,15 +185,6 @@ body {
   -webkit-box-shadow: 0 0 100px #000;
           box-shadow: 0 0 100px #000;
   z-index: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .about-ul {
@@ -220,6 +206,23 @@ body {
   z-index: -1;
   position: absolute;
   text-indent: -10%;
+}
+
+.about-wrap {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 95vw;
+  top: 9.5%;
+  left: 5%;
 }
 
 .about-font-size {
@@ -252,16 +255,18 @@ body {
   -webkit-flex-wrap: nowrap;
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap;
-  position: absolute;
-  width: 100%;
-  height: 10%;
+  margin-left: auto;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 9%;
+  width: 95%;
 }
 
 .about-title {
-  margin-left: 5.5%;
-  margin-top: -1%;
-  width: 15%;
-  display: inline-block;
+  text-align: right;
+  width: 10%;
   font-family: Baskerville Old Face;
 }
 
@@ -304,40 +309,50 @@ body {
 }
 
 .about-nav {
-  float: right;
-  width: 85%;
-  padding: 0.6%  0.2%;
-  text-align: right;
+  width: 80%;
+  margin-left: auto;
   list-style-type: none;
-  display: inline-block;
   z-index: 5;
 }
 
 .about-foot {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   background-color: #fff;
-  margin-top: 5%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  z-index: 1;
 }
 
 .about-foot-ul {
   list-style-type: none;
-}
-
-.about-foot-ul, .about-foot-p {
-  width: 20%;
+  width: 24%;
   padding-left: 4%;
   font-family: eurofurence light;
 }
 
+.about-foot a {
+  text-decoration: none;
+  color: #000;
+  opacity: 0.6;
+}
+
+.about-foot a:hover {
+  opacity: 1;
+}
+
 .about-foot-li {
-  padding-top: 4%;
+  padding-top: 5%;
 }
 
 .about-foot-li img {
@@ -393,26 +408,29 @@ body {
 }
 
 .s-icons img:hover {
-  opacity: 0.6;
+  opacity: 1;
+}
+
+.op {
+  opacity: 0.8;
 }
 
 .cpr {
-  position: absolute;
-  height: 10%;
-  width: 15%;
   font-family: eurofurence light;
   letter-spacing: 5px;
-  opacity: 0.3;
-  margin-top: 17%;
-  padding-left: 84%;
+  opacity: 0.2;
+  padding-left: 3%;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
 }
 
 .btn {
   display: inline-block;
   position: relative;
-  padding: 1.5rem 1rem;
+  padding: 1%;
   color: #000;
-  letter-spacing: 0.2rem;
+  letter-spacing: 5px;
   text-transform: uppercase;
   -webkit-transition: all 400ms cubic-bezier(0.77, 0, 0.175, 1);
   -o-transition: all 400ms cubic-bezier(0.77, 0, 0.175, 1);
@@ -465,7 +483,7 @@ body {
 }
 
 .btn:hover:after {
-  background: var(--inv);
+  background: #fff;
   -webkit-transition-delay: .2s;
        -o-transition-delay: .2s;
           transition-delay: .2s;
@@ -481,7 +499,7 @@ body {
 
 .from-left:before {
   right: 0;
-  border: 2px solid var(--inv);
+  border: 2px solid #fff;
   border-left: 0;
   border-right: 0;
 }
@@ -498,4 +516,36 @@ body {
 *:before, *:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.shops-wrap {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.2)));
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+  -webkit-box-shadow: 0 0 100px #000;
+          box-shadow: 0 0 100px #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 90%;
+}
+
+#shops {
+  height: 100%;
+  width: 20%;
+}
+
+#YMapsID {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 100%;
 }
