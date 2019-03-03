@@ -1,0 +1,5 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.chexol\.by$
+RewriteRule ^/?$ "http\:\/\/chexol\.by\/" [R=301,L]
+ErrorDocument 404 http://www.chexol.by/404.shtml

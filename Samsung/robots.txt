@@ -1,0 +1,13 @@
+User-agent: *
+Sitemap: http://chexol.by/sitemap.xml
+
+Disallow: /img
+Disallow: /cgi-bin
+Disallow:/.well-known
+Disallow: */redirect*
+Disallow: /*?
+Allow: *.css
+Allow: *.js
+Allow: *.html
+
+
