@@ -12,7 +12,9 @@ tl.to ("#L_1", 1, {height: line_height})//линия сверху-вниз
 .to ("#L_2", 1, {width: 3000})//линия слева-направо
 .to(".about-header",1, {opacity: 1, ease: Power2.easeIn},"-=2")
 .to(".about", 1, {opacity: 1, ease: Power2.easeIn},"-=1")
-
+.to(".shops-wrap", 1, {opacity: 1, ease: Power2.easeIn},"-=1")
+.to(".contacts-bcg", 1, {opacity: 1, ease: Power2.easeIn},"-=1")
+.to(".about-foot", 1,{opacity: 1, ease: Power2.easeIn},"-=1")
  // console.log (about_height_nmbr);
  // console.log (body_height_nmbr);
  // console.log (footer_height_nmbr);
