@@ -112,7 +112,7 @@ html, body
 
 .about
   flex: 1 0 auto
-  background: linear-gradient(to bottom, rgba(255,255,255,.8),rgba(255,255,255,.2))
+  background: linear-gradient(to bottom, rgba(255,255,255,.9),rgba(255,255,255,.2))
   box-shadow: 0 0 100px #000
   z-index: 1
   // opacity: 0
@@ -158,18 +158,17 @@ html, body
     
     // opacity: 0
     
-  &-title  
-    text-align: right
-    width: 10%
+  &-title-1  
+    width: 4%
     font:
       family: Baskerville Old Face
     &-font-size
       @include fluidFontSize(40px, 100px, 1280px, 2560px)
-    &-span-font-size
+  &-title-2
+    font:
+      family: Corinthia
+    &-font-size
       @include fluidFontSize(86px, 140px, 1280px, 2560px)
-    span
-      font:
-        family: Corinthia
      
         
   &-nav
@@ -242,9 +241,11 @@ html, body
     left: 3%
   flex-basis: 100%
     
+.contacts-title-font-size
+  @include fluidFontSize(56px, 110px, 1280px, 2560px)
 
-
-
+.partnership-title-font-size
+  @include fluidFontSize(41px, 95px, 1280px, 2560px)
 //menu buttons
 .btn
   display: inline-block
@@ -318,13 +319,121 @@ html, body
 #shops
   height: 100%
   width: 20%
-  
 
 #YMapsID
   flex-grow: 1
   height: 100%
  
+///////////////////
+/////contacts//////
+///////////////////
+
+.contacts-wrap
+  flex: 1 0 auto
+  display: flex
+  flex-direction: row
+  width: 100%
+  height: 60%
+
+.contacts-bcg
+  flex: 1 0 auto
+  background: linear-gradient(to bottom, rgba(255,255,255,.9),rgba(255,255,255,.2))
+  box-shadow: 0 0 100px #000
+  z-index: 1
+ 
+.contacts
+  display: flex
+  width: 49%
+  padding: 
+    top: 1%
+    left: 2%
+  height: 90%
+  align-self: center
+  border-right: 1px solid rgba(0,0,0,.3)
+  font-family: eurofurence light
   
+.cont_name
+  text-align: justify
+  width: 50%
+
+.cont
+  padding: 3%  4%
+  &-wrap
+    display: flex
+    flex-direction: column
+
+.map-wrap
+  display: flex
+  flex-direction: column
+  width: 50%
+  padding:
+    right: 2%
+    left: 2%
+
+#contacts_map
+  width: 100%
+  height: 35%
+
+#YMapsID-1
+  width: 100%
+  flex-grow: 1
+  margin:
+    top: 15%
+
+table
+  width: 95%
+  margin: 0 auto
+/////form/////
+.contacts-form
+  flex: 1 0 auto
+  width: 95%
+  margin: 1% auto
+  padding:
+    // left: 5%
+    bottom: 3%
+  border-top: 1px solid rgba(0,0,0,.3)
+  flex-grow: 1
+  font-family: eurofurence light
+ 
+
+.form
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  width: 100%
+  label
+    display: inline-block
+    width: 25%
+    padding: 1%
+  input, textarea
+    width: 50%
+  input
+    height: 10%
+  textarea
+    margin-top: 2%
+
+.input, .area
+  width: 45%
+  padding-left: 5%
+
+.top
+  vertical-align: top
+
+.submit
+  margin-top: 3%
+  input
+    width: 15%
+    margin-left: 63%
+    font:
+      family: eurofurence light
+      size: 80%
+
+
+
   
+
+
+
+
 
 

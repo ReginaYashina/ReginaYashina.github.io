@@ -3,12 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Контакты</title>
+	<script src="https://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="css/libs.min.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="all">
 	<header class="about-header">
-		<div class="about-title about-title-font-size" >  <span class="about-title-span-font-size"></span></div>
+		<div class="about-title-2 contacts-title-font-size">Контакты</div>
 		<nav class="about-nav btn-font-size">	
 				<a href="index.html"><div class="btn from-left">Главная</div></a>
 				<a href="about.html"><div class="btn  from-left">О нас</div></a>
@@ -21,13 +22,53 @@
 	</header>
 		<div id = "L_1"></div>
 		<div id = "L_2"></div>
-		<section class="about-wrap">
-			<section class="about about-font-size"> 	            
-				<ul class="about-ul">					
-					<li class="about-li">Контакты</li>
+		<section class="about-wrap contacts-bcg">
+			<section class="contacts-wrap about-font-size"> 	   
+				<div class="contacts">
+					<div class="cont-wrap">
+						<table>
+							<tr>
+								<td class="cont_name">Информационная поддержка: <br/> Помощь покупателям:</td>
+								<td class="cont_name cont">Телефон: +375(29) 515 48 98 <br/>Email: romkonst@gmail.com</td>
+							</tr>
+							<tr>
+								<td class="cont_name">Розничная и мелкооптовая торговля через интернет:</td>
+								<td class="cont_name cont">Телефон: +375(29) 180 66 26 <br/>Email: birgitta@bugalux.com</td>
+							</tr>
+							<tr>
+								<td class="cont_name">Отдел маркетинга:</td>
+								<td class="cont_name cont">Телефон: +375(29) 111 22 33 <br/>Email: birgitta_sale@bugalux.com</td>
+							</tr>
+							<tr>
+								<td class="cont_name">Бухгалтерия:</td>
+								<td class="cont_name cont">Телефон: +375(29) 222 33 44 <br/>Email: birgitta_pay@bugalux.com</td>
+							</tr>
+							<tr>
+								<td class="cont_name">Отдел кадров:</td>
+								<td class="cont_name cont">Телефон: +375(29) 444 55 66 <br/>Email: birgitta_work@bugalux.com</td>
+							</tr>
+						</table>
+				</div>
+				</div>         
+				<div class="map-wrap">
+					<div id ="contacts_map"></div>
+					<div id="YMapsID-1"></div>
+				</div>
+			</section>
+			<section class="contacts-form about-font-size">
+				<h3>Форма обратной связи</h3>
+				<form name="MyForm" action="#" method="post" class="form">
+					<div class="input">
+						<label for="name">Ваше имя*</label><input  name="name" id="name" type="text" required/><br/>					 
+						<label for="email">Электронная почта*</label><input name="email" id="email" type="text" required/> <br/>					
+					</div> 
+					<div class="area">
+						<label for="topic">Тема сообщения</label><input name="topic" id="topic" type="text" required/> <br/>
+						<label for="body" class="top">Текст сообщения</label><textarea id="body" name="body" rows="5" class="ckeditor" required/></textarea>
+						<div class="submit"><input id="submit" value="Отправить" type="submit"/></div>
+					</div>
 					
-					
-				</ul>
+				</form>
 			</section>
 			<footer class="about-foot about-font-size">
 				<ul class="about-foot-ul">
@@ -59,6 +100,7 @@
 			</footer>
 </section>
 <script src="js/libs.min.js"></script>
+<script src="js/contacts_map.js"></script>
 <!-- <script src="js/canvas_test.js"></script> -->
 <script src="js/common.js"></script>	
 </body>
