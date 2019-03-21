@@ -50,7 +50,7 @@ html, body {
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  height: 13%;
+  height: 15%;
   background: -webkit-gradient(linear, right top, left top, from(#3492e9), to(rgba(255, 255, 255, 0.2)));
   background: -webkit-linear-gradient(right, #3492e9, rgba(255, 255, 255, 0.2));
   background: -o-linear-gradient(right, #3492e9, rgba(255, 255, 255, 0.2));
@@ -60,6 +60,13 @@ html, body {
 .logo {
   padding: 0.4% 1%;
   width: 18%;
+  height: 100px;
+}
+
+@media screen and (max-width: 1280px) {
+  .logo {
+    padding: 1%;
+  }
 }
 
 .logo img {
@@ -187,7 +194,7 @@ html, body {
   -webkit-flex: 0 0 auto;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  height: 74%;
+  height: 70%;
 }
 
 .sign-up {
@@ -238,7 +245,7 @@ html, body {
   -webkit-flex: 1 0 auto;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
-  height: 13%;
+  height: 15%;
   background: -webkit-gradient(linear, right top, left top, from(#3492e9), to(rgba(255, 255, 255, 0.2)));
   background: -webkit-linear-gradient(right, #3492e9, rgba(255, 255, 255, 0.2));
   background: -o-linear-gradient(right, #3492e9, rgba(255, 255, 255, 0.2));
