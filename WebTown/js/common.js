@@ -1,6 +1,6 @@
 $(function() {      
   var width=$('.slider-box').width();                     // Ширина слайдера.
-      interval = 5000;                                    // Интервал смены слайдов.
+      interval = 8000;                                    // Интервал смены слайдов.
  
   $('.slider img:last').clone().prependTo('.slider');     // Копия последнего слайда помещается в начало.
   $('.slider img').eq(1).clone().appendTo('.slider');     // Копия первого слайда помещается в конец.  

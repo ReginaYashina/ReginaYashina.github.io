@@ -1,12 +1,15 @@
 @import "font-size.scss"
-html, body
+
+*
 	margin: 0
 	padding: 0
+
+html, body
 	height: 100%
 	width: 100vw
 	display: flex
 	flex-direction: column
-	// overflow-x: hidden
+	overflow-x: hidden
 
 	
 .header
@@ -26,36 +29,51 @@ html, body
 
 .nav
 	flex: 1 0 auto
-
 	ul
-	 display: flex
-	 list-style: none
-	 align-items: center
-	 justify-content: flex-end
-	 li
-	 	display: inline
-	 	margin:
-	 		left: 7.5%
-	 		top: 1.5%
-	 		right: 1%
-	 	a
-	 		text-decoration: none
-	 		color: #000
-	 		font:
-	 			family: Arial, sans-serif
-	 			size: 
-	 		text-align: center
-	 		outline: none
-	 		p 
-	 			margin-top: 1.5%
-	 		img 
-	 		  height: 50px
-	 		  mix-blend-mode: color-dodge
-	 		div
+	 	display: flex
+	 	list-style: none
+	 	align-items: center
+	 	justify-content: flex-end
+	 	@media screen and (min-width: 1050px) and (max-width: 1280px)
+	 		padding-top: 2%
+		
+
+
+
+
+	 	// margin:
+	  // 	top: 0
+	  // 	bottom: 0
+	 	li
+	 		display: inline
+	 		margin:
+	 			left: 7.5%
+	 			top: 1.5%
+	 			right: 1%
+	 		@media screen and (min-width: 1024px)
+	 			margin-left: 6%
+	 		a
+	 			text-decoration: none
+	 			color: #000
+	 			font:
+	 				family: Arial, sans-serif
+	 			text-align: center
+	 			outline: none
+	 	p 
+	 		margin-top: 1.5%
+	 	img 
+	 	  height: 50px
+	 	  mix-blend-mode: color-dodge
+	 	  @media screen and (min-width: 2000px)
+	 	  	height: 70px
+	 	div
+	 		transition-duration: 1s
+	 		&:hover
+	 			transform: scale(1.2)
 	 			transition-duration: 1s
-	 			&:hover
-	 				transform: scale(1.2)
-	 				transition-duration: 1s
+
+.a-font-size
+	@include fluidFontSize(15px, 30px, 1280px, 2560px)
 
 .slider 
 	margin: 0 auto
@@ -109,6 +127,9 @@ html, body
 	  display: flex
 	  list-style: none
 	  justify-content: flex-end
+	  // margin:
+	  //   top: 0
+	  //   bottom: 0
 	  li
 	  	margin: 1% 
 	  img
