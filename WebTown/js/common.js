@@ -21,3 +21,34 @@ function animation(){
   }
   $('.slider').animate({marginLeft:margin},1000);          // Блок .slider смещается влево на 1 слайд.
 };
+
+ 
+$(function() {
+ 
+  $(window).scroll(function() 
+  {
+    if($(this).scrollTop() != 0) 
+    {
+      $('#toTop').fadeIn();
+      $('#sign-up').fadeIn();
+      $('#bt').fadeOut();
+    } else 
+      {
+        $('#toTop').fadeOut();
+        $('#sign-up').fadeOut();
+        $('#bt').fadeIn();
+      }
+  });
+ 
+  $('#toTop').click(function() 
+  {
+    $('body,html').animate({scrollTop:0},800);
+  });
+
+  $('#sign-up').click(function() 
+  {
+    $('body,html').animate({scrollTop:0},800);
+  });
+ 
+});
+ 

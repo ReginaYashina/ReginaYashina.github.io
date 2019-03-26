@@ -22,7 +22,11 @@
 }
 
 html, body {
-  height: 100%;
+  overflow-x: hidden;
+}
+
+.main-wrap {
+  height: 100vh;
   width: 100vw;
   display: -webkit-box;
   display: -webkit-flex;
@@ -33,7 +37,6 @@ html, body {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow-x: hidden;
 }
 
 .header {
@@ -51,10 +54,10 @@ html, body {
       -ms-flex-direction: row;
           flex-direction: row;
   height: 15%;
-  background: -webkit-gradient(linear, right top, left top, from(#3492e9), to(rgba(255, 255, 255, 0.2)));
-  background: -webkit-linear-gradient(right, #3492e9, rgba(255, 255, 255, 0.2));
-  background: -o-linear-gradient(right, #3492e9, rgba(255, 255, 255, 0.2));
-  background: linear-gradient(to left, #3492e9, rgba(255, 255, 255, 0.2));
+  background: -webkit-gradient(linear, right top, left top, from(#347feb), to(rgba(255, 255, 255, 0.2)));
+  background: -webkit-linear-gradient(right, #347feb, rgba(255, 255, 255, 0.2));
+  background: -o-linear-gradient(right, #347feb, rgba(255, 255, 255, 0.2));
+  background: linear-gradient(to left, #347feb, rgba(255, 255, 255, 0.2));
 }
 
 .logo {
@@ -171,6 +174,83 @@ html, body {
   }
 }
 
+.modalDialog {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  -webkit-transition: opacity 400ms ease-in;
+  -o-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  display: none;
+  pointer-events: none;
+}
+
+.modalDialog:target {
+  display: block;
+  pointer-events: auto;
+}
+
+.modalDialog form {
+  width: 600px;
+  position: relative;
+  margin: 5% auto;
+  padding: 5px 20px 13px 20px;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  background: #fff;
+}
+
+.modalDialog form div {
+  margin: 3% auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+}
+
+.modalDialog form div input {
+  height: 40px;
+}
+
+.form-btn {
+  width: 20%;
+  -webkit-align-self: end;
+      -ms-flex-item-align: end;
+          align-self: end;
+}
+
+.close {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 12px;
+          border-radius: 12px;
+  -webkit-box-shadow: 1px 1px 3px #000;
+          box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+  background: #00d9ff;
+}
+
 .slider {
   margin: 0 auto;
   width: 700%;
@@ -197,7 +277,7 @@ html, body {
   height: 70%;
 }
 
-.sign-up {
+.sign-up-main {
   position: absolute;
   background-color: rgba(211, 211, 211, 0.4);
   z-index: 100;
@@ -214,29 +294,144 @@ html, body {
       -ms-transform: translate(300%, 400%);
           transform: translate(300%, 400%);
   font-family: Arial, sans-serif;
-  font-size: 30px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.sign-up:hover {
+.sign-up-main:hover {
   background-color: rgba(211, 211, 211, 0.8);
 }
 
-.sign-up-font-size {
+.sign-up-main-font-size {
   font-size: 20px;
 }
 
 @media (min-width: 1280px) {
-  .sign-up-font-size {
+  .sign-up-main-font-size {
     font-size: -webkit-calc( 0.00781 * 100vw + 10px);
     font-size: calc( 0.00781 * 100vw + 10px);
   }
 }
 
 @media (min-width: 2560px) {
-  .sign-up-font-size {
+  .sign-up-main-font-size {
     font-size: 30px;
+  }
+}
+
+#sign-up {
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  border: 2px solid #fff;
+  background: rgba(220, 20, 60, 0.4);
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 5%;
+  left: 4%;
+  cursor: pointer;
+  display: none;
+  -webkit-box-shadow: 1px 1px 1px #ccc;
+          box-shadow: 1px 1px 1px #ccc;
+  color: #fff;
+  line-height: 25px;
+  text-shadow: 1px 1px 1px #ccc;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-animation: radial-pulse 2s infinite;
+          animation: radial-pulse 2s infinite;
+}
+
+#sign-up:hover {
+  background-color: rgba(220, 20, 60, 0.8);
+}
+
+@media screen and (min-width: 1920px) {
+  #sign-up {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media screen and (min-width: 2500px) {
+  #sign-up {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@-webkit-keyframes radial-pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 40px rgba(0, 0, 0, 0);
+            box-shadow: 0 0 0 40px rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes radial-pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 40px rgba(0, 0, 0, 0);
+            box-shadow: 0 0 0 40px rgba(0, 0, 0, 0);
+  }
+}
+
+#toTop {
+  width: 60px;
+  height: 20px;
+  border: 1px solid #fff;
+  background: rgba(211, 211, 211, 0.4);
+  text-align: center;
+  padding-top: 10px;
+  opacity: 0.7;
+  position: fixed;
+  bottom: 17%;
+  right: 2%;
+  cursor: pointer;
+  display: none;
+  -webkit-box-shadow: 1px 1px 1px #ccc;
+          box-shadow: 1px 1px 1px #ccc;
+  color: #fff;
+  text-shadow: 1px 1px 1px #ccc;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#toTop:hover {
+  background-color: rgba(211, 211, 211, 0.8);
+}
+
+@media screen and (min-width: 1920px) {
+  #toTop {
+    width: 100px;
+    height: 30px;
+  }
+}
+
+.up-font-size {
+  font-size: 10px;
+}
+
+@media (min-width: 1280px) {
+  .up-font-size {
+    font-size: -webkit-calc( 0.00781 * 100vw + 0px);
+    font-size: calc( 0.00781 * 100vw + 0px);
+  }
+}
+
+@media (min-width: 2560px) {
+  .up-font-size {
+    font-size: 20px;
   }
 }
 
@@ -284,4 +479,127 @@ html, body {
   -webkit-transition-duration: 1s;
        -o-transition-duration: 1s;
           transition-duration: 1s;
+}
+
+.courses-wrap {
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.courses-main {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  height: 85%;
+  background: -webkit-gradient(linear, right top, left top, from(#3492e9), to(rgba(255, 255, 255, 0.2)));
+  background: -webkit-linear-gradient(right, #3492e9, rgba(255, 255, 255, 0.2));
+  background: -o-linear-gradient(right, #3492e9, rgba(255, 255, 255, 0.2));
+  background: linear-gradient(to left, #3492e9, rgba(255, 255, 255, 0.2));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.first-line, .second-line {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.first-line a, .second-line a {
+  text-decoration: none;
+  color: #000;
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  text-align: center;
+  outline: none;
+}
+
+.first-line a p, .second-line a p {
+  margin-top: 2%;
+  -webkit-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+.first-line a div, .second-line a div {
+  -webkit-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+.first-line a div img, .second-line a div img {
+  -webkit-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+}
+
+.first-line a div:hover, .second-line a div:hover {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+.first-line a div:hover img, .second-line a div:hover img {
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+.first-line a div:hover p, .second-line a div:hover p {
+  text-shadow: 2px 2px 2px #fff;
+  -webkit-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+.first-line {
+  margin-top: 5%;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
+.second-line {
+  margin-top: 9%;
+}
+
+.second-line a {
+  margin-left: 28%;
+}
+
+@media screen and (min-width: 1020px) and (max-width: 1280px) {
+  .second-line a {
+    margin-left: 23%;
+  }
+}
+
+.footer-bcg {
+  background: -webkit-gradient(linear, right top, left top, from(#347feb), to(rgba(255, 255, 255, 0.2)));
+  background: -webkit-linear-gradient(right, #347feb, rgba(255, 255, 255, 0.2));
+  background: -o-linear-gradient(right, #347feb, rgba(255, 255, 255, 0.2));
+  background: linear-gradient(to left, #347feb, rgba(255, 255, 255, 0.2));
 }

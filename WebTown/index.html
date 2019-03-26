@@ -10,6 +10,7 @@
 </head>
 <body>
 	<!-- main -->
+<section class="main-wrap">
 <header class="header">
 	<p><a name="main"></a></p>
 	<div class="logo"><a href="#main"><img src="img/logo_2.png" alt="WebTown-logo"></a></div>
@@ -23,7 +24,7 @@
 				</a>
 			</li>
 			
-			<li><a href="#" class="a-font-size" >
+			<li><a href="#courses" class="a-font-size" >
 					<div>
 						<img src="img/courses.png" alt="to the main page">
 						<p>Курсы</p>
@@ -67,7 +68,39 @@
 
 </header>
 <main class="main">
-	<button class="sign-up sign-up-font-size">записаться<br/> на курсы</button>
+
+<!-- модальное окно -->
+<a href="#openModal"><button class="sign-up-main sign-up-main-font-size" id ="bt">записаться<br/> на курсы</button></a>
+<div id="openModal" class="modalDialog">
+    <div>
+        <form class="form">	
+        <a href="#close" title="Закрыть" class="close">X</a>			
+	 		    <div class="">	       
+	          <label for="name" class="form-items-name ">Ваше имя*</label>				
+	          <input id="name" type="text" class="form-control" name="name" value="" required autofocus>
+	        </div>	
+	        <div class="">	          
+	          <label for="e-mail" class="form-items-name ">E-mail*</label>		
+	          <input id="e-mail" type="e-mail" class="form-control" name="e-mail" value="" required autofocus>
+	        </div>
+	        <div class="">	
+	          <label for="topic" class="form-items-name">Номер телефона*</label>
+	         	<input id="topic" type="text" class="form-control" name="topic" value="" required autofocus>
+	        </div>  
+	        <div>       
+	          <label for="body">Текст сообщения</label>   
+	          <textarea rows="10" cols="56" name="body"></textarea>
+	        </div>
+	        <div >
+	          	<input id="submit" value="Отправить" type="submit" class="form-btn">
+	         </div>	             
+	      </form>		
+    </div>
+</div>
+
+<!--  -->
+
+
 	<div class="slider-box">
   <div class="slider">
 			<img src="img/img_1.jpg" alt="First" class="slide" /><!-- slides -->
@@ -78,7 +111,33 @@
 		</div>	
 	</div>
 </main>
-<footer class="footer">
+<section class="footer">
+	
+</section>
+</section>
+<!-- courses -->
+<section class="courses-wrap">
+	<main class="courses-main">
+	<p><a name="courses"></a></p>
+		<section class="first-line">
+			<a href="#"><div><img src="img/java.png" alt="JAVA-разработка"><p>JAVA-разработка</p></div></a>
+			<a href="#"><div><img src="img/pm.png" alt="Project-менеджмент"><p>Project-менеджмент</p></div></a>
+			<a href="#"><div><img src="img/web.png" alt="Web-разработка"><p>Web-разработка</p></div></a>
+		</section>
+		<section class="second-line">
+			<a href="#"><div><img src="img/des.png" alt="Web-дизайн"><p>Web-дизайн</p></div></a>
+			<a href="#"><div><img src="img/test.png" alt="Тестирование ПО"><p>Тестирование ПО</p></div></a>
+		</section>
+<a href="#openModal">
+	
+		<button class="up-font-size pulse" id="sign-up">записаться<br/> на курсы</button>
+	
+</a>
+
+	<div class="up-font-size" id="toTop">Наверх</div>
+
+</main>
+<footer class="footer footer-bcg">
 	<ul>
 		<li><a href="https://vk.com/" target="_blank"> <img src="img/vk.png" alt=""></a></li>
 		<li><a href="https://www.facebook.com/" target="_blank"> <img src="img/fb.png" alt=""></a></li>
@@ -86,9 +145,7 @@
 		<li><a href="https://www.instagram.com/" target="_blank"> <img src="img/insta.png" alt=""></a></li>
 	</ul>
 </footer>
-
-<!-- courses -->
-
+</section>
 
 
 <script src="js/libs.min.js"></script>
