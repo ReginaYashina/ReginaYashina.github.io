@@ -6,6 +6,7 @@
 
 html, body
 	overflow-x: hidden
+	background: linear-gradient(to left, rgba(52, 127, 235, 1),rgba(255,255,255,.2))
 
 .main-wrap
 	height: 100vh
@@ -13,14 +14,22 @@ html, body
 	display: flex
 	flex-direction: column
 	
-
+.title
+	margin: 2% 5%
+	font:
+		family: Arial, sans-serif
+		weight: bold
+	text-transform: uppercase
+	text-shadow: 2px 2px 2px #fff
+	&-font-size 
+		@include fluidFontSize(20px, 35px, 1280px, 2560px)
 
 .header
 	flex: 0 0 auto
 	display: flex
 	flex-direction: row
 	height: 15%
-	background: linear-gradient(to left, rgba(52, 127, 235, 1),rgba(255,255,255,.2))
+	// background: linear-gradient(to left, rgba(52, 127, 235, 1),rgba(255,255,255,.2))
 
 
 .logo
@@ -47,7 +56,7 @@ html, body
 	 		margin:
 	 			left: 7.5%
 	 			top: 1.5%
-	 			right: 1%
+	 			right: 2%
 	 		@media screen and (min-width: 1024px)
 	 			margin-left: 6%
 	 		a
@@ -105,6 +114,51 @@ html, body
 			width: 90%
 			input 
 				height: 40px
+
+
+// модальное окно курсы
+.modalDialogcourse
+	position: fixed
+	font-family: Arial, Helvetica, sans-serif
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	background: rgba(0,0,0,0.8)
+	z-index: 99999
+	transition: opacity 400ms ease-in
+	display: none
+	pointer-events: none
+	&:target 
+		display: block
+		pointer-events: auto
+
+.modalDialogcourse
+	div
+		width: 600px
+		position: relative
+		margin: 5% auto
+		padding: 5px 20px 13px 20px
+		border-radius: 10px
+		background: #fff
+		font-size: 25px
+		text-align: justify
+		text-indent: 3%
+		padding: 2% 3% 5% 3%
+		p 
+			margin-top: 3%
+		@media screen and (max-width:480px)
+			width: 250px
+			font-size: 16px
+			p 
+				margin-top: 7%
+			
+
+
+
+
+
+
 
 .form-btn
 	width: 20%
@@ -193,9 +247,12 @@ html, body
 	animation: radial-pulse 2s infinite
 	&:hover
 		background-color: rgba(	220, 20, 60, .8)
+	@media screen and (min-width: 1366px) 
+		width: 130px
+		height: 130px
 	@media screen and (min-width: 1920px) 
-		width: 150px
-		height: 150px
+		width: 170px
+		height: 170px
 	@media screen and (min-width: 2500px) 
 		width: 180px
 		height: 180px
@@ -216,7 +273,7 @@ html, body
 	padding-top: 10px
 	opacity: 0.7
 	position: fixed
-	bottom: 16% 
+	bottom: 25% 
 	right: 2%
 	cursor: pointer
 	display: none
@@ -229,20 +286,25 @@ html, body
 	text-transform: uppercase
 	&:hover
 		background-color: rgba(211, 211, 211, .8)
+	@media screen and (min-width: 1280px) and (max-width: 1365px)
+		bottom: 9%
+	@media screen and (min-width: 1366px)
+		bottom: 7%
 	@media screen and (min-width: 1920px) 
 		width: 100px
 		height: 30px
 
+
 	
 .up-font-size 
-	@include fluidFontSize(10px, 20px, 1280px, 2560px)
+	@include fluidFontSize(7px, 20px, 320px, 2560px)
 	
 
 
 .footer
 	flex: 1 0 auto
 	height: 15%
-	background: linear-gradient(to left, rgba(52, 146, 233, 1),rgba(255,255,255,.2))
+	// background: linear-gradient(to left, rgba(52, 146, 233, 1),rgba(255,255,255,.2))
 	ul
 	  width: 
 	  display: flex
@@ -271,7 +333,7 @@ html, body
 
 .courses-main
 	height: 100%
-	background: linear-gradient(to left, rgba(52, 146, 233, 1),rgba(255,255,255,.2))
+	// background: linear-gradient(to left, rgba(52, 146, 233, 1),rgba(255,255,255,.2))
 	display: flex
 	flex-direction: column
 
@@ -361,7 +423,7 @@ html, body
 .feedbacks
 	display: flex 
 	flex-direction: column 
-	margin-top: 5%
+	margin-top: -3%
 	height: 85%
 	figure 
 		display: flex
@@ -375,6 +437,10 @@ html, body
 			width: 200px
 			height: 200px
 			border-radius: 50%
+			@media screen and (min-width: 1366px)
+				width: 120px
+				height: 120px
+				align-self: center
 		article 
 			width: 60%
 			padding-top: 1%
@@ -390,6 +456,7 @@ html, body
 //contacts
 
 .contacts
+	margin-top: -10%
 	flex: 0 0 auto
 	display: flex
 	flex-direction: row
@@ -416,10 +483,498 @@ html, body
 	width: 40%
 	@media screen and (min-width: 1020px) and (max-width: 1280px)
 		display: none
-
+	@media screen and (min-width: 1366px)
+		margin:
+			top: 5%
+			left: -7% 
+.very-little-map
+	display: none
 .little-map
 	display: none
 	@media screen and (min-width: 1020px) and (max-width: 1280px)
 		display: block
 		margin-top: -2.5%
 
+.mob-nav
+	display: none
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@media screen and (min-width:481px) and (max-width:1024px)
+	.logo
+		position: absolute
+		// margin-left: 23%
+		margin-top: 1%
+		padding: 1%
+		width: 30%
+		height: 15%
+		z-index: 1
+		img
+			width: 90%
+			height: 90%
+
+
+	.header
+		height: 18%
+
+	.sign-up-main
+		width: 20%
+		transform: translate(200%, 350%)
+		z-index: 99
+
+	.main 
+		height: 70%
+
+		
+	.modalDialog
+		form 
+			width: 350px
+			position: relative
+			margin: 5% auto
+			padding: 5px 20px 13px 20px
+			border-radius: 10px
+			background: #fff
+			div
+				margin: 3% auto
+				display: flex
+				flex-direction: column
+				width: 90%
+				input 
+					height: 40px
+
+	.form-btn
+		width: 30%
+		
+	.courses-main
+		margin-top: 0
+
+	.first-line, .second-line
+		z-index: 99
+		a
+			font-size: 15px
+		img 
+			width: 120px
+					
+				
+	.second-line
+		a
+			margin-left: 25%
+		
+	// .teachers-wrap
+	// 	margin-top: 50%
+
+
+	.teachers
+		flex-direction: column
+		flex-wrap: nowrap 
+		margin: 70% auto
+		figure
+			margin: 1% auto
+			width: 65%
+			padding: 3%
+		
+	.feedbacks-wrap
+		margin-top: 150%
+
+	.feedbacks
+		figure 
+			display: flex
+			flex-direction: row
+			width: 90%
+			margin: 2.5% auto
+			img 
+				width: 120px
+				height: 120px
+				align-self: center
+			article 
+				width: 60%
+				padding-top: 1%
+				padding-right: 5%
+				text-align: justify
+				span 
+					font-weight: bold
+				p 
+					margin-top: 2%
+
+	.contacts
+		margin: 1% auto
+		flex-direction: column
+		height: 80%
+		padding-bottom: 0
+		
+
+	.contacts-txt
+		width: 90%
+		margin-top: -20%
+
+	.map
+		display: none
+
+	.little-map
+		display: block
+		width: 90%
+		margin-top: 5%
+
+	#toTop
+		bottom: 16%
+
+	.footer
+			height: 10%
+			li
+				z-index: 99
+
+
+	.nav
+		display: none
+
+	.nav-input 
+		display: none
+
+	.nav-label 
+		cursor: pointer
+
+	.mob-nav 
+		display: block
+		user-select: none
+		font:
+				family: Arial, sans-serif
+
+	.nav__showmenu 
+		position: relative
+		z-index: 1000
+		display: inline-block
+		margin-left: 5px
+		padding: 5px 10px 10px
+		top: 2px
+		font-size: 23px
+
+	.nav__back 
+		position: fixed
+		top: 0
+		right: 0  
+		bottom: 0
+		left: 0
+		transition: background-color .3s
+		// z-index: -1
+
+	.menu, .menu__submenu
+		list-style: none
+		padding: 0
+		color: #fff
+		overflow: hidden
+
+	.menu 
+		position: fixed
+		top: 0
+		bottom: 0
+		left: 0
+		display: block
+		width: 220px
+		margin: 0
+		padding: 17px 0
+		text-transform: uppercase
+		line-height: 2em
+		background-color: #2e69bd
+		box-shadow: 0 0 10px #000
+		overflow-y: auto
+		z-index: 100
+		-webkit-overflow-scrolling: touch
+		transform: translateX(-100%)
+		transition: transform .3s
+		will-change: transform
+		backface-visibility: hidden
+
+
+	.menu__submenu 
+		font-size: .8em
+		background-color: #ddd
+		max-height: 0
+		transition: max-height .3s ease-in-out
+
+
+	.menu__showsub 
+		position: absolute
+		right: 0
+		margin-top: -34px
+		padding: 10px
+		line-height: normal
+
+
+	.menu__item   
+		display: block
+		text-align: center
+		text-decoration: none
+		color: #fff
+		z-index: 1000
+		text-align: right
+		padding-right: 7%
+
+
+	.menu__submenu
+		color: #000
+
+	.nav__check:checked~.nav__back 
+		background-color: rgba(0,0,0,.2)
+		bottom: 0
+
+
+	.menu__item:hover,.nav__showmenu:hover,.menu__showsub:hover 
+		opacity: 0.7
+
+	.menu::-webkit-scrollbar 
+		display: none
+	.nav__check:checked+.nav__showmenu 
+		color:#fff
+	.menu__check:checked~.menu__submenu 
+		max-height: 100vh
+	.menu__check:checked+.menu__showsub 
+		transform: rotate(180deg)
+	.nav__check:checked~.menu 
+		transform: translateX(0)
+
+
+@media screen and (max-width:480px)
+	.logo
+		position: absolute
+		// margin-left: 23%
+		margin-top: 7%
+		margin-left: 23%
+		padding: 1%
+		width: 60%
+		height: 15%
+		z-index: 1
+		img
+			width: 90%
+			height: 90%
+
+	.slider-box 
+		display: none
+	
+	.sign-up-main
+		width: 65%
+		height: 20%
+		transform: translate(25%, 70%)
+		z-index: 99
+
+	#sign-up
+		width: 70px
+		height: 70px
+
+
+
+	.modalDialog
+		form 
+			width: 250px
+			position: relative
+			margin: 5% auto
+			padding: 5px 20px 13px 20px
+			border-radius: 10px
+			background: #fff
+			div
+				margin: 3% auto
+				display: flex
+				flex-direction: column
+				width: 90%
+				input 
+					height: 40px
+
+	.form-btn
+		width: 30%
+
+	.footer
+		height: 10%
+		li
+			z-index: 99
+	.courses-wrap
+		height: auto
+		padding-bottom: 20%
+
+	.courses-main
+		margin-top: -45%
+
+	.first-line, .second-line
+		z-index: 99
+		a
+			font-size: 15px
+		img 
+			width: 90px
+					
+	.first-line
+		flex-wrap: wrap
+		&:last-child	
+			width: 100%
+		a 
+			margin-top: 10%
+
+	.second-line
+		a
+			margin-left: 13%
+		
+	// .teachers-wrap
+	// 	margin-top: 150%
+
+
+	.teachers
+		flex-direction: column
+		flex-wrap: nowrap 
+		margin: 50% auto
+		figure
+			margin: 1% auto
+			width: 80%
+			padding: 3%
+			font-size: 15px
+		
+	.feedbacks-wrap
+		margin-top: 30%
+
+	.feedbacks
+		figure 
+			display: flex
+			flex-direction: row
+			width: 90%
+			margin: 4% auto
+			font-size: 15px
+			img 
+				width: 100px
+				height: 100px
+				align-self: center
+			article 
+				width: 60%
+				padding-top: 1%
+				padding-right: 5%
+				text-align: justify
+				span 
+					font-weight: bold
+				p 
+					margin-top: 2%
+
+	#toTop
+		bottom: 3%
+
+	.contacts
+		margin: 10% auto
+		flex-direction: column
+		height: 85%
+		
+
+	.contacts-txt
+		width: 90%
+		font-size: 15px
+
+	.map
+		display: none
+
+	.little-map
+		display: none
+
+	.very-little-map
+		display: block
+		width: 70%
+		margin-top: 5%
+		margin-left: -30%
+
+	.nav
+		display: none
+
+	.nav-input 
+		display: none
+
+	.nav-label 
+		cursor: pointer
+
+	.mob-nav 
+		display: block
+		user-select: none
+		font:
+				family: Arial, sans-serif
+
+	.nav__showmenu 
+		position: relative
+		z-index: 1000
+		display: inline-block
+		margin-left: 5px
+		padding: 5px 10px 10px
+		top: 2px
+		font-size: 23px
+
+	.nav__back 
+		position: fixed
+		top: 0
+		right: 0  
+		bottom: 0
+		left: 0
+		transition: background-color .3s
+		// z-index: -1
+
+	.menu, .menu__submenu
+		list-style: none
+		padding: 0
+		color: #fff
+		overflow: hidden
+
+	.menu 
+		position: fixed
+		top: 0
+		bottom: 0
+		left: 0
+		display: block
+		width: 220px
+		margin: 0
+		padding: 17px 0
+		text-transform: uppercase
+		line-height: 2em
+		background-color: #2e69bd
+		box-shadow: 0 0 10px #000
+		overflow-y: auto
+		z-index: 100
+		-webkit-overflow-scrolling: touch
+		transform: translateX(-100%)
+		transition: transform .3s
+		will-change: transform
+		backface-visibility: hidden
+
+
+	.menu__submenu 
+		font-size: .8em
+		background-color: #ddd
+		max-height: 0
+		transition: max-height .3s ease-in-out
+
+
+	.menu__showsub 
+		position: absolute
+		right: 0
+		margin-top: -34px
+		padding: 10px
+		line-height: normal
+
+
+	.menu__item   
+		display: block
+		text-align: center
+		text-decoration: none
+		color: #fff
+		z-index: 1000
+		text-align: right
+		padding-right: 7%
+
+
+	.menu__submenu
+		color: #000
+
+	.nav__check:checked~.nav__back 
+		background-color: rgba(0,0,0,.2)
+		bottom: 0
+
+
+	.menu__item:hover,.nav__showmenu:hover,.menu__showsub:hover 
+		opacity: 0.7
+
+	.menu::-webkit-scrollbar 
+		display: none
+	.nav__check:checked+.nav__showmenu 
+		color:#fff
+	.menu__check:checked~.menu__submenu 
+		max-height: 100vh
+	.menu__check:checked+.menu__showsub 
+		transform: rotate(180deg)
+	.nav__check:checked~.menu 
+		transform: translateX(0)

@@ -15,6 +15,26 @@
 <header class="header">
 	<p><a name="main"></a></p>
 	<div class="logo"><a href="#main"><img src="img/logo_2.png" alt="WebTown-logo"></a></div>
+
+<!-- mobile -->
+<nav class="mob-nav">
+  <input class="nav-input nav__check" type="checkbox" id="showmenu"/>
+  <label class="nav-label nav__showmenu" for="showmenu">&#9776;</label>
+  <label class="nav-label nav__back" for="showmenu"></label>
+  <ul class="menu">
+    <li><a class="menu__item" href="#main">Главная</a></li>
+    <li>
+      <a class="menu__item" href="#courses">Курсы</a>
+      <input class="nav-input menu__check" type="checkbox" id="menu2">
+    </li>
+    <li><a class="menu__item" href="#teachers">Преподаватели</a></li>
+    <li><a class="menu__item" href="#feedbacks">Отзывы</a></li>
+    <li><a class="menu__item" href="#contacts">Контакты</a></li>
+  </ul>
+</nav>
+<!--  -->
+
+
 	<nav class="nav">
 		<ul>
 			<li><a href="#main" class="a-font-size" >
@@ -56,14 +76,14 @@
 					</div>
 				</a>
 			</li>
-			
+		<!-- 	
 			<li><a href="#contacts" class="a-font-size" >
 					<div>
 						<img src="img/map.png" alt="to the main page">
 						<p>Как добраться</p>
 					</div>
 				</a>
-			</li>
+			</li> -->
 		</ul>
 	</nav>
 
@@ -120,22 +140,40 @@
 <section class="courses-wrap">
 	<main class="courses-main">
 	<p><a name="courses"></a></p>
+	<p class="title title-font-size" >Наши курсы</p>
+
+	<!-- модальное окно программа курса -->
+
+<div id="openModalcourse" class="modalDialogcourse">
+    <div>	
+        <a href="#close" title="Закрыть" class="close">X</a>			
+	 		   <p><strong>Программа курса</strong></p>
+	 		   <p> Consectetur adipisicing elit. Quaerat blanditiis non eveniet expedita id aut temporibus repellendus. Aspernatur corporis quasi ut, illum, at quia perspiciatis, explicabo totam atque neque modi.</p>
+	 		   <p> Consectetur adipisicing elit. Quaerat blanditiis non eveniet expedita id aut temporibus repellendus. Aspernatur corporis quasi ut, illum, at quia perspiciatis, explicabo totam atque neque modi.</p>
+	 		   <p> Consectetur adipisicing elit. Quaerat blanditiis non eveniet expedita id aut temporibus repellendus. Aspernatur corporis quasi ut, illum, at quia perspiciatis, explicabo totam atque neque modi.</p>
+    </div>
+</div>
+
+<!--  -->
+
+
 		<section class="first-line">
-			<a href="#"><div><img src="img/java.png" alt="JAVA-разработка"><p>JAVA-разработка</p></div></a>
-			<a href="#"><div><img src="img/pm.png" alt="Project-менеджмент"><p>Project-менеджмент</p></div></a>
-			<a href="#"><div><img src="img/web.png" alt="Web-разработка"><p>Web-разработка</p></div></a>
+			<a href="#openModalcourse"><div><img src="img/java.png" alt="JAVA-разработка"><p>JAVA-разработка</p></div></a>
+			<a href="#openModalcourse"><div><img src="img/pm.png" alt="Project-менеджмент"><p>Project-менеджмент</p></div></a>
+			<a href="#openModalcourse"><div><img src="img/web.png" alt="Web-разработка"><p>Web-разработка</p></div></a>
 		</section>
 		<section class="second-line">
-			<a href="#"><div><img src="img/des.png" alt="Web-дизайн"><p>Web-дизайн</p></div></a>
-			<a href="#"><div><img src="img/test.png" alt="Тестирование ПО"><p>Тестирование ПО</p></div></a>
+			<a href="#openModalcourse"><div><img src="img/des.png" alt="Web-дизайн"><p>Web-дизайн</p></div></a>
+			<a href="#openModalcourse"><div><img src="img/test.png" alt="Тестирование ПО"><p>Тестирование ПО</p></div></a>
 		</section>
-
-
 </main>
 </section>
 
 <!-- teachers -->
-<section class="courses-wrap">
+<section class="courses-wrap teachers-wrap">
+	<p><a name="teachers"></a></p>
+	<p class="title title-font-size" >Наши преподаватели</p>
+	
 	<main class="courses-main">
 	<p><a name="teachers"></a></p>
 		<section class="teachers teachers-font-size" id="tch">
@@ -168,11 +206,13 @@
 </section>
 
 <!-- отзывы -->
-<section class="courses-wrap">
+<section class="courses-wrap feedbacks-wrap">
 	<main class="courses-main">	
+		<p><a name="feedbacks"></a></p>
+		<p class="title title-font-size" >Отзывы о нашей работе</p>
 		<section class="feedbacks feedbacks-font-size">
 			<figure>	
-			<p><a name="feedbacks"></a></p>			
+						
 				<article><span>Nullam Massa </span><br/> <p>Dapibus ac vehicula sed, placerat a lacus. Quisque porttitor posuere libero, ac ornare tortor aliquet non. Nunc dignissim eros non felis elementum ut malesuada nulla aliquam. Sed porta faucibus nibh sed laoreet. Vestibulum non urna , vel fermentum felis.</p></article>
 				<img src="img/7.png" alt="">
 			</figure>
@@ -189,33 +229,42 @@
 </section>
 
 <!-- контакты -->
-<section class="courses-wrap">
-	<main class="courses-main contacts contacts-font-size">	
-		<section class="contacts-txt">
-			<p><a name="contacts"></a></p>	
-			<ul>
-				<li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
-				<li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
-				<li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
-				<li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
-</ul>
+<section class="courses-wrap contacts-wrap">
+	<p><a name="contacts"></a></p>	
+	<p class="title title-font-size" >Контакты</p>
+			
+			<main class="courses-main contacts contacts-font-size">	
+				<section class="contacts-txt">
+					<ul>
+						<li>Morbi in sem quis dui placerat ornare. </li>			
+						<li>Phasellus ultrices nulla quis nibh.</li>
+						<li>Pellentesque fermentum dolor. </li>
+						<li>Praesent dapibus, neque id cursus faucibus.</li>
+					</ul>
+				</section>	
+				<section class="map">
+					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa324e8477898d5c37abf9ea4e7518a51976ef3745dc23cac8e9a69c42264e77c&amp;width=650&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
+				</section>	
+				<section class="little-map">
+					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa324e8477898d5c37abf9ea4e7518a51976ef3745dc23cac8e9a69c42264e77c&amp;width=350&amp;height=384&amp;lang=ru_RU&amp;scroll=true"></script>
+				</section>	
+				<section class="very-little-map">
+					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa324e8477898d5c37abf9ea4e7518a51976ef3745dc23cac8e9a69c42264e77c&amp;width=320&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+				</section>
 
-		</section>	
-		<section class="map">
-			<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa324e8477898d5c37abf9ea4e7518a51976ef3745dc23cac8e9a69c42264e77c&amp;width=650&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
-		</section>	
-		<section class="little-map">
-		<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa324e8477898d5c37abf9ea4e7518a51976ef3745dc23cac8e9a69c42264e77c&amp;width=350&amp;height=384&amp;lang=ru_RU&amp;scroll=true"></script>
-		</section>	
-	</main>
-	<footer class="footer footer-bcg">
-	<ul>
-		<li><a href="https://vk.com/" target="_blank"> <img src="img/vk.png" alt=""></a></li>
-		<li><a href="https://www.facebook.com/" target="_blank"> <img src="img/fb.png" alt=""></a></li>
-		<li><a href="skype:WebTown?userinfo" target="_blank"> <img src="img/skype.png" alt=""></a></li>
-		<li><a href="https://www.instagram.com/" target="_blank"> <img src="img/insta.png" alt=""></a></li>
-	</ul>
-</footer>
+
+
+
+			</main>
+
+			<footer class="footer footer-bcg">
+				<ul>
+					<li><a href="https://vk.com/" target="_blank"> <img src="img/vk.png" alt=""></a></li>
+					<li><a href="https://www.facebook.com/" target="_blank"> <img src="img/fb.png" alt=""></a></li>
+					<li><a href="skype:WebTown?userinfo" target="_blank"> <img src="img/skype.png" alt=""></a></li>
+					<li><a href="https://www.instagram.com/" target="_blank"> <img src="img/insta.png" alt=""></a></li>
+				</ul>
+		</footer>
 </section>
 
 
