@@ -583,6 +583,14 @@ html, body {
           flex-direction: column;
 }
 
+.modal-courses-button {
+  margin-top: 7%;
+  margin-left: 80%;
+  margin-bottom: -90%;
+  width: 20%;
+  padding: 1%;
+}
+
 .courses-main {
   height: 100%;
   display: -webkit-box;
@@ -837,6 +845,25 @@ html, body {
   .feedbacks-font-size {
     font-size: 30px;
   }
+}
+
+.feedback-button {
+  width: 68%;
+  margin: -7% auto;
+  text-align: right;
+}
+
+.feedback-button button {
+  height: 50px;
+  padding: 1%;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.feedback-button button:hover {
+  -webkit-box-shadow: 0 0 15px #ccc;
+          box-shadow: 0 0 15px #ccc;
 }
 
 .contacts {

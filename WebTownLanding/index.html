@@ -151,7 +151,11 @@
 	 		   <p> Consectetur adipisicing elit. Quaerat blanditiis non eveniet expedita id aut temporibus repellendus. Aspernatur corporis quasi ut, illum, at quia perspiciatis, explicabo totam atque neque modi.</p>
 	 		   <p> Consectetur adipisicing elit. Quaerat blanditiis non eveniet expedita id aut temporibus repellendus. Aspernatur corporis quasi ut, illum, at quia perspiciatis, explicabo totam atque neque modi.</p>
 	 		   <p> Consectetur adipisicing elit. Quaerat blanditiis non eveniet expedita id aut temporibus repellendus. Aspernatur corporis quasi ut, illum, at quia perspiciatis, explicabo totam atque neque modi.</p>
+	 		   <a href="#openModal">
+		<button class="modal-courses-button">Записаться<br/> на курсы</button>
+</a>
     </div>
+    
 </div>
 
 <!--  -->
@@ -225,8 +229,33 @@
 				<img src="img/7.png" alt="">
 			</figure>			
 		</section>
+		<a href="#openModalfeedbacks"><div class="feedback-button">
+			<button  type="button" >Оставить отзыв</button>
+		</div></a>
 	</main>
+	<!-- модальное окно отзывы-->
+<div id="openModalfeedbacks" class="modalDialog">
+    <div>
+        <form class="form">	
+        <a href="#close" title="Закрыть" class="close">X</a>			
+	 		    <div class="">	       
+	          <label for="name" class="form-items-name ">Ваше имя*</label>				
+	          <input id="name" type="text" class="form-control" name="name" value="" required autofocus>
+	        </div>	
+	        <div>       
+	          <label for="body">Ваш отзыв*</label>   
+	          <textarea rows="10" cols="56" name="body" required autofocus></textarea>
+	        </div>
+	        <div >
+	          	<input id="submit" value="Отправить" type="submit" class="form-btn">
+	         </div>	             
+	      </form>		
+    </div>
+</div>
+
+<!--  -->
 </section>
+
 
 <!-- контакты -->
 <section class="courses-wrap contacts-wrap">
