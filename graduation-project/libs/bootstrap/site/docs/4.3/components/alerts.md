@@ -19,7 +19,7 @@ Alerts are available for any length of text, as well as an optional dismiss butt
   A simple {{ color.name }} alert—check it out!
 </div>{% endfor %}
 {% endcapture %}
-<!-- {% include example.html content=example %} -->
+{% include example.html content=example %}
 
 {% include callout-warning-color-assistive-technologies.md %}
 
