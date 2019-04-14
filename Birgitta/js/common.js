@@ -13,7 +13,7 @@ var line_height = line + line*0.75/100;
 
 console.log(line_height);
 
-var tl = new TimelineMax ({delay:1});
+var tl = new TimelineMax ({delay:0});
 tl.to ("#L_1", 1, {height: line_height})//линия сверху-вниз
 .to ("#L_2", 1, {width: 3000})//линия слева-направо
 .to(".top-nav",1, {opacity: 1, ease: Power2.easeIn},"-=2")
