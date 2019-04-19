@@ -10,6 +10,7 @@ html, body
   margin: 0
   padding: 0
   width: 100%
+  overflow-x: hidden
   a 
     outline: none
 
@@ -63,6 +64,12 @@ html, body
 
 .main-submenu-font-size
   @include fluidFontSize(10px, 20px, 1280px, 2560px)
+
+.second-index-h3-font-size
+  @include fluidFontSize(55px, 100px, 1280px, 2560px)
+
+.second-index-p-font-size
+  @include fluidFontSize(28px, 50px, 1280px, 2560px)
 
 //////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////index/////////////////////////////////////////
@@ -238,8 +245,10 @@ html, body
   
 //////////////////////////////////////////////////////////////////////
 ///////////////////second-index//////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
-// #index
+/////////////////////////////////////////////////////////////////////////
+
+#index
+  height: 100vh
 //   display: none
 
 #L_index
@@ -257,48 +266,58 @@ html, body
 
 
 .second-index
-  background: teal url(../img/1.png)
-  background-blend-mode: screen
-  background-attachment: fixed
-  background-size: cover
-  background-position: center center
-  background-repeat: no-repeat
+  background-color: transparent
   overflow-x: hidden
-  position: absolute
-  z-index: -1
-  &-bcg
-    margin: 2% auto
-    background-color: rgba(255,255,255,.5)
-    // background: linear-gradient(to bottom, rgba(255,255,255,.9),rgba(255,255,255,.2))
-    // box-shadow: 0 0 10px #000
-    z-index: 1
-    @media screen and (max-width: 992px)
-      margin: 0 auto
-  &-nav 
-    width: 90%
-    margin: 2% auto
-    // opacity: 0
-    padding:
-      right: 1%
-  &-wrap
-    width: 100%
-    margin: 1% auto
+  &-row
     background-color: #fff
-    box-shadow: 0 0 10px #ccc
-  &-foto
+  figure
+    width: 99%
+  &-info
+    height: 40vh
+    text-align: center
+    padding: 10% 
+    filter: brightness(100%)
+    transition: all 1s ease
+    &:hover
+      color: #000
+      text-decoration: none
+      filter: brightness(60%)
+      text-shadow: 1px 1px 5px #ccc
+    // &-line
+    //   &:after 
+    //     content: ""
+    //     position: absolute
+    //     top: 3%
+    //     left: 97%
+    //     border-left: 1px solid rgba(0,0,0,.3)
+    //     height: 37vh
+    h3 
+      font-family: eurofurence 
+    p 
+      font:
+        weight: 100
+        family: eurofurence light
+  img
     width: 100%
-    margin: 3% auto
-  &-txt
-    text-transform: uppercase
-    font-family: eurofurence light
-    font-size: 130px
-    &-sale
-      font-family: eurofurence light
-      font-size: 80px
-    &-job
-      margin-top: -5%
-      font-family: eurofurence light
-      font-size: 40px
+  a
+    color: #000
+    &:hover
+      text-decoration: none
+    
+    
+
+
+
+// .color-line
+//   margin-top: 0.1% !important
+  
+
+       
+        
+
+
+
+
 
 
     

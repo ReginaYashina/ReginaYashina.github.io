@@ -20,6 +20,7 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
+  overflow-x: hidden;
 }
 
 html a, body a {
@@ -230,6 +231,40 @@ html a, body a {
 @media (min-width: 2560px) {
   .main-submenu-font-size {
     font-size: 20px;
+  }
+}
+
+.second-index-h3-font-size {
+  font-size: 55px;
+}
+
+@media (min-width: 1280px) {
+  .second-index-h3-font-size {
+    font-size: -webkit-calc( 0.03516 * 100vw + 10px);
+    font-size: calc( 0.03516 * 100vw + 10px);
+  }
+}
+
+@media (min-width: 2560px) {
+  .second-index-h3-font-size {
+    font-size: 100px;
+  }
+}
+
+.second-index-p-font-size {
+  font-size: 28px;
+}
+
+@media (min-width: 1280px) {
+  .second-index-p-font-size {
+    font-size: -webkit-calc( 0.01719 * 100vw + 6px);
+    font-size: calc( 0.01719 * 100vw + 6px);
+  }
+}
+
+@media (min-width: 2560px) {
+  .second-index-p-font-size {
+    font-size: 50px;
   }
 }
 
@@ -448,6 +483,10 @@ html a, body a {
   left: 75%;
 }
 
+#index {
+  height: 100vh;
+}
+
 #L_index {
   width: 1700px;
   height: 3px;
@@ -471,64 +510,56 @@ html a, body a {
 }
 
 .second-index {
-  background: teal url(../img/1.png);
-  background-blend-mode: screen;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-          background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-color: transparent;
   overflow-x: hidden;
-  position: absolute;
-  z-index: -1;
 }
 
-.second-index-bcg {
-  margin: 2% auto;
-  background-color: rgba(255, 255, 255, 0.5);
-  z-index: 1;
-}
-
-@media screen and (max-width: 992px) {
-  .second-index-bcg {
-    margin: 0 auto;
-  }
-}
-
-.second-index-nav {
-  width: 90%;
-  margin: 2% auto;
-  padding-right: 1%;
-}
-
-.second-index-wrap {
-  width: 100%;
-  margin: 1% auto;
+.second-index-row {
   background-color: #fff;
-  -webkit-box-shadow: 0 0 10px #ccc;
-          box-shadow: 0 0 10px #ccc;
 }
 
-.second-index-foto {
+.second-index figure {
+  width: 99%;
+}
+
+.second-index-info {
+  height: 40vh;
+  text-align: center;
+  padding: 10%;
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.second-index-info:hover {
+  color: #000;
+  text-decoration: none;
+  -webkit-filter: brightness(60%);
+          filter: brightness(60%);
+  text-shadow: 1px 1px 5px #ccc;
+}
+
+.second-index-info h3 {
+  font-family: eurofurence;
+}
+
+.second-index-info p {
+  font-weight: 100;
+  font-family: eurofurence light;
+}
+
+.second-index img {
   width: 100%;
-  margin: 3% auto;
 }
 
-.second-index-txt {
-  text-transform: uppercase;
-  font-family: eurofurence light;
-  font-size: 130px;
+.second-index a {
+  color: #000;
 }
 
-.second-index-txt-sale {
-  font-family: eurofurence light;
-  font-size: 80px;
-}
-
-.second-index-txt-job {
-  margin-top: -5%;
-  font-family: eurofurence light;
-  font-size: 40px;
+.second-index a:hover {
+  text-decoration: none;
 }
 
 #L_1 {
