@@ -25,10 +25,10 @@ a {
 
 .first_section {
     background:
-        url(/assets/img/bullet1.png) no-repeat 100% 33%,
-        url(/assets/img/bullet5min.png)no-repeat left bottom,
-        url(/assets/img/glass1-min.png)no-repeat 14% 23%,
-        url(/assets/img/glass2-min.png)no-repeat 90% 98%,
+        url(assets/img/bullet1.png) no-repeat 100% 33%,
+        url(assets/img/bullet5min.png)no-repeat left bottom,
+        url(assets/img/glass1-min.png)no-repeat 14% 23%,
+        url(assets/img/glass2-min.png)no-repeat 90% 98%,
         radial-gradient(at 50% 50%, #232323 0%, rgba(22, 22, 22, 0.97) 0.01%, rgba(18, 18, 18, 0.96) 49.48%, rgba(0, 0, 0, 0.95) 100%);
     background-size: 20%, 20%, 15%, 20%;
     color: $light;
@@ -56,20 +56,20 @@ a {
 
     @media screen and (max-width:1920px) {
         background:
-            url(/assets/img/bullet1.png) no-repeat 100% 33%,
-            url(/assets/img/bullet5min.png)no-repeat left bottom,
-            url(/assets/img/glass1-min.png)no-repeat 5% 23%,
-            url(/assets/img/glass2-min.png)no-repeat 97% 98%,
+            url(assets/img/bullet1.png) no-repeat 100% 33%,
+            url(assets/img/bullet5min.png)no-repeat left bottom,
+            url(assets/img/glass1-min.png)no-repeat 5% 23%,
+            url(assets/img/glass2-min.png)no-repeat 97% 98%,
             radial-gradient(at 50% 50%, #232323 0%, rgba(22, 22, 22, 0.97) 0.01%, rgba(18, 18, 18, 0.96) 49.48%, rgba(0, 0, 0, 0.95) 100%);
         background-size: 20%, 20%, 15%, 20%;
     }
 
     @media screen and (max-width:1366px) {
         background:
-            url(/assets/img/bullet1.png) no-repeat 100% 32%,
-            url(/assets/img/bullet5min.png)no-repeat left bottom,
-            url(/assets/img/glass1-min.png)no-repeat 1% 23%,
-            url(/assets/img/glass2-min.png)no-repeat 90% 98%,
+            url(assets/img/bullet1.png) no-repeat 100% 32%,
+            url(assets/img/bullet5min.png)no-repeat left bottom,
+            url(assets/img/glass1-min.png)no-repeat 1% 23%,
+            url(assets/img/glass2-min.png)no-repeat 90% 98%,
             radial-gradient(at 50% 50%, #232323 0%, rgba(22, 22, 22, 0.97) 0.01%, rgba(18, 18, 18, 0.96) 49.48%, rgba(0, 0, 0, 0.95) 100%);
         background-size: 16%, 20%, 15%, 20%;
     }
@@ -83,7 +83,7 @@ a {
     width: $wrapperWidthLarge;
     margin: 0 auto;
     padding-top: 2%;
-    background-image: url(/assets/img/minigun-min.png);
+    background-image: url(assets/img/minigun-min.png);
     background-repeat: no-repeat;
     background-position: 82% top;
     background-size: 55%;
@@ -219,19 +219,19 @@ a {
     }
 
     &-item1 {
-        background-image: url(/assets/img/screen-icon.png);
+        background-image: url(assets/img/screen-icon.png);
     }
 
     &-item2 {
-        background-image: url(/assets/img/mdi_bullseye-arrow.png);
+        background-image: url(assets/img/mdi_bullseye-arrow.png);
     }
 
     &-item3 {
-        background-image: url(/assets/img/icon_bullseye-arrow.png);
+        background-image: url(assets/img/icon_bullseye-arrow.png);
     }
 
     &-item4 {
-        background-image: url(/assets/img/mdi_folder-settings-variant-outline.png);
+        background-image: url(assets/img/mdi_folder-settings-variant-outline.png);
     }
 }
 
@@ -334,7 +334,7 @@ a {
         font-size: 11px;
         line-height: 13px;
         font-family: $contentFont;
-        background: url(/assets/img/Star-min.png) no-repeat 2% center;
+        background: url(assets/img/Star-min.png) no-repeat 2% center;
         padding: 1% 2%;
         border: 1px solid $accentColor;
         border-radius: 5px;
@@ -364,15 +364,15 @@ a {
         }
 
         &-background1 {
-            background: url(/assets/img/hurts-min.png) no-repeat 4% top;
+            background: url(assets/img/hurts-min.png) no-repeat 4% top;
         }
 
         &-background2 {
-            background: url(/assets/img/causes-min.png) no-repeat 4% top;
+            background: url(assets/img/causes-min.png) no-repeat 4% top;
         }
 
         &-background3 {
-            background: url(/assets/img/desigion-min.png) no-repeat 4% top;
+            background: url(assets/img/desigion-min.png) no-repeat 4% top;
         }
     }
 
