@@ -1,0 +1,403 @@
+@import 'variables';
+@import 'fonts';
+@import 'mixins';
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*:active,
+*:hover,
+*:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.first_section {
+    background:
+        url(/assets/img/bullet1.png) no-repeat 100% 33%,
+        url(/assets/img/bullet5min.png)no-repeat left bottom,
+        url(/assets/img/glass1-min.png)no-repeat 14% 23%,
+        url(/assets/img/glass2-min.png)no-repeat 90% 98%,
+        radial-gradient(at 50% 50%, #232323 0%, rgba(22, 22, 22, 0.97) 0.01%, rgba(18, 18, 18, 0.96) 49.48%, rgba(0, 0, 0, 0.95) 100%);
+    background-size: 20%, 20%, 15%, 20%;
+    color: $light;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        border-left: 1px solid rgba(66, 66, 66, 0.35);
+        height: 98%;
+        left: 2%;
+        top: 1%;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        border-left: 1px solid rgba(66, 66, 66, 0.35);
+        height: 98%;
+        left: 33%;
+        top: 1%;
+    }
+
+
+
+    @media screen and (max-width:1920px) {
+        background:
+            url(/assets/img/bullet1.png) no-repeat 100% 33%,
+            url(/assets/img/bullet5min.png)no-repeat left bottom,
+            url(/assets/img/glass1-min.png)no-repeat 5% 23%,
+            url(/assets/img/glass2-min.png)no-repeat 97% 98%,
+            radial-gradient(at 50% 50%, #232323 0%, rgba(22, 22, 22, 0.97) 0.01%, rgba(18, 18, 18, 0.96) 49.48%, rgba(0, 0, 0, 0.95) 100%);
+        background-size: 20%, 20%, 15%, 20%;
+    }
+
+    @media screen and (max-width:1366px) {
+        background:
+            url(/assets/img/bullet1.png) no-repeat 100% 32%,
+            url(/assets/img/bullet5min.png)no-repeat left bottom,
+            url(/assets/img/glass1-min.png)no-repeat 1% 23%,
+            url(/assets/img/glass2-min.png)no-repeat 90% 98%,
+            radial-gradient(at 50% 50%, #232323 0%, rgba(22, 22, 22, 0.97) 0.01%, rgba(18, 18, 18, 0.96) 49.48%, rgba(0, 0, 0, 0.95) 100%);
+        background-size: 16%, 20%, 15%, 20%;
+    }
+
+
+
+
+}
+
+.first_section_wrapper {
+    width: $wrapperWidthLarge;
+    margin: 0 auto;
+    padding-top: 2%;
+    background-image: url(/assets/img/minigun-min.png);
+    background-repeat: no-repeat;
+    background-position: 82% top;
+    background-size: 55%;
+
+    &:before {
+        content: "";
+        position: absolute;
+        border-left: 1px solid rgba(66, 66, 66, 0.35);
+        height: 98%;
+        left: 64%;
+        top: 1%;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        border-left: 1px solid rgba(66, 66, 66, 0.35);
+        height: 98%;
+        left: 96%;
+        top: 1%;
+    }
+
+
+
+    @media screen and (max-width:1920px) {
+        width: $wrapperWidth1920;
+        background-position: 87% 1%;
+        background-size: auto;
+    }
+
+    @media screen and (max-width:1366px) {
+        width: $wrapperWidth1366;
+        background-position: 110% 0;
+        background-size: auto;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.header_title {
+    font-size: 16px;
+    line-height: 19px;
+    font-family: $stylesListFont;
+
+
+
+}
+
+
+.header_contacts {}
+
+.header_phone {
+
+    &-link {
+        font-size: 25px;
+        line-height: 33px;
+        font-family: $stylesListFont;
+        color: $accentColor;
+    }
+}
+
+.header_callback {
+    text-align: right;
+    margin-top: 1%;
+
+    &-link {
+        font-size: 14px;
+        line-height: 19px;
+        font-family: $contentFont;
+        text-transform: uppercase;
+        color: $light;
+
+    }
+}
+
+.first_section_content {
+    display: flex;
+    margin-top: 5%;
+
+}
+
+.first_section_info {}
+
+.first_section_visual {}
+
+.first_section_img {
+    max-width: 41%;
+    position: absolute;
+    top: -3%;
+    left: 44%;
+}
+
+.first_section_title {
+    font-size: 48px;
+    line-height: 48px;
+    font-family: $headingFont;
+    text-transform: uppercase;
+
+    &-spacing {
+        letter-spacing: 2px;
+    }
+
+
+}
+
+.first_section_subtitle {
+    font-size: 40px;
+    line-height: 40px;
+    font-family: $headingFont;
+    color: $accentColor;
+
+}
+
+
+.first_section_list {
+    margin: 7% 0;
+    width: 45%;
+
+    &-item {
+        margin-bottom: 5%;
+        background-position: left center;
+        background-repeat: no-repeat;
+        padding: 0px 0px 0px 65px;
+        font-size: 13px;
+        line-height: 16px;
+        font-family: $contentFont;
+
+    }
+
+    &-item1 {
+        background-image: url(/assets/img/screen-icon.png);
+    }
+
+    &-item2 {
+        background-image: url(/assets/img/mdi_bullseye-arrow.png);
+    }
+
+    &-item3 {
+        background-image: url(/assets/img/icon_bullseye-arrow.png);
+    }
+
+    &-item4 {
+        background-image: url(/assets/img/mdi_folder-settings-variant-outline.png);
+    }
+}
+
+.gold_button {
+    font-family: $headingFont;
+    color: $dark;
+    background: $buttonGradient;
+    font-size: 20px;
+    line-height: 20px;
+    border: 0;
+    border-radius: 5px;
+    font-weight: bold;
+
+
+}
+
+.first_section .gold_button {
+    padding: 18px 30px 18px 65px;
+    margin: 0 0 20% 12%;
+}
+
+
+.button_img {
+    position: absolute;
+    top: 78%;
+    left: 23%;
+
+
+    @media screen and (max-width:1920px) {
+        top: 72%;
+        left: 17%;
+    }
+
+    @media screen and (max-width:1366px) {
+        top: 72%;
+        left: 13%;
+    }
+}
+
+//////////////////hurt_section/////////////////////
+.hurt_section_wrapper {
+    @include section_wrapper();
+
+}
+
+.hurt_section_title {
+    font-family: $headingFont;
+    font-size: 28px;
+    line-height: 28px;
+    text-align: center;
+    margin-bottom: 1%;
+
+}
+
+.section_subtitle {
+    font-family: $contentFont;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+    &-dark {
+        color: $dark;
+    }
+
+    &-light {
+        color: $light;
+    }
+
+}
+
+
+.hurt_section_content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2%;
+    justify-content: center;
+}
+
+.hurt_section_visual {
+    width: 45%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hurt_section_info {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 4%;
+}
+
+.hurt_section_decision {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    margin: 1% 0 5%;
+
+    &-item {
+        font-size: 11px;
+        line-height: 13px;
+        font-family: $contentFont;
+        background: url(/assets/img/Star-min.png) no-repeat 2% center;
+        padding: 1% 2%;
+        border: 1px solid $accentColor;
+        border-radius: 5px;
+        box-shadow: 0px 4px 4px rgba(210, 163, 106, 0.25);
+        width: 23%;
+@media screen and (max-width:1366px){
+    width: 27%;
+}
+        
+    }   
+
+    }
+
+
+    .header {
+        font-size: 25px;
+        line-height: 25px;
+        font-family: $headingFont;
+
+
+        &-dark {
+            color: $dark;
+        }
+
+        &-light {
+            color: $light;
+        }
+
+        &-background1 {
+            background: url(/assets/img/hurts-min.png) no-repeat 4% top;
+        }
+
+        &-background2 {
+            background: url(/assets/img/causes-min.png) no-repeat 4% top;
+        }
+
+        &-background3 {
+            background: url(/assets/img/desigion-min.png) no-repeat 4% top;
+        }
+    }
+
+    .hurt_section .header {
+        padding-top: 6%;
+        margin: 2% 0;
+    }
+
+    .txt {
+        font-size: 18px;
+        line-height: 22px;
+        font-family: $contentFont;
+        margin: 1% 0;
+
+        &-dark {
+            color: $dark;
+        }
+
+        &-light {
+            color: $light;
+        }
+
+    }
+
+    .hurt_section .txt {
+        text-indent: 2%;
+        text-align: justify;
+    }
