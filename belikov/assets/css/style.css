@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
@@ -755,6 +757,7 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
+  font-weight: normal;
 }
 
 ul {
@@ -807,6 +810,27 @@ body.lock {
   padding: 0 15px;
 }
 
+.title {
+  font-family: PFRegalDisplayPro, serif;
+  font-size: 42px;
+  line-height: 65px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.title-italic {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 22px;
+  line-height: 29px;
+  text-align: center;
+  color: #1C1C1C;
+  margin-top: 10px;
+}
+
 .main_screen {
   flex: 1 0 100%;
   position: relative;
@@ -821,17 +845,37 @@ body.lock {
   left: 0;
 }
 
-.main_screen--img-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
+.no-webp .main_screen--bg-bush{
+  background: url(../img/desktop/decor/5.png) no-repeat; }
+
+.main_screen--bg-bush {
   pointer-events: none;
 }
 
+.no-webp .main_screen--bg-cloud{
+  background: url(../img/desktop/decor/26.png) no-repeat; }
+
+.main_screen--bg-cloud {
+  pointer-events: none;
+}
+
+.main_screen--bg-tablet {
+  display: none;
+}
+
+.main_screen--bg-mobile {
+  display: none;
+}
+
+.main_screen--img-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+}
+
 .main_screen--description {
-  position: relative;
-  margin-top: 163px;
-  margin-left: 165px;
+  flex: 0 1 16%;
 }
 
 .main_screen--description_column {
@@ -854,7 +898,7 @@ body.lock {
 
 .main_screen--description_inner {
   max-width: 190px;
-  padding: 20px 23px 90px 20px;
+  padding: 20px 23px 0 20px;
   background-color: #fff;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
   border-top-left-radius: 100px 15px;
@@ -896,7 +940,8 @@ body.lock {
 
 .main_screen--content {
   position: relative;
-  margin-top: 18%;
+  margin-top: 163px;
+  margin-left: 165px;
 }
 
 .main_screen--row {
@@ -904,12 +949,11 @@ body.lock {
 }
 
 .main_screen--column-left {
-  flex: 0 1 60%;
-  padding-left: 210px;
+  flex: 0 1 38%;
+  padding-top: 90px;
 }
 
 .main_screen--column-right {
-  flex: 0 1 40%;
   display: flex;
   align-items: flex-end;
 }
@@ -917,7 +961,7 @@ body.lock {
 .main_screen--title {
   font-family: PFRegalDisplayPro, serif;
   font-weight: normal;
-  font-size: 38px;
+  font-size: 32px;
   line-height: 67px;
   letter-spacing: -1.5px;
 }
@@ -947,7 +991,7 @@ body.lock {
   width: 330px;
   height: 80px;
   background: linear-gradient(180deg, #FCD980 0%, #FDC236 100%);
-  border-radius: 4px/14px;
+  border-radius: 14px/90px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -960,22 +1004,14 @@ body.lock {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: all .5s ease 0s;
+  outline: 0.5px solid rgba(255, 255, 255, 0.6);
+  outline-offset: -7px;
+  -moz-outline-radius: 14px/90px;
 }
 
 .main_screen--button:hover {
   box-shadow: 0px 0px 50px rgba(253, 217, 127, 0.8), 0 7px 3px -5px #AD8A39;
   transition: all .5s ease 0s;
-}
-
-.main_screen--button:before {
-  content: '';
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 320px;
-  height: 70px;
-  border: 0.5px solid rgba(255, 255, 255, 0.6);
-  border-radius: 4px/14px;
 }
 
 .main_screen--link {
@@ -997,7 +1033,7 @@ body.lock {
   position: relative;
   align-items: center;
   margin-bottom: -90px;
-  margin-left: 93px;
+  margin-left: 88px;
 }
 
 .main_screen--border {
@@ -1071,6 +1107,708 @@ body.lock {
   font-weight: 600;
 }
 
+.causes_section {
+  padding-top: 100px;
+  background: #fff;
+  position: relative;
+}
+
+.causes_section--row {
+  display: flex;
+  margin-top: 100px;
+  justify-content: space-between;
+}
+
+.causes_section--block {
+  max-width: 330px;
+  border-radius: 8px;
+  -webkit-clip-path: polygon(0% 0%, 20% 1%, 25% 45px, 30% 1.5%, 100% 5%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 20% 1%, 25% 45px, 30% 1.5%, 100% 5%, 100% 100%, 0% 100%);
+  padding: 83px 32px 0 40px;
+  min-height: 800px;
+}
+
+.no-webp .causes_section--block-childhood{
+  background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/desktop/1.png) no-repeat center bottom; }
+
+.causes_section--block-childhood {
+  background-size: contain !important;
+}
+
+.no-webp .causes_section--block-freedom{
+  background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/desktop/2.png) no-repeat center bottom; }
+
+.causes_section--block-freedom {
+  background-size: contain !important;
+}
+
+.no-webp .causes_section--block-health{
+  background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/desktop/3.png) no-repeat center bottom; }
+
+.causes_section--block-health {
+  background-size: contain !important;
+}
+
+.no-webp .causes_section--block-rest{
+  background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/desktop/4.png) no-repeat center bottom; }
+
+.causes_section--block-rest {
+  background-size: contain !important;
+}
+
+.causes_section--heading {
+  font-family: PFRegalDisplayPro, serif;
+  font-size: 20px;
+  line-height: 29px;
+  font-weight: normal;
+}
+
+.causes_section--heading span {
+  font-style: italic;
+  color: #7887A6;
+  font-weight: 600;
+}
+
+.causes_section--list {
+  margin-top: 29px;
+  font-size: 13px;
+  line-height: 17px;
+}
+
+.causes_section--item {
+  position: relative;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.causes_section--item:last-child {
+  margin-bottom: 30px;
+}
+
+.causes_section--item::before {
+  content: url(../img/desktop/decor/1.svg);
+  position: absolute;
+  left: -18px;
+}
+
+.causes_section--image {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+}
+
+.no-webp .causes_section--image-1{
+  background: url(../img/desktop/decor/19.png) no-repeat -2% 0; }
+
+.no-webp .causes_section--image-2{
+  background: url(../img/desktop/decor/15.png) no-repeat 15% -1%; }
+
+.no-webp .causes_section--image-3{
+  background: url(../img/desktop/decor/8.png) no-repeat 28% 4%; }
+
+.no-webp .causes_section--image-4{
+  background: url(../img/desktop/decor/16.png) no-repeat 73% -3%; }
+
+.no-webp .causes_section--image-5{
+  background: url(../img/desktop/decor/7.png) no-repeat 87% -1%; }
+
+.no-webp .causes_section--image-6{
+  background: url(../img/desktop/decor/19.png) no-repeat 103% 3%; }
+
+.slider {
+  position: relative;
+  padding: 0 60px;
+}
+
+.slider .slick-arrow {
+  position: absolute;
+  top: 50%;
+  margin: -30px 0px 0px 0px;
+  z-index: 10;
+  font-size: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  transition: all 1s ease 0s;
+}
+
+.slider .slick-arrow.slick-prev {
+  left: -5%;
+  background: url("../img/desktop/icons/5.svg") center/50% no-repeat, #F1F1F1;
+}
+
+.slider .slick-arrow.slick-prev:hover {
+  background: url("../img/desktop/icons/5.svg") center/50% no-repeat, linear-gradient(180deg, #FCD980 0%, #FDC236 100%);
+  transition: background 1s ease 0s;
+}
+
+.slider .slick-arrow.slick-next {
+  right: -5%;
+  background: url("../img/desktop/icons/6.svg") center/50% no-repeat, #F1F1F1;
+}
+
+.slider .slick-arrow.slick-next:hover {
+  background: url("../img/desktop/icons/6.svg") center/50% no-repeat, linear-gradient(180deg, #FCD980 0%, #FDC236 100%);
+  transition: background 1s ease 0s;
+}
+
+.slider .slick-slider {
+  min-width: 0;
+}
+
+.slider .slick-list {
+  overflow: hidden;
+}
+
+.slider .slick-track {
+  display: flex;
+  align-items: flex-start;
+}
+
+.no-webp .slider_section{
+  background: url(../img/desktop/decor/1.png) 101% -10%/12% no-repeat, url(../img/desktop/decor/6.png) left bottom/10% no-repeat, url(../img/desktop/decor/23.png) 90% 101%/10% no-repeat, url(../img/desktop/decor/28.png) center/cover no-repeat; }
+
+.slider_section {
+  padding: 150px 0;
+  position: relative;
+}
+
+.slider_section--dots {
+  margin-top: 90px;
+  position: relative;
+}
+
+.slider_section--dots::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  height: 1px;
+  border-bottom: 2px dashed #D5D5D5;
+}
+
+.slider_section--dots .slick-dots {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider_section--dots li {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.slider_section--dots li::before {
+  content: '';
+  position: absolute;
+  font-size: 11px;
+  color: #D4D4D4;
+  line-height: 14px;
+  top: 126%;
+  white-space: nowrap;
+}
+
+.slider_section--dots li:nth-child(1)::before {
+  content: 'Встреча';
+}
+
+.slider_section--dots li:nth-child(2)::before {
+  content: 'АС проект';
+}
+
+.slider_section--dots li:nth-child(3)::before {
+  content: 'Подготовка';
+}
+
+.slider_section--dots li:nth-child(4)::before {
+  content: 'Коробка дома';
+}
+
+.slider_section--dots li:nth-child(5)::before {
+  content: 'Теплый контур';
+}
+
+.slider_section--dots li:nth-child(6)::before {
+  content: 'Дизайн проект';
+}
+
+.slider_section--dots li:nth-child(7)::before {
+  content: 'Сети и коммуникации';
+}
+
+.slider_section--dots li:nth-child(8)::before {
+  content: 'Внутренняя отделка';
+}
+
+.slider_section--dots li:nth-child(9)::before {
+  content: 'Заселение';
+}
+
+.slider_section--dots li::after {
+  content: 'Этап';
+  position: absolute;
+  font-size: 11px;
+  color: #D4D4D4;
+  text-transform: uppercase;
+  line-height: 14px;
+  top: -55%;
+}
+
+.slider_section--dots li.slick-active::before {
+  color: #3F3F3F;
+}
+
+.slider_section--dots li.slick-active::after {
+  color: #3F3F3F;
+}
+
+.slider_section--dots li button {
+  width: 40px;
+  height: 40px;
+  background: #FFFFFF;
+  border: 1px solid #D4D4D4;
+  border-radius: 50%;
+  position: relative;
+  box-sizing: content-box;
+  position: relative;
+  margin-top: 4px;
+  transition: all 1s ease 0s;
+}
+
+.slider_section--dots li.slick-active button {
+  background: #7887A6;
+  color: #fff;
+  position: relative;
+  box-sizing: content-box;
+  border: 1px solid #7887A6;
+  box-shadow: 0 0 0 4px #fff inset;
+  padding: 4px;
+  margin: 0;
+  transition: all 1s ease 0s;
+}
+
+.slider_section--content {
+  margin-top: 110px;
+}
+
+.slider_section--row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider_section--column {
+  flex: 0 1 50%;
+}
+
+.slider_section--image {
+  border-radius: 20px;
+}
+
+.slider_section--stage {
+  max-width: 100px;
+  height: 36px;
+  background: linear-gradient(180deg, #FCD980 0%, #FDC236 100%);
+  border-radius: 5px;
+  transform: skewX(-20deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider_section--stage-number {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  transform: skewX(20deg);
+  letter-spacing: 0.08em;
+}
+
+.slider_section--heading {
+  margin-top: 50px;
+  font-family: PFRegalDisplayPro, serif;
+  font-size: 26px;
+  line-height: 38px;
+}
+
+.slider_section--heading-small {
+  font-size: 22px;
+  line-height: 34px;
+}
+
+.slider_section--list {
+  margin-top: 38px;
+  font-size: 15px;
+  line-height: 16px;
+}
+
+.slider_section--item {
+  margin-bottom: 26px;
+  position: relative;
+  margin-left: 60px;
+}
+
+.slider_section--item::before {
+  content: url(../img/desktop/icons/8.svg);
+  position: absolute;
+  left: -40px;
+}
+
+.slider_section--text {
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 25px;
+  margin-left: 22px;
+}
+
+.no-webp .dream_house_section{
+  background: url(../img/desktop/backgrounds/2.png) no-repeat; }
+
+.dream_house_section {
+  padding: 100px 0 150px;
+}
+
+.dream_house_section--row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dream_house_section--column {
+  flex: 0 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dream_house_section--title {
+  font-family: PFRegalDisplayPro, serif;
+  font-size: 40px;
+}
+
+.dream_house_section--title span {
+  font-style: italic;
+  font-weight: 600;
+  line-height: 58px;
+}
+
+.dream_house_section--subtitle {
+  margin-top: 30px;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.dream_house_section--button {
+  display: inline-block;
+  margin-top: 53px;
+  width: 436px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #FCD980 0%, #FDC236 100%);
+  border-radius: 14px/90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  box-shadow: 0px 10px 50px rgba(253, 217, 127, 0.5), 0 7px 3px -5px #AD8A39;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 21px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all .5s ease 0s;
+  outline: 0.5px solid rgba(255, 255, 255, 0.6);
+  outline-offset: -7px;
+  -moz-outline-radius: 14px/90px;
+}
+
+.dream_house_section--button:hover {
+  box-shadow: 0px 0px 50px rgba(253, 217, 127, 0.8), 0 7px 3px -5px #AD8A39;
+  transition: all .5s ease 0s;
+}
+
+.no-webp .cost_section{
+  background: url(../img/desktop/decor/24.png) 97% 7%/auto no-repeat, url(../img/desktop/decor/25.png) 8% 0%/auto no-repeat, url(../img/desktop/decor/28.png) center/cover no-repeat; }
+
+.cost_section {
+  padding: 40px 0 100px;
+}
+
+.cost_section--row {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cost_section--column {
+  flex: 0 1 50%;
+}
+
+.cost_section--column-content {
+  position: relative;
+}
+
+.cost_section--column-content::before {
+  content: url(../img/desktop/decor/35.png);
+  position: absolute;
+  top: 91%;
+  left: 87%;
+  z-index: 2;
+}
+
+.cost_section--column-visual {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.cost_section--title {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.cost_section--content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 44px;
+}
+
+.cost_section--info {
+  flex: 0 1 33.333%;
+}
+
+.cost_section--heading {
+  font-family: PFRegalDisplayPro, serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.cost_section--description {
+  margin-top: 10px;
+  font-size: 18px;
+  width: 95%;
+}
+
+.cost_section--subtitle {
+  margin-top: 58px;
+  font-family: PFRegalDisplayPro, serif;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.cost_section--question {
+  margin-top: 20px;
+  font-family: PFRegalDisplayPro, serif;
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.cost_section--text {
+  margin-top: 30px;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.cost_section--text a {
+  font-weight: 600;
+  transition: all 0.5s ease 0s;
+}
+
+.cost_section--text a:hover {
+  text-decoration: underline;
+  transition: all 0.5s ease 0s;
+}
+
+.cost_section--offer {
+  max-width: 450px;
+  height: 470px;
+  padding: 93px 50px 72px;
+  background-color: #fff;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cost_section--offer::before {
+  content: '';
+  position: absolute;
+  width: 430px;
+  height: 450px;
+  border: 1px solid #EFEFEF;
+  box-sizing: border-box;
+  border-radius: 20px;
+  top: 10px;
+  left: 10px;
+}
+
+.cost_section--offer-title {
+  font-family: PFRegalDisplayPro, serif;
+  font-size: 28px;
+  line-height: 43px;
+}
+
+.cost_section--offer-text {
+  margin-top: 20px;
+  font-family: PFRegalDisplayPro, serif;
+  font-size: 26px;
+  line-height: 35px;
+  font-style: italic;
+  font-weight: 500;
+  color: #7887A6;
+}
+
+.cost_section--button {
+  display: inline-block;
+  margin: 63px auto 0;
+  width: 350px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #FCD980 0%, #FDC236 100%);
+  border-radius: 14px/90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  box-shadow: 0px 10px 50px rgba(253, 217, 127, 0.5), 0 7px 3px -5px #AD8A39;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all .5s ease 0s;
+}
+
+.cost_section--button::before {
+  content: 'СКАЧАТЬ PDF-ПОДСКАЗКУ';
+  position: absolute;
+  color: transparent;
+  width: 340px;
+  height: 70px;
+  border: 0.5px solid rgba(255, 255, 255, 0.6);
+  border-radius: 14px/90px;
+}
+
+.cost_section--button:hover {
+  box-shadow: 0px 0px 50px rgba(253, 217, 127, 0.8), 0 7px 3px -5px #AD8A39;
+  transition: all .5s ease 0s;
+}
+
+.cost_section--image {
+  position: absolute;
+  top: -14%;
+  left: -17%;
+  z-index: 0;
+}
+
+.tariffs_section {
+  padding: 20px 0 20px;
+}
+
+.tariffs_section--wrapper {
+  margin-top: 117px;
+  display: flex;
+}
+
+.tariffs_section--servises {
+  flex: 0 1 34%;
+  padding-top: 200px;
+}
+
+.tariffs_section--title {
+  margin-top: 30px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: bold;
+}
+
+.tariffs_section--item {
+  font-size: 18px;
+  line-height: 21px;
+  margin-top: 15px;
+}
+
+.tariffs_section--tariffs_block {
+  flex: 0 1 66%;
+  display: flex;
+  overflow-x: auto;
+  justify-content: space-between;
+}
+
+.tariffs_section--package_wrapper {
+  flex: 0 1 50%;
+}
+
+.tariffs_section--heading {
+  font-size: 14px;
+  line-height: 26px;
+  text-align: center;
+}
+
+.tariffs_section--heading span {
+  font-weight: 600;
+}
+
+.tariffs_section--package {
+  margin-top: 44px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.tariffs_section--package-blue {
+  border-top: 15px solid #97D3FF;
+  border-bottom: 15px solid #97D3FF;
+}
+
+.tariffs_section--package-green {
+  border-top: 15px solid #ABE47F;
+  border-bottom: 15px solid #ABE47F;
+}
+
+.tariffs_section--caption {
+  margin-top: 50px;
+  font-family: PFRegalDisplayPro, serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.tariffs_section--list_tariff {
+  margin-top: 20px;
+}
+
+.tariffs_section--item_tariff {
+  position: relative;
+}
+
+.tariffs_section--item_tariff-plus::before {
+  content: '+';
+  font-size: 24px;
+  line-height: 56px;
+  color: #37D200;
+}
+
+.tariffs_section--item_tariff-minus::before {
+  content: '-';
+  font-size: 24px;
+  line-height: 56px;
+  color: #D8D8D8;
+}
+
 @media (min-width: 480px) {
   .fluid-font-size {
     font-size: 18px;
@@ -1091,6 +1829,14 @@ body.lock {
     font-size: calc( 0.00223 * 100vw + 11.71429px);
   }
 
+  .title {
+    font-size: calc( 0.01339 * 100vw + 28.28571px);
+  }
+
+  .subtitle {
+    font-size: calc( 0.00223 * 100vw + 19.71429px);
+  }
+
   .main_screen--description_title {
     font-size: calc( 0.00446 * 100vw + 11.42857px);
   }
@@ -1100,7 +1846,7 @@ body.lock {
   }
 
   .main_screen--title {
-    font-size: calc( 0.01116 * 100vw + 26.57143px);
+    font-size: calc( 0.01786 * 100vw + 13.71429px);
   }
 
   .main_screen--subtitle {
@@ -1118,6 +1864,98 @@ body.lock {
   .main_screen--text {
     font-size: calc( 0.00446 * 100vw + 7.42857px);
   }
+
+  .slider_section--dots li::before {
+    font-size: calc( 0.00112 * 100vw + 9.85714px);
+  }
+
+  .slider_section--dots li::after {
+    font-size: calc( 0.00112 * 100vw + 9.85714px);
+  }
+
+  .slider_section--stage-number {
+    font-size: calc( 0 * 100vw + 14px);
+  }
+
+  .slider_section--heading {
+    font-size: calc( 0.0067 * 100vw + 19.14286px);
+  }
+
+  .slider_section--heading-small {
+    font-size: calc( 0.0067 * 100vw + 15.14286px);
+  }
+
+  .slider_section--list {
+    font-size: calc( 0.00112 * 100vw + 13.85714px);
+  }
+
+  .slider_section--text {
+    font-size: calc( 0.00223 * 100vw + 13.71429px);
+  }
+
+  .dream_house_section--title {
+    font-size: calc( 0.00893 * 100vw + 30.85714px);
+  }
+
+  .dream_house_section--subtitle {
+    font-size: calc( 0.00446 * 100vw + 11.42857px);
+  }
+
+  .dream_house_section--button {
+    font-size: calc( 0.00446 * 100vw + 7.42857px);
+  }
+
+  .cost_section--title {
+    font-size: calc( 0 * 100vw + 20px);
+  }
+
+  .cost_section--heading {
+    font-size: calc( 0.0067 * 100vw + 7.14286px);
+  }
+
+  .cost_section--description {
+    font-size: calc( -0.00446 * 100vw + 22.57143px);
+  }
+
+  .cost_section--subtitle {
+    font-size: calc( 0 * 100vw + 20px);
+  }
+
+  .cost_section--question {
+    font-size: calc( 0 * 100vw + 36px);
+  }
+
+  .cost_section--text {
+    font-size: calc( 0 * 100vw + 18px);
+  }
+
+  .cost_section--offer-title {
+    font-size: calc( 0 * 100vw + 28px);
+  }
+
+  .cost_section--offer-text {
+    font-size: calc( 0 * 100vw + 26px);
+  }
+
+  .cost_section--button {
+    font-size: calc( 0 * 100vw + 16px);
+  }
+
+  .tariffs_section--heading {
+    font-size: calc( 0.0067 * 100vw + 7.14286px);
+  }
+
+  .tariffs_section--caption {
+    font-size: calc( 0.01563 * 100vw + 4px);
+  }
+
+  .tariffs_section--item_tariff-plus::before {
+    font-size: calc( 0.02679 * 100vw + -3.42857px);
+  }
+
+  .tariffs_section--item_tariff-minus::before {
+    font-size: calc( 0.02679 * 100vw + -3.42857px);
+  }
 }
 
 @media (min-width: 1201px) {
@@ -1129,6 +1967,16 @@ body.lock {
 @media (min-width: 1280px) {
   .fluid-font-size {
     font-size: 24px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .causes_section--heading {
+    font-size: calc( 0.00722 * 100vw + 10.13718px);
+  }
+
+  .causes_section--list {
+    font-size: calc( 0.00181 * 100vw + 10.5343px);
   }
 }
 
@@ -1147,6 +1995,14 @@ body.lock {
 
   .contact_block--call {
     font-size: 16px;
+  }
+
+  .title {
+    font-size: 54px;
+  }
+
+  .subtitle {
+    font-size: 24px;
   }
 
   .main_screen--description_title {
@@ -1176,11 +2032,167 @@ body.lock {
   .main_screen--text {
     font-size: 16px;
   }
+
+  .causes_section--heading {
+    font-size: 24px;
+  }
+
+  .causes_section--list {
+    font-size: 14px;
+  }
+
+  .slider_section--dots li::before {
+    font-size: 12px;
+  }
+
+  .slider_section--dots li::after {
+    font-size: 12px;
+  }
+
+  .slider_section--stage-number {
+    font-size: 14px;
+  }
+
+  .slider_section--heading {
+    font-size: 32px;
+  }
+
+  .slider_section--heading-small {
+    font-size: 28px;
+  }
+
+  .slider_section--list {
+    font-size: 16px;
+  }
+
+  .slider_section--text {
+    font-size: 18px;
+  }
+
+  .dream_house_section--title {
+    font-size: 48px;
+  }
+
+  .dream_house_section--subtitle {
+    font-size: 20px;
+  }
+
+  .dream_house_section--button {
+    font-size: 16px;
+  }
+
+  .cost_section--title {
+    font-size: 20px;
+  }
+
+  .cost_section--heading {
+    font-size: 20px;
+  }
+
+  .cost_section--description {
+    font-size: 14px;
+  }
+
+  .cost_section--subtitle {
+    font-size: 20px;
+  }
+
+  .cost_section--question {
+    font-size: 36px;
+  }
+
+  .cost_section--text {
+    font-size: 18px;
+  }
+
+  .cost_section--offer-title {
+    font-size: 28px;
+  }
+
+  .cost_section--offer-text {
+    font-size: 26px;
+  }
+
+  .cost_section--button {
+    font-size: 16px;
+  }
+
+  .tariffs_section--heading {
+    font-size: 20px;
+  }
+
+  .tariffs_section--caption {
+    font-size: 34px;
+  }
+
+  .tariffs_section--item_tariff-plus::before {
+    font-size: 48px;
+  }
+
+  .tariffs_section--item_tariff-minus::before {
+    font-size: 48px;
+  }
 }
 
-@media (max-width: 1875px) {
+@media (max-width: 1700px) {
+  .main_screen--content {
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .main_screen--description {
+    flex: 0 1 18%;
+  }
+
+  .main_screen--description_title {
+    line-height: 20px;
+  }
+
+  .main_screen--content {
+    margin-left: 45px;
+  }
+
   .main_screen--column-left {
-    padding-left: 250px;
+    flex: 0 1 36%;
+    padding-top: 20px;
+  }
+
+  .main_screen--column-right {
+    align-items: center;
+  }
+
+  .main_screen--title {
+    line-height: 55px;
+  }
+
+  .main_screen--link_block {
+    margin-top: 40px;
+  }
+
+  .main_screen--button_block {
+    margin-bottom: 0;
+    margin-top: 300px;
+  }
+
+  .slider .slick-arrow.slick-prev {
+    left: -2%;
+  }
+
+  .slider .slick-arrow.slick-next {
+    right: -2%;
+  }
+}
+
+@media (max-width: 1536px) {
+  .main_screen--title {
+    line-height: 50px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .dream_house_section--image {
+    max-width: 110%;
   }
 }
 
@@ -1199,6 +2211,196 @@ body.lock {
 
   .container {
     max-width: 1200px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .main_screen--description_column {
+    min-width: 190px;
+  }
+
+  .main_screen--description_column-2 {
+    top: 160px;
+  }
+
+  .main_screen--description_column-3 {
+    top: 345px;
+  }
+
+  .main_screen--description_inner {
+    max-width: 170px;
+  }
+
+  .main_screen--description_image-1 {
+    transform: scale(0.9);
+  }
+
+  .main_screen--description_image-2 {
+    transform: scale(0.9);
+    margin-left: 45px;
+  }
+
+  .main_screen--description_image-3 {
+    transform: scale(0.9);
+    margin-left: 11px;
+  }
+
+  .main_screen--column-left {
+    padding-top: 53px;
+  }
+
+  .main_screen--subtitle {
+    padding-right: 34px;
+  }
+
+  .main_screen--button {
+    width: 310px;
+  }
+
+  .main_screen--button_block {
+    margin-top: 355px;
+  }
+
+  .causes_section--block {
+    max-width: 270px;
+    padding: 70px 20px 0 20px;
+    min-height: 700px;
+  }
+
+  .slider .slick-arrow.slick-prev {
+    left: -5%;
+  }
+
+  .slider .slick-arrow.slick-next {
+    right: -5%;
+  }
+
+  .cost_section--offer {
+    max-width: 420px;
+    height: 450px;
+    padding: 70px 35px 60px;
+  }
+
+  .cost_section--offer::before {
+    width: 400px;
+    height: 430px;
+  }
+
+  .cost_section--image {
+    top: -19%;
+    left: -21%;
+  }
+}
+
+@media (max-width: 1366px) {
+  .main_screen--bg-bush {
+    background-position: 0 20% !important;
+  }
+
+  .main_screen--bg-cloud {
+    background-position: 0 20% !important;
+  }
+
+  .main_screen--description_column-2 {
+    top: 145px;
+  }
+
+  .main_screen--description_column-3 {
+    top: 325px;
+  }
+
+  .main_screen--description_image-1 {
+    transform: scale(0.8);
+    margin-top: -30px;
+  }
+
+  .main_screen--description_image-2 {
+    transform: scale(0.8);
+    margin-top: -30px;
+  }
+
+  .main_screen--description_image-3 {
+    transform: scale(0.8);
+    margin-left: 20px;
+    margin-top: -30px;
+  }
+
+  .main_screen--content {
+    margin-top: 150px;
+  }
+
+  .main_screen--column-left {
+    padding-top: 20px;
+  }
+
+  .main_screen--title {
+    line-height: 45px;
+  }
+
+  .main_screen--button {
+    width: 260px;
+    height: 60px;
+  }
+
+  .main_screen--button_block {
+    margin-left: 50px;
+    margin-top: 295px;
+  }
+
+  .main_screen--border {
+    width: 140px;
+    height: 140px;
+  }
+
+  .main_screen--border:before {
+    width: 120px;
+    height: 120px;
+  }
+
+  .causes_section {
+    padding-top: 80px;
+  }
+
+  .causes_section--row {
+    margin-top: 80px;
+  }
+
+  .causes_section--block {
+    min-height: 670px;
+  }
+
+  .no-webp .causes_section--block-childhood{
+    background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/desktop/1.png) no-repeat center 109%; }
+
+  .no-webp .causes_section--block-health{
+    background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/desktop/3.png) no-repeat center 130%; }
+
+  .no-webp .causes_section--image-3{
+    background: url(../img/desktop/decor/8.png) no-repeat 25% 4%; }
+
+  .no-webp .causes_section--image-4{
+    background: url(../img/desktop/decor/16.png) no-repeat 76% -3%; }
+
+  .no-webp .causes_section--image-5{
+    background: url(../img/desktop/decor/7.png) no-repeat 88% -2%; }
+
+  .no-webp .causes_section--image-6{
+    background: url(../img/desktop/decor/19.png) no-repeat 104% 3%; }
+}
+
+@media (max-width: 1300px) {
+  .dream_house_section--image {
+    max-width: 105%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .slider .slick-arrow.slick-prev {
+    left: -3%;
+  }
+
+  .slider .slick-arrow.slick-next {
+    right: -3%;
   }
 }
 
@@ -1303,11 +2505,369 @@ body.lock {
   .container {
     max-width: 970px;
   }
+
+  .title {
+    line-height: 45px;
+  }
+
+  .main_screen--description_column {
+    display: none;
+  }
+
+  .main_screen--content {
+    margin: 150px auto 0;
+    max-width: 91%;
+  }
+
+  .main_screen--column-left {
+    flex: 0 1 50%;
+  }
+
+  .main_screen--column-right {
+    flex: 0 1 50%;
+    justify-content: center;
+  }
+
+  .causes_section {
+    padding-top: 50px;
+  }
+
+  .causes_section--row {
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
+
+  .causes_section--column {
+    margin-bottom: 30px;
+    flex: 0 1 48%;
+  }
+
+  .causes_section--block {
+    max-width: none;
+    padding: 83px 32px 0 40px;
+    min-height: 800px;
+  }
+
+  .causes_section--heading {
+    font-size: 14px;
+  }
+
+  .causes_section--list {
+    font-size: 10px;
+  }
+
+  .no-webp .causes_section--image-2{
+    background: url(../img/desktop/decor/15.png) no-repeat 15% 0%; }
+
+  .no-webp .causes_section--image-4{
+    background: url(../img/desktop/decor/16.png) no-repeat 76% 3%; }
+
+  .no-webp .causes_section--image-5{
+    background: url(../img/desktop/decor/7.png) no-repeat 88% 0%; }
+
+  .slider .slick-arrow {
+    width: 50px;
+    height: 50px;
+    top: 105%;
+  }
+
+  .slider .slick-arrow.slick-prev {
+    left: 87%;
+  }
+
+  .slider .slick-arrow.slick-next {
+    right: 0;
+  }
+
+  .slider_section--dots li::before {
+    white-space: normal;
+    text-align: center;
+  }
+
+  .slider_section--content {
+    margin-top: 90px;
+  }
+
+  .slider_section--row {
+    flex-direction: column;
+  }
+
+  .slider_section--column {
+    flex: 0 1 100%;
+  }
+
+  .slider_section--column-visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .slider_section--column-content {
+    margin-top: 58px;
+  }
+
+  .slider_section--stage {
+    margin-left: 10px;
+  }
+
+  .slider_section--heading {
+    margin-top: 40px;
+  }
+
+  .no-webp .dream_house_section{
+    background: url(../img/desktop/decor/33.png) no-repeat, url(../img/desktop/backgrounds/2.png) no-repeat; }
+
+  .dream_house_section {
+    padding-top: 50px;
+    background-position: center bottom, right !important;
+  }
+
+  .dream_house_section--row {
+    flex-direction: column;
+  }
+
+  .dream_house_section--column-content {
+    order: 2;
+  }
+
+  .dream_house_section--column-visual {
+    order: 1;
+    align-items: center;
+  }
+
+  .dream_house_section--title {
+    text-align: center;
+  }
+
+  .dream_house_section--subtitle {
+    text-align: center;
+  }
+
+  .dream_house_section--button {
+    margin: 53px auto 0;
+  }
+
+  .cost_section--row {
+    flex-direction: column;
+  }
+
+  .cost_section--column-content::before {
+    content: url(../img/desktop/decor/36.png);
+    left: 77%;
+    top: 86%;
+  }
+
+  .cost_section--column-visual {
+    margin-top: 100px;
+  }
+
+  .cost_section--offer {
+    max-width: 450px;
+    height: 470px;
+    padding: 93px 50px 72px;
+    margin-right: 10vw;
+  }
+
+  .cost_section--offer::before {
+    width: 430px;
+    height: 450px;
+  }
+
+  .cost_section--image {
+    top: -26%;
+    left: -6%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main_screen--description {
+    display: none;
+  }
 }
 
 @media (max-width: 992px) {
   .container {
     max-width: 750px;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 43px;
+  }
+
+  .main_screen {
+    flex-basis: auto;
+    padding-bottom: 35vw;
+  }
+
+  .main_screen .ibg {
+    background-position-y: top;
+  }
+
+  .main_screen--bg-bush {
+    display: none;
+  }
+
+  .main_screen--bg-cloud {
+    display: none;
+  }
+
+  .main_screen--bg-desktop {
+    display: none;
+  }
+
+  .main_screen--bg-tablet {
+    display: block;
+  }
+
+  .main_screen--content {
+    margin-top: 246px;
+  }
+
+  .main_screen--column-left {
+    padding-top: 0;
+    flex-basis: 70%;
+  }
+
+  .main_screen--column-right {
+    flex: 0 1 30%;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .main_screen--title {
+    font-size: 32px;
+  }
+
+  .main_screen--title-italic {
+    font-size: 32px;
+  }
+
+  .main_screen--subtitle {
+    font-size: 12px;
+    line-height: 22px;
+  }
+
+  .main_screen--button {
+    width: 240px;
+    height: 80px;
+  }
+
+  .main_screen--link {
+    font-size: 16px;
+  }
+
+  .main_screen--button_block {
+    margin-left: -100px;
+    margin-top: 420px;
+    margin-bottom: 100px;
+  }
+
+  .main_screen--text {
+    font-size: 16px;
+  }
+
+  .no-webp .causes_section--block-childhood{
+    background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/tablet/1.png) no-repeat center bottom; }
+
+  .no-webp .causes_section--block-freedom{
+    background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/tablet/2.png) no-repeat center bottom; }
+
+  .no-webp .causes_section--block-health{
+    background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/tablet/3.png) no-repeat center bottom; }
+
+  .no-webp .causes_section--block-rest{
+    background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/tablet/4.png) no-repeat center bottom; }
+
+  .causes_section--heading {
+    line-height: 29px;
+  }
+
+  .causes_section--image-1 {
+    display: none;
+  }
+
+  .no-webp .causes_section--image-2{
+    background: url(../img/desktop/decor/15.png) no-repeat -2% -0.5%; }
+
+  .no-webp .causes_section--image-3{
+    background: url(../img/desktop/decor/8.png) no-repeat 15% 4%; }
+
+  .causes_section--image-4 {
+    display: none;
+  }
+
+  .no-webp .causes_section--image-5{
+    background: url(../img/desktop/decor/15.png) no-repeat 92% 1%; }
+
+  .no-webp .causes_section--image-6{
+    background: url(../img/desktop/decor/34.png) no-repeat 104% 3%; }
+
+  .slider .slick-arrow.slick-prev {
+    left: 83%;
+  }
+
+  .no-webp .slider_section{
+    background: url(../img/desktop/decor/28.png) center/cover no-repeat; }
+
+  .slider_section {
+    padding-bottom: 110px;
+  }
+
+  .no-webp .dream_house_section{
+    background: url(../img/tablet/backgrounds/2.png) no-repeat; }
+
+  .dream_house_section {
+    background-position: center !important;
+    background-size: cover !important;
+  }
+
+  .dream_house_section--column-visual picture {
+    text-align: center;
+  }
+
+  .dream_house_section--title {
+    font-size: 24px;
+    line-height: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .dream_house_section--subtitle {
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .dream_house_section--button {
+    width: 460px;
+    font-size: 13px;
+  }
+
+  .dream_house_section--image {
+    max-width: 77%;
+  }
+
+  .no-webp .cost_section{
+    background: url(../img/desktop/decor/28.png) center/cover no-repeat; }
+
+  .cost_section--column-content::before {
+    top: 88%;
+    left: 81%;
+  }
+
+  .cost_section--heading {
+    font-size: 20px;
+  }
+
+  .cost_section--description {
+    font-size: 14px;
+  }
+
+  .cost_section--offer {
+    margin-right: 0;
+  }
+
+  .cost_section--image {
+    left: -18%;
   }
 }
 
@@ -1321,4 +2881,743 @@ body.lock {
   .container {
     max-width: none;
   }
+}
+
+@media (max-width: 750px) {
+  .slider_section--dots li::before {
+    font-size: 10px;
+  }
+
+  .slider_section--dots li::after {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 740px) {
+  .causes_section--block {
+    padding: 70px 20px 0 20px;
+  }
+
+  .causes_section--block {
+    min-height: 710px;
+  }
+}
+
+@media (max-width: 640px) {
+  .main_screen {
+    padding-bottom: 17vw;
+  }
+
+  .main_screen--content {
+    margin-top: 190px;
+  }
+
+  .cost_section {
+    overflow-x: hidden;
+  }
+
+  .cost_section--column-content::before {
+    left: 76%;
+  }
+
+  .cost_section--image {
+    left: -30%;
+  }
+}
+
+@media (max-width: 610px) {
+  .slider .slick-arrow.slick-prev {
+    left: 80%;
+  }
+
+  .dream_house_section--title {
+    padding-left: 60px;
+    padding-right: 60px;
+    line-height: 29px;
+  }
+
+  .dream_house_section--title span {
+    line-height: 29px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header--body {
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .header--nav {
+    order: 2;
+  }
+
+  .header--nav {
+    flex-basis: 50%;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .logo_block {
+    flex-basis: 50%;
+  }
+
+  .contact_block {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .contact_block--phone {
+    line-height: 20px;
+    margin-top: 25px;
+  }
+
+  .main_screen {
+    padding-bottom: 85vw;
+  }
+
+  .main_screen .ibg {
+    background-position-y: bottom;
+  }
+
+  .main_screen--bg-tablet {
+    display: none;
+  }
+
+  .main_screen--bg-mobile {
+    display: block;
+  }
+
+  .main_screen--content {
+    margin-top: 179px;
+  }
+
+  .main_screen--column-left {
+    flex-basis: 100%;
+  }
+
+  .main_screen--column-right {
+    display: none;
+  }
+
+  .main_screen--link_block {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main_screen--link {
+    margin-top: 25px;
+    margin-left: 10px;
+  }
+
+  .causes_section {
+    padding-top: 0;
+  }
+
+  .causes_section--image {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .causes_section--block {
+    min-height: 500px;
+    padding: 50px 10px 0 10px;
+    -webkit-clip-path: polygon(0% 0%, 20% 1%, 25% 25px, 30% 1.5%, 100% 5%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 20% 1%, 25% 25px, 30% 1.5%, 100% 5%, 100% 100%, 0% 100%);
+  }
+
+  .no-webp .causes_section--block-childhood{
+    background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/mobile/1.png) no-repeat center bottom; }
+
+  .no-webp .causes_section--block-freedom{
+    background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/mobile/2.png) no-repeat center bottom; }
+
+  .no-webp .causes_section--block-health{
+    background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/mobile/3.png) no-repeat center bottom; }
+
+  .no-webp .causes_section--block-rest{
+    background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/mobile/4.png) no-repeat center bottom; }
+
+  .causes_section--heading {
+    line-height: 17px;
+  }
+
+  .causes_section--list {
+    line-height: 15px;
+    margin-top: 12px;
+  }
+
+  .causes_section--item {
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 540px) {
+  .title {
+    line-height: 29px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .main_screen {
+    padding-bottom: 79vw;
+  }
+
+  .slider {
+    padding: 0 20px;
+  }
+
+  .slider .slick-arrow.slick-prev {
+    left: 70%;
+  }
+
+  .slider_section {
+    padding-top: 60px;
+    padding-bottom: 45px;
+  }
+
+  .slider_section--dots {
+    margin-top: 30px;
+  }
+
+  .slider_section--dots li::before {
+    display: none;
+  }
+
+  .slider_section--dots li::after {
+    display: none;
+  }
+
+  .slider_section--dots li button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .slider_section--content {
+    margin-top: 50px;
+  }
+
+  .slider_section--column-visual {
+    display: block;
+  }
+
+  .slider_section--column-content {
+    margin-top: 40px;
+  }
+
+  .slider_section--image {
+    max-width: 100%;
+  }
+
+  .slider_section--heading {
+    line-height: 29px;
+    font-size: 24px;
+  }
+
+  .slider_section--heading-small {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .slider_section--list {
+    margin-top: 25px;
+  }
+
+  .slider_section--item {
+    margin-bottom: 20px;
+    margin-left: 30px;
+  }
+
+  .slider_section--item::before {
+    left: -25px;
+  }
+
+  .slider_section--text {
+    margin-top: 10px;
+    text-align: center;
+    margin-left: 0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .dream_house_section--subtitle {
+    line-height: 24px;
+  }
+
+  .cost_section--column-content::before {
+    transform: scale(0.7);
+    left: 67%;
+    top: 90%;
+  }
+
+  .cost_section--column-visual {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cost_section--title {
+    text-align: center;
+  }
+
+  .cost_section--content {
+    flex-direction: column;
+  }
+
+  .cost_section--info {
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  .cost_section--heading {
+    font-size: 24px;
+  }
+
+  .cost_section--subtitle {
+    margin-top: 35px;
+  }
+
+  .cost_section--text {
+    font-size: 16px;
+  }
+
+  .cost_section--offer {
+    max-width: 100%;
+    height: auto;
+    margin-top: 230px;
+    padding: 56px 26px 54px;
+  }
+
+  .cost_section--offer::before {
+    width: 96%;
+    height: 96%;
+    top: 2%;
+    left: 2%;
+  }
+
+  .cost_section--button {
+    width: 100%;
+  }
+
+  .cost_section--button::before {
+    width: 96%;
+  }
+
+  .cost_section--image {
+    max-width: 105%;
+    left: -30%;
+    top: -5%;
+  }
+}
+
+@media (max-width: 500px) {
+  .dream_house_section--button {
+    width: 90%;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 445px) {
+  .dream_house_section--title {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .dream_house_section--button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .main_screen--title {
+    font-size: 22px;
+    line-height: 34px;
+    letter-spacing: normal;
+  }
+
+  .main_screen--title-italic {
+    font-size: 24px;
+  }
+
+  .main_screen--subtitle {
+    line-height: 20px;
+  }
+
+  .main_screen--button {
+    width: 250px;
+    height: 75px;
+  }
+
+  .main_screen--link {
+    margin-top: 20px;
+  }
+
+  .slider {
+    padding: 0;
+  }
+
+  .slider_section--dots li button {
+    width: 23px;
+    height: 23px;
+  }
+
+  .slider_section--content {
+    margin-top: 35px;
+  }
+
+  .dream_house_section--title {
+    margin-top: 50px;
+  }
+
+  .dream_house_section--subtitle {
+    margin-top: 27px;
+  }
+
+  .dream_house_section--image {
+    max-width: 100%;
+  }
+
+  .cost_section--row {
+    margin-top: 60px;
+  }
+
+  .cost_section--column-content::before {
+    content: url(../img/mobile/decor/3.png);
+    transform: scale(1);
+    left: 70%;
+    top: 101%;
+  }
+
+  .cost_section--subtitle {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .cost_section--question {
+    margin-top: 15px;
+    font-size: 25px;
+  }
+
+  .cost_section--text {
+    font-size: 14px;
+    line-height: 19px;
+    margin-top: 17px;
+  }
+
+  .cost_section--offer {
+    margin-top: 190px;
+  }
+
+  .cost_section--offer-title {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .cost_section--offer-text {
+    font-size: 18px;
+  }
+
+  .cost_section--button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 320px) {
+  .contact_block--phone {
+    margin-top: 15px;
+  }
+
+  .main_screen--content {
+    margin-top: 160px;
+  }
+
+  .main_screen--title {
+    line-height: 30px;
+  }
+
+  .main_screen--subtitle {
+    padding-right: 0;
+  }
+
+  .main_screen--link_block {
+    margin-top: 30px;
+  }
+
+  .main_screen--button {
+    height: 60px;
+  }
+
+  .main_screen--link {
+    font-size: 14px;
+  }
+
+  .causes_section--column {
+    flex: 0 1 100%;
+  }
+
+  .no-webp .causes_section--block-childhood{
+    background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/mobile/1.png) no-repeat center 330%; }
+
+  .no-webp .causes_section--block-health{
+    background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/mobile/3.png) no-repeat center 2400%; }
+
+  .dream_house_section--title {
+    padding: 0;
+  }
+}
+
+@media (max-width: 992px) and (min-width: 360px) {
+  .title {
+    font-size: calc( 0.02711 * 100vw + 14.24096px);
+  }
+
+  .dream_house_section--title {
+    font-size: calc( 0.01899 * 100vw + 17.16456px);
+  }
+
+  .dream_house_section--subtitle {
+    font-size: calc( 0.00633 * 100vw + 13.72152px);
+  }
+
+  .dream_house_section--button {
+    font-size: calc( 0.00475 * 100vw + 11.29114px);
+  }
+}
+
+@media (max-width: 992px) and (min-width: 1024px) {
+  .title {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 992px) and (min-width: 361px) {
+  .main_screen--title {
+    font-size: calc( 0.00634 * 100vw + 29.71157px);
+  }
+
+  .main_screen--title-italic {
+    font-size: calc( 0.01585 * 100vw + 26.27892px);
+  }
+}
+
+@media (max-width: 992px) and (min-width: 992px) {
+  .main_screen--title {
+    font-size: 36px;
+  }
+
+  .main_screen--title-italic {
+    font-size: 42px;
+  }
+
+  .main_screen--subtitle {
+    font-size: 16px;
+  }
+
+  .dream_house_section--title {
+    font-size: 36px;
+  }
+
+  .dream_house_section--subtitle {
+    font-size: 20px;
+  }
+
+  .dream_house_section--button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 992px) and (min-width: 320px) {
+  .main_screen--subtitle {
+    font-size: calc( 0.00595 * 100vw + 10.09524px);
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 360px) {
+  .causes_section--heading {
+    font-size: calc( 0.0119 * 100vw + 9.71429px);
+  }
+
+  .causes_section--list {
+    font-size: calc( 0.00476 * 100vw + 8.28571px);
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 1200px) {
+  .causes_section--heading {
+    font-size: 24px;
+  }
+
+  .causes_section--list {
+    font-size: 14px;
+  }
+}
+
+.webp .main_screen--bg-bush{ background: url(../img/desktop/decor/5.webp) no-repeat; }
+
+.webp .main_screen--bg-cloud{ background: url(../img/desktop/decor/26.webp) no-repeat; }
+
+.webp .causes_section--block-childhood{ background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/desktop/1.webp) no-repeat center bottom; }
+
+.webp .causes_section--block-freedom{ background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/desktop/2.webp) no-repeat center bottom; }
+
+.webp .causes_section--block-health{ background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/desktop/3.webp) no-repeat center bottom; }
+
+.webp .causes_section--block-rest{ background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/desktop/4.webp) no-repeat center bottom; }
+
+.webp .causes_section--image-1{ background: url(../img/desktop/decor/19.webp) no-repeat -2% 0; }
+
+.webp .causes_section--image-2{ background: url(../img/desktop/decor/15.webp) no-repeat 15% -1%; }
+
+.webp .causes_section--image-3{ background: url(../img/desktop/decor/8.webp) no-repeat 28% 4%; }
+
+.webp .causes_section--image-4{ background: url(../img/desktop/decor/16.webp) no-repeat 73% -3%; }
+
+.webp .causes_section--image-5{ background: url(../img/desktop/decor/7.webp) no-repeat 87% -1%; }
+
+.webp .causes_section--image-6{ background: url(../img/desktop/decor/19.webp) no-repeat 103% 3%; }
+
+.webp .slider_section{ background: url(../img/desktop/decor/1.webp) 101% -10%/12% no-repeat, url(../img/desktop/decor/6.webp) left bottom/10% no-repeat, url(../img/desktop/decor/23.webp) 90% 101%/10% no-repeat, url(../img/desktop/decor/28.webp) center/cover no-repeat; }
+
+.webp .dream_house_section{ background: url(../img/desktop/backgrounds/2.webp) no-repeat; }
+
+.webp .cost_section{ background: url(../img/desktop/decor/24.webp) 97% 7%/auto no-repeat, url(../img/desktop/decor/25.webp) 8% 0%/auto no-repeat, url(../img/desktop/decor/28.webp) center/cover no-repeat; }
+
+@media (max-width: 1366px){
+
+  .webp .causes_section--block-childhood{ background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/desktop/1.webp) no-repeat center 109%; }
+}
+
+@media (max-width: 1366px){
+
+  .webp .causes_section--block-health{ background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/desktop/3.webp) no-repeat center 130%; }
+}
+
+@media (max-width: 1366px){
+
+  .webp .causes_section--image-3{ background: url(../img/desktop/decor/8.webp) no-repeat 25% 4%; }
+}
+
+@media (max-width: 1366px){
+
+  .webp .causes_section--image-4{ background: url(../img/desktop/decor/16.webp) no-repeat 76% -3%; }
+}
+
+@media (max-width: 1366px){
+
+  .webp .causes_section--image-5{ background: url(../img/desktop/decor/7.webp) no-repeat 88% -2%; }
+}
+
+@media (max-width: 1366px){
+
+  .webp .causes_section--image-6{ background: url(../img/desktop/decor/19.webp) no-repeat 104% 3%; }
+}
+
+@media (max-width: 1200px){
+
+  .webp .causes_section--image-2{ background: url(../img/desktop/decor/15.webp) no-repeat 15% 0%; }
+}
+
+@media (max-width: 1200px){
+
+  .webp .causes_section--image-4{ background: url(../img/desktop/decor/16.webp) no-repeat 76% 3%; }
+}
+
+@media (max-width: 1200px){
+
+  .webp .causes_section--image-5{ background: url(../img/desktop/decor/7.webp) no-repeat 88% 0%; }
+}
+
+@media (max-width: 1200px){
+
+  .webp .dream_house_section{ background: url(../img/desktop/decor/33.webp) no-repeat, url(../img/desktop/backgrounds/2.webp) no-repeat; }
+}
+
+@media (max-width: 992px){
+
+  .webp .causes_section--block-childhood{ background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/tablet/1.webp) no-repeat center bottom; }
+}
+
+@media (max-width: 992px){
+
+  .webp .causes_section--block-freedom{ background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/tablet/2.webp) no-repeat center bottom; }
+}
+
+@media (max-width: 992px){
+
+  .webp .causes_section--block-health{ background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/tablet/3.webp) no-repeat center bottom; }
+}
+
+@media (max-width: 992px){
+
+  .webp .causes_section--block-rest{ background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/tablet/4.webp) no-repeat center bottom; }
+}
+
+@media (max-width: 992px){
+
+  .webp .causes_section--image-2{ background: url(../img/desktop/decor/15.webp) no-repeat -2% -0.5%; }
+}
+
+@media (max-width: 992px){
+
+  .webp .causes_section--image-3{ background: url(../img/desktop/decor/8.webp) no-repeat 15% 4%; }
+}
+
+@media (max-width: 992px){
+
+  .webp .causes_section--image-5{ background: url(../img/desktop/decor/15.webp) no-repeat 92% 1%; }
+}
+
+@media (max-width: 992px){
+
+  .webp .causes_section--image-6{ background: url(../img/desktop/decor/34.webp) no-repeat 104% 3%; }
+}
+
+@media (max-width: 992px){
+
+  .webp .slider_section{ background: url(../img/desktop/decor/28.webp) center/cover no-repeat; }
+}
+
+@media (max-width: 992px){
+
+  .webp .dream_house_section{ background: url(../img/tablet/backgrounds/2.webp) no-repeat; }
+}
+
+@media (max-width: 992px){
+
+  .webp .cost_section{ background: url(../img/desktop/decor/28.webp) center/cover no-repeat; }
+}
+
+@media (max-width: 560px){
+
+  .webp .causes_section--block-childhood{ background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/mobile/1.webp) no-repeat center bottom; }
+}
+
+@media (max-width: 560px){
+
+  .webp .causes_section--block-freedom{ background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/mobile/2.webp) no-repeat center bottom; }
+}
+
+@media (max-width: 560px){
+
+  .webp .causes_section--block-health{ background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/mobile/3.webp) no-repeat center bottom; }
+}
+
+@media (max-width: 560px){
+
+  .webp .causes_section--block-rest{ background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/mobile/4.webp) no-repeat center bottom; }
+}
+
+@media (max-width: 320px){
+
+  .webp .causes_section--block-childhood{ background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/mobile/1.webp) no-repeat center 330%; }
+}
+
+@media (max-width: 320px){
+
+  .webp .causes_section--block-health{ background: linear-gradient(180deg, #FAFAFA 43.23%, rgba(255, 255, 255, 0) 59.9%), url(../img/mobile/3.webp) no-repeat center 2400%; }
 }
