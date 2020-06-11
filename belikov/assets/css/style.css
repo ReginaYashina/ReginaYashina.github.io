@@ -834,7 +834,6 @@ body.lock {
 .main_screen {
   flex: 1 0 100%;
   position: relative;
-  overflow-x: hidden;
 }
 
 .main_screen--bg {
