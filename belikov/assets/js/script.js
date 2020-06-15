@@ -1,4 +1,5 @@
-//преобразование img в background
+$(document).ready(function () {
+    //преобразование img в background
 //js
 function ibg(){
 
@@ -12,12 +13,12 @@ function ibg(){
     
     ibg();
 ;
-$('.header--burger').click(function () {
+    $('.header--burger').click(function () {
 $('.header--burger, .header--nav-body').toggleClass('active');
 $('body').toggleClass('lock');
     });
 ;
-//определяет, когда использовать формат изображений .webp
+    //определяет, когда использовать формат изображений .webp
 function testWebP(callback) {
 
     var webP = new Image();
@@ -35,7 +36,7 @@ function testWebP(callback) {
     document.querySelector('body').classList.add('no-webp');
     }
     });;
-$(document).ready(function(){
+    $(document).ready(function(){
 	$('.slider').slick({
 		arrows:true,
 		dots:true,
@@ -59,40 +60,50 @@ $(document).ready(function(){
 			// }
 		 ]
 	});
-// $('.slider').slick('setPosition');
-	// $('.slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-	// 	console.log(currentSlide);
-	// 	if(nextSlide === 4){
-	// 		$('.slider-section__bg').fadeIn(3000);
-	// 		$('.slick-arrow').fadeOut();
-	// 	} else {
-	// 		$('.slider-section__bg').fadeOut();
-	// 		$('.slick-arrow').fadeIn(3000);
-	// 	}
+	$('.slider_fp').slick({
+		arrows:true,
+		dots:false,
+		slidesToShow:1,
+		autoplay:false,
+		speed:1000,
+		autoplaySpeed:800
+		// responsive:[
+		// 	{
+		// 		breakpoint: 600,
+		// 		settings: {
+		// 			arrows:false
+		// 		}
+		// 	}
+			// {
+			// 	breakpoint: 550,
+			// 	settings: {
+			// 		slidesToShow:1
+			// 	}
+			// }
+		//  ]
+	});
 
-	// 	if(nextSlide === 1){
-	// 		$('#img_4, #img_3, #img_2').addClass('animation');
-	// 	} else{
-	// 		$('#img_4, #img_3, #img_2').removeClass('animation');
-	// 	}
-
-	// 	if(nextSlide === 2){
-	// 		$('#img_5, #img_5-1, #img_6, #img_6-1, #img_7, #img_8').addClass('animation');
-	// 	} else{
-	// 		$('#img_5, #img_5-1, #img_6, #img_6-1, #img_7, #img_8').removeClass('animation');
-	// 	}
-
-	// 	if(nextSlide === 3){
-	// 		$('#img_9, #img_9-1, #img_10, #img_10-1').addClass('animation');
-	// 	} else{
-	// 		$('#img_9, #img_9-1, #img_10, #img_10-1').removeClass('animation');
-	// 	}
-
-
-
-
-	// });
 });
 
 ;
- 
+    $(".show-image").click(function() {
+    event.preventDefault();
+    var  mainImage= $(this).index();
+  
+    $(this).parent('.gallery--miniature').prev('.gallery--images').children('picture').children('img').removeClass('active');
+    $(this).parent('.gallery--miniature').prev('.gallery--images').children('picture').children('img:eq('+mainImage+')').addClass('active');
+    
+    console.log( $(this).parent('.gallery--miniature').prev('.gallery--images').children('picture '))
+});
+
+;
+     $('.spoiler--title').click(function(event){
+        if($('.spoiler').hasClass('one')){
+            $('.spoiler--title').not($(this)).removeClass('active');
+            $('.spoiler--text').not($(this).next()).(300);
+        }
+        $(this).toggleClass('active').next().slideToggle(300);
+    })
+
+    ;
+})
