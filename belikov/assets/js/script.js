@@ -82,7 +82,29 @@ function testWebP(callback) {
 			// }
 		//  ]
 	});
-
+	$('.slider_crtf').slick({
+		arrows:false,
+		dots:false,
+		slidesToShow:1,
+		autoplay:false,
+		speed:1000,
+		autoplaySpeed:800,
+		slidesToShow:6
+		// responsive:[
+		// 	{
+		// 		breakpoint: 600,
+		// 		settings: {
+		// 			arrows:false
+		// 		}
+		// 	}
+			// {
+			// 	breakpoint: 550,
+			// 	settings: {
+			// 		slidesToShow:1
+			// 	}
+			// }
+		//  ]
+	});
 });
 
 ;
@@ -106,4 +128,99 @@ function testWebP(callback) {
     })
 
 ;
+    let i = 0;
+const item = $('.slider_fdb--item');
+const btnPrev = $('.slider_fdb--prev');
+const btnNext = $('.slider_fdb--next');
+
+
+btnPrev.click(function () {
+    i--;
+    if (i < 0) {
+        i =  item.length - 1;
+    }
+    item.eq(i).css({left: -130 + '%'});
+    item.eq(i).animate({ left: 0 }, 1000);
+    if(i == item.length - 1){
+        item.eq(0).animate({ left: 100 + '%' }, 1000);
+    }else{
+        item.eq(i + 1).animate({ left: 100 + '%' }, 1000);
+    }
+   
+
+})
+
+
+btnNext.click(function () {
+    i++;
+    if (i > item.length - 1) {
+        i = 0;
+    }
+    item.eq(i).css({left: 100 + '%'});
+    item.eq(i).animate({ left: 0 }, 1000);
+    item.eq(i - 1).animate({ left: -130 + '%' }, 1000);
+
+})
+;
+    // ymaps.ready(function(){
+//     // Указывается идентификатор HTML-элемента.
+//     var map = new ymaps.Map("map", {
+//         center: [53.892919, 27.493793],
+//         zoom: 15
+//     });
+// });
+
+ymaps.ready(init);
+
+function init() {
+    var myMap = new ymaps.Map("map", {
+        center: [53.893015, 27.491466],
+        zoom: 17
+    }, {
+        searchControlProvider: 'yandex#search'
+    }),
+        ponomarenko = new ymaps.Placemark([53.893019, 27.493680], {
+            // Чтобы балун и хинт открывались на метке, необходимо задать ей определенные свойства.
+            // balloonContentHeader: "Балун метки",
+            balloonContentBody: "г.Минск, ул.Пономаренко, 35а",
+            // balloonContentFooter: "Подвал",
+            iconCaption: 'улица Пономаренко, 35А'
+        },{
+            preset: 'islands#redDotIconWithCaption'
+        }
+        
+        
+        );
+
+    mavra = new ymaps.Placemark([53.892755, 27.491566], {
+        hintContent: 'Мы тут!',
+        balloonContent: 'Мы тут!',
+        
+
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#imageWithContent',
+        // Своё изображение иконки метки.
+        iconImageHref: 'assets/img/desktop/icons/2.png',
+        // Размеры метки.
+        iconImageSize: [100, 100],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-50, -56],
+        // Смещение слоя с содержимым относительно слоя с картинкой.
+        iconContentOffset: [15, 15],
+        // Макет содержимого.
+        // iconContentLayout: MyIconContentLayout
+    });
+
+
+    myMap.geoObjects.add(ponomarenko);
+    myMap.geoObjects.add(mavra);
+    myMap.geoObjects.add(myPlacemarkWithContent);
+
+  
+
+
+};
 })
