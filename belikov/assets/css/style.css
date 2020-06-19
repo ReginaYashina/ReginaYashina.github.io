@@ -5989,6 +5989,10 @@ body.lock {
   .tour_section--subtitle {
     padding: 0;
   }
+
+  .slider_crtf--item {
+    flex-basis: 49%;
+  }
 }
 
 @media (max-width: 560px) {
