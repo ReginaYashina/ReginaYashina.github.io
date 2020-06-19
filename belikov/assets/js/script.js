@@ -82,29 +82,29 @@ function testWebP(callback) {
 			// }
 		//  ]
 	});
-	$('.slider_crtf').slick({
-		arrows:false,
-		dots:false,
-		slidesToShow:1,
-		autoplay:false,
-		speed:1000,
-		autoplaySpeed:800,
-		slidesToShow:6
-		// responsive:[
-		// 	{
-		// 		breakpoint: 600,
-		// 		settings: {
-		// 			arrows:false
-		// 		}
-		// 	}
-			// {
-			// 	breakpoint: 550,
-			// 	settings: {
-			// 		slidesToShow:1
-			// 	}
-			// }
-		//  ]
-	});
+	// $('.slider_crtf').slick({
+	// 	arrows:false,
+	// 	dots:false,
+	// 	slidesToShow:1,
+	// 	autoplay:false,
+	// 	speed:1000,
+	// 	autoplaySpeed:800,
+	// 	slidesToShow:6,
+	// 	responsive:[
+	// 		{
+	// 			breakpoint: 1200,
+	// 			settings: {
+	// 				rows:2
+	// 			}
+	// 		}
+	// 		// {
+	// 		// 	breakpoint: 550,
+	// 		// 	settings: {
+	// 		// 		slidesToShow:1
+	// 		// 	}
+	// 		// }
+	// 	 ]
+	// });
 });
 
 ;
