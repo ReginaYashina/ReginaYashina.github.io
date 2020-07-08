@@ -181,14 +181,7 @@ btnNext.click(function () {
 
 })
 ;
-    // ymaps.ready(function(){
-//     // Указывается идентификатор HTML-элемента.
-//     var map = new ymaps.Map("map", {
-//         center: [53.892919, 27.493793],
-//         zoom: 15
-//     });
-// });
-
+    
 ymaps.ready(init);
 
 function init() {
@@ -239,33 +232,22 @@ function init() {
     myMap.geoObjects.add(myPlacemarkWithContent);
 
 
-}
+};
+
+
 
 ymaps.ready(initExcursion);
 
 function initExcursion() {
     var myMap = new ymaps.Map("map_excursion", {
         center: [53.902512, 27.561481],
-        zoom: 12
+        zoom: 9
     }, {
         searchControlProvider: 'yandex#search'
     }),
-        ponomarenko = new ymaps.Placemark([53.893019, 27.493680], {
-            // Чтобы балун и хинт открывались на метке, необходимо задать ей определенные свойства.
-            // balloonContentHeader: "Балун метки",
-            balloonContentBody: "г.Минск, ул.Пономаренко, 35а",
-            // balloonContentFooter: "Подвал",
-            iconCaption: 'улица Пономаренко, 35А'
-        },{
-            preset: 'islands#redDotIconWithCaption'
-        }
-        
-        
-        );
-
-    mavra = new ymaps.Placemark([53.892755, 27.491566], {
-        hintContent: 'Мы тут!',
-        balloonContent: 'Мы тут!',
+    Busuny = new ymaps.Placemark([54.188353, 27.573416], {
+        hintContent: 'Воложенский район, д. Бузуны',
+        balloonContent: 'Воложенский район, д. Бузуны',
         
 
     }, {
@@ -273,25 +255,252 @@ function initExcursion() {
         // Необходимо указать данный тип макета.
         iconLayout: 'default#imageWithContent',
         // Своё изображение иконки метки.
-        iconImageHref: 'assets/img/desktop/icons/2.png',
+        iconImageHref: 'assets/img/desktop/icons/5.png',
         // Размеры метки.
-        iconImageSize: [100, 100],
+        iconImageSize: [45, 55],
         // Смещение левого верхнего угла иконки относительно
         // её "ножки" (точки привязки).
-        iconImageOffset: [-50, -56],
+        iconImageOffset: [0, 0],
         // Смещение слоя с содержимым относительно слоя с картинкой.
-        iconContentOffset: [15, 15],
+        iconContentOffset: [0, 0],
+        // Макет содержимого.
+        // iconContentLayout: MyIconContentLayout
+    }),
+    Chernica = new ymaps.Placemark([53.999819, 28.128498], {
+        hintContent: 'Смолевический район, хутор Черница',
+        balloonContent: 'Смолевический район, хутор Черница',
+        
+
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#imageWithContent',
+        // Своё изображение иконки метки.
+        iconImageHref: 'assets/img/desktop/icons/5.png',
+        // Размеры метки.
+        iconImageSize: [45, 55],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [0, 0],
+        // Смещение слоя с содержимым относительно слоя с картинкой.
+        iconContentOffset: [0, 0],
+        // Макет содержимого.
+        // iconContentLayout: MyIconContentLayout
+    }),
+    Novoselje = new ymaps.Placemark([53.906697, 27.180229], {
+        hintContent: 'Новоселье, ул.Цветочная, 2',
+        balloonContent: 'Новоселье, ул.Цветочная, 2',
+        
+
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#imageWithContent',
+        // Своё изображение иконки метки.
+        iconImageHref: 'assets/img/desktop/icons/5.png',
+        // Размеры метки.
+        iconImageSize: [45, 55],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [0, 0],
+        // Смещение слоя с содержимым относительно слоя с картинкой.
+        iconContentOffset: [0, 0],
+        // Макет содержимого.
+        // iconContentLayout: MyIconContentLayout
+    }),
+    Belica = new ymaps.Placemark([53.719365, 27.533801], {
+        hintContent: 'д.Белица д. У-11',
+        balloonContent: 'д.Белица д. У-11',
+        
+
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#imageWithContent',
+        // Своё изображение иконки метки.
+        iconImageHref: 'assets/img/desktop/icons/5.png',
+        // Размеры метки.
+        iconImageSize: [45, 55],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [0, 0],
+        // Смещение слоя с содержимым относительно слоя с картинкой.
+        iconContentOffset: [0, 0],
+        // Макет содержимого.
+        // iconContentLayout: MyIconContentLayout
+    }),
+    Elnica = new ymaps.Placemark([53.815866, 27.723702], {
+        hintContent: 'д.Ельница д.13',
+        balloonContent: 'д.Ельница д.13',
+        
+
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#imageWithContent',
+        // Своё изображение иконки метки.
+        iconImageHref: 'assets/img/desktop/icons/5.png',
+        // Размеры метки.
+        iconImageSize: [45, 55],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [0, 0],
+        // Смещение слоя с содержимым относительно слоя с картинкой.
+        iconContentOffset: [0, 0],
+        // Макет содержимого.
+        // iconContentLayout: MyIconContentLayout
+    }),
+    PrSloboda = new ymaps.Placemark([54.049862, 27.330465], {
+        hintContent: 'д. Прудянская Слобода д.4',
+        balloonContent: 'д. Прудянская Слобода д.4',
+        
+
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#imageWithContent',
+        // Своё изображение иконки метки.
+        iconImageHref: 'assets/img/desktop/icons/5.png',
+        // Размеры метки.
+        iconImageSize: [45, 55],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [0, 0],
+        // Смещение слоя с содержимым относительно слоя с картинкой.
+        iconContentOffset: [0, 0],
+        // Макет содержимого.
+        // iconContentLayout: MyIconContentLayout
+    }),
+    Vyprabavalnik = new ymaps.Placemark([53.776021, 27.784182], {
+        hintContent: 'садоводческое товарищество Выпрабавальник, 2087',
+        balloonContent: 'садоводческое товарищество Выпрабавальник, 2087',
+        
+
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#imageWithContent',
+        // Своё изображение иконки метки.
+        iconImageHref: 'assets/img/desktop/icons/5.png',
+        // Размеры метки.
+        iconImageSize: [45, 55],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [0, 0],
+        // Смещение слоя с содержимым относительно слоя с картинкой.
+        iconContentOffset: [0, 0],
+        // Макет содержимого.
+        // iconContentLayout: MyIconContentLayout
+    }),
+    Ozero = new ymaps.Placemark([53.643145, 27.457049], {
+        hintContent: 'р-н Озерский с\с аг.Озеро ул.Вишневая д.22',
+        balloonContent: 'р-н Озерский с\с аг.Озеро ул.Вишневая д.22',
+        
+
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#imageWithContent',
+        // Своё изображение иконки метки.
+        iconImageHref: 'assets/img/desktop/icons/5.png',
+        // Размеры метки.
+        iconImageSize: [45, 55],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [0, 0],
+        // Смещение слоя с содержимым относительно слоя с картинкой.
+        iconContentOffset: [0, 0],
+        // Макет содержимого.
+        // iconContentLayout: MyIconContentLayout
+    }),
+    Grinkevichi = new ymaps.Placemark([53.823515, 27.002338], {
+        hintContent: 'Держинский р-рн. Гринкевичи д. 12',
+        balloonContent: 'Держинский р-рн. Гринкевичи д. 12',
+        
+
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#imageWithContent',
+        // Своё изображение иконки метки.
+        iconImageHref: 'assets/img/desktop/icons/5.png',
+        // Размеры метки.
+        iconImageSize: [45, 55],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [0, 0],
+        // Смещение слоя с содержимым относительно слоя с картинкой.
+        iconContentOffset: [0, 0],
+        // Макет содержимого.
+        // iconContentLayout: MyIconContentLayout
+    }),
+    Novashino = new ymaps.Placemark([54.050046, 27.276005], {
+        hintContent: 'п.Новашино, ул. Новаш уч. 206',
+        balloonContent: 'п.Новашино, ул. Новаш уч. 206',
+        
+
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#imageWithContent',
+        // Своё изображение иконки метки.
+        iconImageHref: 'assets/img/desktop/icons/5.png',
+        // Размеры метки.
+        iconImageSize: [45, 55],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [0, 0],
+        // Смещение слоя с содержимым относительно слоя с картинкой.
+        iconContentOffset: [0, 0],
+        // Макет содержимого.
+        // iconContentLayout: MyIconContentLayout
+    }),
+    Cvetochnaya = new ymaps.Placemark([53.906943, 27.179945], {
+        hintContent: 'Новоселье, ул.Цветочная, 2',
+        balloonContent: 'Новоселье, ул.Цветочная, 2',
+        
+
+    }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#imageWithContent',
+        // Своё изображение иконки метки.
+        iconImageHref: 'assets/img/desktop/icons/5.png',
+        // Размеры метки.
+        iconImageSize: [45, 55],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [0, 0],
+        // Смещение слоя с содержимым относительно слоя с картинкой.
+        iconContentOffset: [0, 0],
         // Макет содержимого.
         // iconContentLayout: MyIconContentLayout
     });
 
 
-    myMap.geoObjects.add(ponomarenko);
-    myMap.geoObjects.add(mavra);
+
+
+
+    myMap.geoObjects.add(Busuny);
+    myMap.geoObjects.add(Chernica);
+    myMap.geoObjects.add(Novoselje);
+    myMap.geoObjects.add(Belica);
+    myMap.geoObjects.add(Elnica);
+    myMap.geoObjects.add(PrSloboda);
+    myMap.geoObjects.add(Vyprabavalnik);
+    myMap.geoObjects.add(Ozero);
+    myMap.geoObjects.add(Grinkevichi);
+    myMap.geoObjects.add(Novashino);
+    myMap.geoObjects.add(Cvetochnaya);
+
     myMap.geoObjects.add(myPlacemarkWithContent);
 
 
 };
+
+
+
+;
     $(".show_tab").click(function() {
     event.preventDefault();
     var  mainTab= $(this).index();
