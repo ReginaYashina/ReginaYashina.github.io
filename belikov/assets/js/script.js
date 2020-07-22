@@ -116,6 +116,7 @@ function testWebP(callback) {
 			}
 		 ]
 	});
+	
 });
 
 ;
@@ -146,6 +147,15 @@ $(".main_section--show-image").click(function() {
         $(this).toggleClass('active').next().slideToggle(300);
     })
 
+//Выпадающее меню
+
+$('.categories--link').click(function(event){
+    if($('.categories--list').hasClass('one')){
+        $('.categories--link').not($(this)).next().removeClass('active');
+        $('.categories--list-sub').not($(this).next()).slideUp(300);
+    }
+    $(this).toggleClass('active').next().slideToggle(300);
+})
 ;
     let i = 0;
 const item = $('.slider_fdb--item');
@@ -186,8 +196,8 @@ ymaps.ready(init);
 
 function init() {
     var myMap = new ymaps.Map("map", {
-        center: [53.893015, 27.491466],
-        zoom: 17
+        center: [53.850178, 27.647279],
+        zoom: 15
     }, {
         searchControlProvider: 'yandex#search'
     }),
@@ -197,24 +207,24 @@ function init() {
             balloonContentBody: "г.Минск, ул.Пономаренко, 35а",
             // balloonContentFooter: "Подвал",
             iconCaption: 'улица Пономаренко, 35А'
-        },{
+        }, {
             preset: 'islands#redDotIconWithCaption'
         }
-        
-        
+
+
         );
 
-    mavra = new ymaps.Placemark([53.892755, 27.491566], {
+    mavra = new ymaps.Placemark([53.850178, 27.647279], {
         hintContent: 'Мы тут!',
         balloonContent: 'Мы тут!',
-        
+
 
     }, {
         // Опции.
         // Необходимо указать данный тип макета.
         iconLayout: 'default#imageWithContent',
         // Своё изображение иконки метки.
-        iconImageHref: 'assets/img/desktop/icons/2.png',
+        iconImageHref: 'https://house.belikov.by/wp-content/themes/belikov/assets/img/desktop/icons/2.png',
         // Размеры метки.
         iconImageSize: [100, 100],
         // Смещение левого верхнего угла иконки относительно
@@ -227,280 +237,367 @@ function init() {
     });
 
 
-    myMap.geoObjects.add(ponomarenko);
+
+
+    myMap.behaviors.disable('scrollZoom');
+    // myMap.geoObjects.add(ponomarenko);
     myMap.geoObjects.add(mavra);
     myMap.geoObjects.add(myPlacemarkWithContent);
 
-
 };
-
 
 
 ymaps.ready(initExcursion);
 
 function initExcursion() {
-    var myMap = new ymaps.Map("map_excursion", {
+    var map = new ymaps.Map("map_excursion", {
         center: [53.902512, 27.561481],
-        zoom: 9
-    }, {
-        searchControlProvider: 'yandex#search'
-    }),
-    Busuny = new ymaps.Placemark([54.188353, 27.573416], {
-        hintContent: 'Воложенский район, д. Бузуны',
-        balloonContent: 'Воложенский район, д. Бузуны',
-        
-
-    }, {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        iconImageHref: 'assets/img/desktop/icons/5.png',
-        // Размеры метки.
-        iconImageSize: [45, 55],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [0, 0],
-        // Смещение слоя с содержимым относительно слоя с картинкой.
-        iconContentOffset: [0, 0],
-        // Макет содержимого.
-        // iconContentLayout: MyIconContentLayout
-    }),
-    Chernica = new ymaps.Placemark([53.999819, 28.128498], {
-        hintContent: 'Смолевический район, хутор Черница',
-        balloonContent: 'Смолевический район, хутор Черница',
-        
-
-    }, {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        iconImageHref: 'assets/img/desktop/icons/5.png',
-        // Размеры метки.
-        iconImageSize: [45, 55],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [0, 0],
-        // Смещение слоя с содержимым относительно слоя с картинкой.
-        iconContentOffset: [0, 0],
-        // Макет содержимого.
-        // iconContentLayout: MyIconContentLayout
-    }),
-    Novoselje = new ymaps.Placemark([53.906697, 27.180229], {
-        hintContent: 'Новоселье, ул.Цветочная, 2',
-        balloonContent: 'Новоселье, ул.Цветочная, 2',
-        
-
-    }, {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        iconImageHref: 'assets/img/desktop/icons/5.png',
-        // Размеры метки.
-        iconImageSize: [45, 55],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [0, 0],
-        // Смещение слоя с содержимым относительно слоя с картинкой.
-        iconContentOffset: [0, 0],
-        // Макет содержимого.
-        // iconContentLayout: MyIconContentLayout
-    }),
-    Belica = new ymaps.Placemark([53.719365, 27.533801], {
-        hintContent: 'д.Белица д. У-11',
-        balloonContent: 'д.Белица д. У-11',
-        
-
-    }, {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        iconImageHref: 'assets/img/desktop/icons/5.png',
-        // Размеры метки.
-        iconImageSize: [45, 55],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [0, 0],
-        // Смещение слоя с содержимым относительно слоя с картинкой.
-        iconContentOffset: [0, 0],
-        // Макет содержимого.
-        // iconContentLayout: MyIconContentLayout
-    }),
-    Elnica = new ymaps.Placemark([53.815866, 27.723702], {
-        hintContent: 'д.Ельница д.13',
-        balloonContent: 'д.Ельница д.13',
-        
-
-    }, {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        iconImageHref: 'assets/img/desktop/icons/5.png',
-        // Размеры метки.
-        iconImageSize: [45, 55],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [0, 0],
-        // Смещение слоя с содержимым относительно слоя с картинкой.
-        iconContentOffset: [0, 0],
-        // Макет содержимого.
-        // iconContentLayout: MyIconContentLayout
-    }),
-    PrSloboda = new ymaps.Placemark([54.049862, 27.330465], {
-        hintContent: 'д. Прудянская Слобода д.4',
-        balloonContent: 'д. Прудянская Слобода д.4',
-        
-
-    }, {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        iconImageHref: 'assets/img/desktop/icons/5.png',
-        // Размеры метки.
-        iconImageSize: [45, 55],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [0, 0],
-        // Смещение слоя с содержимым относительно слоя с картинкой.
-        iconContentOffset: [0, 0],
-        // Макет содержимого.
-        // iconContentLayout: MyIconContentLayout
-    }),
-    Vyprabavalnik = new ymaps.Placemark([53.776021, 27.784182], {
-        hintContent: 'садоводческое товарищество Выпрабавальник, 2087',
-        balloonContent: 'садоводческое товарищество Выпрабавальник, 2087',
-        
-
-    }, {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        iconImageHref: 'assets/img/desktop/icons/5.png',
-        // Размеры метки.
-        iconImageSize: [45, 55],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [0, 0],
-        // Смещение слоя с содержимым относительно слоя с картинкой.
-        iconContentOffset: [0, 0],
-        // Макет содержимого.
-        // iconContentLayout: MyIconContentLayout
-    }),
-    Ozero = new ymaps.Placemark([53.643145, 27.457049], {
-        hintContent: 'р-н Озерский с\с аг.Озеро ул.Вишневая д.22',
-        balloonContent: 'р-н Озерский с\с аг.Озеро ул.Вишневая д.22',
-        
-
-    }, {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        iconImageHref: 'assets/img/desktop/icons/5.png',
-        // Размеры метки.
-        iconImageSize: [45, 55],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [0, 0],
-        // Смещение слоя с содержимым относительно слоя с картинкой.
-        iconContentOffset: [0, 0],
-        // Макет содержимого.
-        // iconContentLayout: MyIconContentLayout
-    }),
-    Grinkevichi = new ymaps.Placemark([53.823515, 27.002338], {
-        hintContent: 'Держинский р-рн. Гринкевичи д. 12',
-        balloonContent: 'Держинский р-рн. Гринкевичи д. 12',
-        
-
-    }, {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        iconImageHref: 'assets/img/desktop/icons/5.png',
-        // Размеры метки.
-        iconImageSize: [45, 55],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [0, 0],
-        // Смещение слоя с содержимым относительно слоя с картинкой.
-        iconContentOffset: [0, 0],
-        // Макет содержимого.
-        // iconContentLayout: MyIconContentLayout
-    }),
-    Novashino = new ymaps.Placemark([54.050046, 27.276005], {
-        hintContent: 'п.Новашино, ул. Новаш уч. 206',
-        balloonContent: 'п.Новашино, ул. Новаш уч. 206',
-        
-
-    }, {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        iconImageHref: 'assets/img/desktop/icons/5.png',
-        // Размеры метки.
-        iconImageSize: [45, 55],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [0, 0],
-        // Смещение слоя с содержимым относительно слоя с картинкой.
-        iconContentOffset: [0, 0],
-        // Макет содержимого.
-        // iconContentLayout: MyIconContentLayout
-    }),
-    Cvetochnaya = new ymaps.Placemark([53.906943, 27.179945], {
-        hintContent: 'Новоселье, ул.Цветочная, 2',
-        balloonContent: 'Новоселье, ул.Цветочная, 2',
-        
-
-    }, {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        iconImageHref: 'assets/img/desktop/icons/5.png',
-        // Размеры метки.
-        iconImageSize: [45, 55],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [0, 0],
-        // Смещение слоя с содержимым относительно слоя с картинкой.
-        iconContentOffset: [0, 0],
-        // Макет содержимого.
-        // iconContentLayout: MyIconContentLayout
+        zoom: 9,
+        controls: []
     });
+    // Создадим контент для меток.
+    var Busuny = '<div class="map__content_wrapper"><h4 class="map__header">д. Бузуны, Воложенский р-он</h4><h5 class="map__subtitle">Объект №1</h5><p class="map__description">устройство кровли из металлочерепицы</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/1/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Krynica = '<div class="map__content_wrapper"><h4 class="map__header">Садовое товарищество "Крыница 92"</h4><h5 class="map__subtitle">Объект №2</h5><p class="map__description">строительство фундамента, стен и кровли </p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/2/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Novoselje = '<div class="map__content_wrapper"><h4 class="map__header">Новоселье, ул.Цветочная, 2</h4><h5 class="map__subtitle">Объект №63</h5><p class="map__description"> устройство свайно-ростверкового фундамента и черновой стяжки, строительство 2х этажей из г/с и кровли из металлочерепицы</p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons""><label for="button-2"></label><input type="radio" id="button-3" name="buttons"><label for="button-3"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/63/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/63/2.png" alt="" class="map__slider_img"></li><li id="map_slide3"><img src="assets/img/map/63/3.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Belica = '<div class="map__content_wrapper"><h4 class="map__header">д.Белица д. У-11</h4><h5 class="map__subtitle">Объект №9</h5><p class="map__description">устройство свайно-ростверкового фундамента и черновой стяжки</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/9/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Chernica = '<div class="map__content_wrapper"><h4 class="map__header">Смолевический район, хутор Черница</h4><h5 class="map__subtitle">Объект №9</h5><p class="map__description">строительство ленточного фундамента </p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/7/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Elnica = '<div class="map__content_wrapper"><h4 class="map__header">д.Ельница д.13</h4><h5 class="map__subtitle">Объект №11</h5><p class="map__description">устройство свайно-ростверкового фундамента и черновой стяжки</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/11/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var PrSloboda = '<div class="map__content_wrapper"><h4 class="map__header">д. Прудянская Слобода д.4</h4><h5 class="map__subtitle">Объект №46</h5><p class="map__description">черновая стяжка, устройство свайно-ростверкового фундамента , ввод коммуникаций</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/46/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Vyprabavalnik = '<div class="map__content_wrapper"><h4 class="map__header">садоводческое товарищество Выпрабавальник, 2087</h4><h5 class="map__subtitle">Объект №13</h5><p class="map__description">устройство цокольного фундамента из ФБС блоков, монолитное перекрытие, кладка первого этажа, монолитное перекрытие первого и второго этажа, монолитная лестница в подвал</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/13/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Ozero = '<div class="map__content_wrapper"><h4 class="map__header">р-н Озерский с\с аг.Озеро ул.Вишневая д.22</h4><h5 class="map__subtitle">Объект №16</h5><p class="map__description">строительство ленточного фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/16/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Grinkevichi = '<div class="map__content_wrapper"><h4 class="map__header">Держинский р-рн. Гринкевичи д. 12</h4><h5 class="map__subtitle">Объект №18</h5><p class="map__description">устройство фундамента для забора</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/18/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Novashino = '<div class="map__content_wrapper"><h4 class="map__header">п.Новашино, ул. Новаш уч. 206</h4><h5 class="map__subtitle">Объект №22</h5><p class="map__description">устройство свайно-ростверкового фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/22/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Cvetochnaya = '<div class="map__content_wrapper"><h4 class="map__header">Новоселье, ул.Цветочная, 2</h4><h5 class="map__subtitle">Объект №69</h5><p class="map__description">устройство плитного фундамента,  возведение стен из керамзитобетонного блока, устройство монолитного перекрытия</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/69/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Fanipol = '<div class="map__content_wrapper"><h4 class="map__header">г. Фаниполь</h4><h5 class="map__subtitle">Объект №3</h5><p class="map__description">подготовка нулевого цикла, площадь 1,5 га</p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><input type="radio" id="button-3" name="buttons"><label for="button-3"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/3/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/3/2.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Sokol = '<div class="map__content_wrapper"><h4 class="map__header">Смолевический р-он, СТ Сокол</h4><h5 class="map__subtitle">Объект №4</h5><p class="map__description">устройство свайно-ростверкового фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/4/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Mara = '<div class="map__content_wrapper"><h4 class="map__header">с\с СТ Мара уч.48</h4><h5 class="map__subtitle">Объект №17</h5><p class="map__description">устройство ленточного фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/17/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Shpilki = '<div class="map__content_wrapper"><h4 class="map__header">д. Шпильки, ул. Центральная д.4 </h4><h5 class="map__subtitle">Объект №19</h5><p class="map__description">устройство плитного фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/19/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Komuna = '<div class="map__content_wrapper"><h4 class="map__header">Логойский р-н. Янушковичский с\с д.Комуна</h4><h5 class="map__subtitle">Объект №20</h5><p class="map__description">устройство свайно-ростверкового фундамента и черновой стяжки</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/20/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Velikopolje = '<div class="map__content_wrapper"><h4 class="map__header">д.Великополье, ул. Центральная д.27 кв.1</h4><h5 class="map__subtitle">Объект №21</h5><p class="map__description">замена фундамента под существующим домом</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/21/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Goncharka = 'div class="map__content_wrapper"><h4 class="map__header">Смолевический район, д. Гончарка</h4><h5 class="map__subtitle">Объект №23</h5><p class="map__description">устройство свайно-ростверкового фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/23/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Verchles = '<div class="map__content_wrapper"><h4 class="map__header">с\с д.Верхлес уч. №13</h4><h5 class="map__subtitle">Объект №24</h5><p class="map__description">земляные работы,устройство свайно-ростверкового фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/24/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Vishnevka = '<div class="map__content_wrapper"><h4 class="map__header">д.Вишневка</h4><h5 class="map__subtitle">Объект №25</h5><p class="map__description">устройство свайно-ростверкового фундамента, установка гидроизоляция</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/25/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Zabolotje = '<div class="map__content_wrapper"><h4 class="map__header">д. Заболотье ул.Новая, д.6</h4><h5 class="map__subtitle">Объект №26</h5><p class="map__description">устройство свайно-ростверкового фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/26/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Dovborovo = '<div class="map__content_wrapper"><h4 class="map__header">с\с, пос. Довборово, 2Б</h4><h5 class="map__subtitle">Объект №28</h5><p class="map__description">вертикальная планировка участка, устройство ленточного фундамента </p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/28/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Zhdanovichi = '<div class="map__content_wrapper"><h4 class="map__header">агр.гор. Ждановичи</h4><h5 class="map__subtitle">Объект №29</h5><p class="map__description">земляные работы, устройство свайно-ростверкового фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/29/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Charownica = '<div class="map__content_wrapper"><h4 class="map__header">Логойский р-н. СТ Чаровница</h4><h5 class="map__subtitle">Объект №30</h5><p class="map__description">устройство свайно-ростверкового фундамента, ростверк под печь</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/30/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Vishnevka18 = '<div class="map__content_wrapper"><h4 class="map__header">с\с д. Вишневка 18</h4><h5 class="map__subtitle">Объект №32</h5><p class="map__description">устройство свайно-ростверкового фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/32/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Ptich = '<div class="map__content_wrapper"><h4 class="map__header">с\с СТ На Птичи уч. 107</h4><h5 class="map__subtitle">Объект №34</h5><p class="map__description">установка и бетонирование свай (забивные сваи)</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/34/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Kopishi = '<div class="map__content_wrapper"><h4 class="map__header">д. Копищи Ул. Подгорная 2</h4><h5 class="map__subtitle">Объект №36</h5><p class="map__description">устройство свайно-ростверкового фундамента</p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/36/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/36/2.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Pervomaj = '<div class="map__content_wrapper"><h4 class="map__header">д.Первомай, ул.Луговая уч10</h4><h5 class="map__subtitle">Объект №37</h5><p class="map__description">устройство свайно-ростверкового фундамента и черновой стяжки</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/37/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Tarasovo = '<div class="map__content_wrapper"><h4 class="map__header">д.Тарасово, ул.Сосновая, уч21</h4><h5 class="map__subtitle">Объект №38</h5><p class="map__description">демонтаж рвзрушенного фундамента, земляные работы </p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/38/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Kolodishi = '<div class="map__content_wrapper"><h4 class="map__header">д.Колодищи, ул.Пригородная, 5</h4><h5 class="map__subtitle">Объект №39</h5><p class="map__description">строительство фундамента, стен и кровли </p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><input type="radio" id="button-3" name="buttons"><label for="button-3"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/39/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/39/2.png" alt="" class="map__slider_img"></li><li id="map_slide3"><img src="assets/img/map/39/3.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Strochica = '<div class="map__content_wrapper"><h4 class="map__header">д.Строчица, 6</h4><h5 class="map__subtitle">Объект №42</h5><p class="map__description">устройство свайно-ростверкового фундамента</p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><input type="radio" id="button-3" name="buttons"><label for="button-3"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/42/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/42/2.png" alt="" class="map__slider_img"></li><li id="map_slide3"><img src="assets/img/map/42/3.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Grynkovo = '<div class="map__content_wrapper"><h4 class="map__header">д. Грыньково, ул. Центральная д. 9</h4><h5 class="map__subtitle">Объект №43</h5><p class="map__description">фундамент под ограждение, площадка для дров, ступени гараж, подвал гаража</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/44/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Gaspadar = '<div class="map__content_wrapper"><h4 class="map__header">СТ "Гаспадар" уч№144</h4><h5 class="map__subtitle">Объект №45</h5><p class="map__description">строительство свайно-ростверкового фундамента, кладка стен два этажа, устройство кровли</p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/45/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/45/2.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Molodechno = '<div class="map__content_wrapper"><h4 class="map__header">Молодечно, ул.Лесная, 28</h4><h5 class="map__subtitle">Объект №49</h5><p class="map__description">устройство свайно-ростверкового фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/49/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Timoshki = '<div class="map__content_wrapper"><h4 class="map__header">д.Тимошки, 32</h4><h5 class="map__subtitle">Объект №51</h5><p class="map__description">устройство свайно-ростверкового фундамента и черновой стяжки</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/51/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Volat = '<div class="map__content_wrapper"><h4 class="map__header">СТ "Волат МЗКТ" уч132</h4><h5 class="map__subtitle">Объект №55</h5><p class="map__description">устройство плитного фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/55/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Belaruchi = '<div class="map__content_wrapper"><h4 class="map__header">СТ "Беларучи", №278</h4><h5 class="map__subtitle">Объект №58</h5><p class="map__description">устройство свайно-ростверкового фундамента, кладка стен из керамзитобетонного блока, утройство кровли из металлочерепицы</p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><input type="radio" id="button-3" name="buttons"><label for="button-3"></label><input type="radio" id="button-4" name="buttons" checked="checked"><label for="button-4"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/58/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/58/2.png" alt="" class="map__slider_img"></li><li id="map_slide3"><img src="assets/img/map/58/3.png" alt="" class="map__slider_img"></li><li id="map_slide4"><img src="assets/img/map/58/4.png" alt="" class="map__slider_img"></li></ul></div></div><a href = "https://www.youtube.com/watch?v=IccWJ2uxyxA&t=22s" target="_blank" class="map__link">Посмотреть видеоролик</a></div>';
+    var Berezovaja = '<div class="map__content_wrapper"><h4 class="map__header">аг. Озеро, ул.Березовая, 18</h4><h5 class="map__subtitle">Объект №59</h5><p class="map__description">устройство свайно-ростверкового фундамента</p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/59/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/59/2.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Leskovka = '<div class="map__content_wrapper"><h4 class="map__header">д.Лесковка, ул.Подлесная, 8</h4><h5 class="map__subtitle">Объект №60</h5><p class="map__description">устройство плитного фундамента по технологии УШП</p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><input type="radio" id="button-3" name="buttons"><label for="button-3"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/60/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/60/2.png" alt="" class="map__slider_img"></li><li id="map_slide3"><img src="assets/img/map/60/3.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Felicianovo = '<div class="map__content_wrapper"><h4 class="map__header">д.Фелицианово, ул.Сельская, д. 2а</h4><h5 class="map__subtitle">Объект №62</h5><p class="map__description">устройство свайно-ростверкового фундамента, кладка стен из газосиликатного блока</p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><input type="radio" id="button-3" name="buttons"><label for="button-3"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/62/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/62/2.png" alt="" class="map__slider_img"></li><li id="map_slide3"><img src="assets/img/map/62/3.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Gaspadar2002 = '<div class="map__content_wrapper"><h4 class="map__header">СТ "Гаспадар-2002"</h4><h5 class="map__subtitle">Объект №64</h5><p class="map__description">устройство свайно-ростверкового фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/64/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Busuny100 = '<div class="map__content_wrapper"><h4 class="map__header">д. Бузуны, уч. 100</h4><h5 class="map__subtitle">Объект №67</h5><p class="map__description">устройство свайно-ростверкового фундамента и черновой стяжки</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/67/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Vasilkovaja = '<div class="map__content_wrapper"><h4 class="map__header">г.Минск, ул.Васильковая, 4 (Озерище)</h4><h5 class="map__subtitle">Объект №71</h5><p class="map__description">устройство свайно-ростверкового фундамента и черновой стяжки, строительство стен из г/с и кровли из металлочерепицы</p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><input type="radio" id="button-3" name="buttons"><label for="button-3"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/71/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/71/2.png" alt="" class="map__slider_img"></li><li id="map_slide3"><img src="assets/img/map/71/3.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Logozhesk = '<div class="map__content_wrapper"><h4 class="map__header">п.Логожеск, ул.Озерная, 6</h4><h5 class="map__subtitle">Объект №72</h5><p class="map__description">устройство подпорной стены с наклонными колоннами</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/72/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Slobodshina = '<div class="map__content_wrapper"><h4 class="map__header">п.Слободщина, ул.Славянская, 23</h4><h5 class="map__subtitle">Объект №74</h5><p class="map__description">устройство свайно-ростверкового фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/74/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Luzhki = '<div class="map__content_wrapper"><h4 class="map__header">д. Лужки уч.3</h4><h5 class="map__subtitle">Объект №75</h5><p class="map__description">устройство свайно-ростверкового фундамента по забивным сваям, черновой стяжки,  кладка 2-х этажного дома из керамзитобетонного блока, устройство кровли из керамической черепицы</p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><input type="radio" id="button-3" name="buttons"><label for="button-3"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/75/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/75/2.png" alt="" class="map__slider_img"></li><li id="map_slide3"><img src="assets/img/map/75/3.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Landysh = '<div class="map__content_wrapper"><h4 class="map__header">СТ "Ландыш 2005" ,уч №42</h4><h5 class="map__subtitle">Объект №79</h5><p class="map__description">устройство свайно-ростверкового фундамента и черновой стяжки, устройство септика</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/79/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Vinogradovka = '<div class="map__content_wrapper"><h4 class="map__header">д.Виноградовка, ул.Центральная, 14</h4><h5 class="map__subtitle">Объект №80</h5><p class="map__description">устройство мелко-заглубленного ленточного фундамента, строительство погреба </p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons" ><label for="button-2"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/80/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/81/1.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Machulishi = '<div class="map__content_wrapper"><h4 class="map__header">г.п. Мачулищи, У-84</h4><h5 class="map__subtitle">Объект №85</h5><p class="map__description">устройство свайно-ростверкового фундамента и черновой стяжки, кладка стен из керамзитобетонного блока</p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><input type="radio" id="button-3" name="buttons"><label for="button-3"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/85/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/85/2.png" alt="" class="map__slider_img"></li><li id="map_slide3"><img src="assets/img/map/85/3.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Kasyn = '<div class="map__content_wrapper"><h4 class="map__header">д. Касынь ул. Луговая, 23</h4><h5 class="map__subtitle">Объект №88</h5><p class="map__description">возведение свайно-ростверкого фундамента под забор</p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/88/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/88/2.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Chodakovo = '<div class="map__content_wrapper"><h4 class="map__header">СТ Ходаково 69</h4><h5 class="map__subtitle">Объект №89</h5><p class="map__description">устройство плитного фундамента, возведение стен из газосиликатных блоков </p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/89/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/89/2.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Ratkovskij = '<div class="map__content_wrapper"><h4 class="map__header">Раковский с/с, ул. Лесная 131 (Бузуны)</h4><h5 class="map__subtitle">Объект №90</h5><p class="map__description">устройство свайно-ростверкового фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/90/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Teljakovo = '<div class="map__content_wrapper"><h4 class="map__header">д.Теляково , ул. Зеленая 13</h4><h5 class="map__subtitle">Объект №92</h5><p class="map__description">устройство свайно-ростверкового фундамента и черновой стяжки, вместе с ямой</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/92/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Vokzalnaja = '<div class="map__content_wrapper"><h4 class="map__header">аг. Ждановичи, ул.Вокзальная 18 кв.1</h4><h5 class="map__subtitle">Объект №94</h5><p class="map__description">Строительство цокольного этажа</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/94/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Zhukovka = '<div class="map__content_wrapper"><h4 class="map__header">д. Жуковка, участок №21</h4><h5 class="map__subtitle">Объект №95</h5><p class="map__description">устройство плитного фундамента, возведение 2-х этажей из газосиликатного блока, устройство монолитного перекрытия устройство кровли из металочерепицы</p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/95/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/95/2.png" alt="" class="map__slider_img"></li></ul></div></div> </div> ';
+    var Zvezdnoe = '<div class="map__content_wrapper"><h4 class="map__header">Ст Звездное у-193</h4><h5 class="map__subtitle">Объект №96</h5><p class="map__description">вертикальная планировка участка, устройство фундамента под дом, устройство подпорной стены </p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/96/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Stankovo = '<div class="map__content_wrapper"><h4 class="map__header">Станьковский с/с д. Васильковая, ул. Центральная 22</h4><h5 class="map__subtitle">Объект №97</h5><p class="map__description">устройство свайно-ростверкового фундамента, кладка стен из газосиликатного блока, устройство мягкой кровли </p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/97/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/97/2.png" alt="" class="map__slider_img"></li></ul></div></div> </div> ';
+    var Degtjarevka = '<div class="map__content_wrapper"><h4 class="map__header">д. Дягтяревка, адм. Здание 37</h4><h5 class="map__subtitle">Объект №98</h5><p class="map__description">Устройство подпорной стены </p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/98/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/98/2.png" alt="" class="map__slider_img"></li></ul></div></div> </div> ';
+    var Tanka = '<div class="map__content_wrapper"><h4 class="map__header">г. Смолевичи, пер. М.Танка 34</h4><h5 class="map__subtitle">Объект №99</h5><p class="map__description">устройство ленточного фундамента и черновой стяжки, кладка стен из газосиликатного блока</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/99/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Budennogo = '<div class="map__content_wrapper"><h4 class="map__header">д.Буденного у-35</h4><h5 class="map__subtitle">Объект №100</h5><p class="map__description">устройство свайно-ростверкового фундамента и черновой стяжки, монтаж септика, кладка стен из газосиликатного блока, монтаж фальцевой кровли</p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><input type="radio" id="button-3" name="buttons"><label for="button-3"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/100/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/100/2.png" alt="" class="map__slider_img"></li><li id="map_slide3"><img src="assets/img/map/100/3.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Koljadichi = '<div class="map__content_wrapper"><h4 class="map__header">д. Колядичи, д.110</h4><h5 class="map__subtitle">Объект №104</h5><p class="map__description">устройство свайно-ростверкового фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/104/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Priselki = '<div class="map__content_wrapper"><h4 class="map__header">д. Приселки у-5</h4><h5 class="map__subtitle">Объект №105</h5><p class="map__description">устройство свайно-ростверкового фундамента, кладка стен из керамзитобетонного блока, утройство кровли из металлочерепицы</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/105/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Abrikosovaja = '<div class="map__content_wrapper"><h4 class="map__header">д. Глебковичи, ул. Абрикосовая, д.4</h4><h5 class="map__subtitle">Объект №106</h5><p class="map__description">устройство свайно-ростверкового фундамента из забивных свай, возведение стен из газосиликатного блока, устройство кровли из металлочерепицы, внутреняя отделка </p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/106/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Rakov = '<div class="map__content_wrapper"><h4 class="map__header">д. Раков, ул. Боровая д.6</h4><h5 class="map__subtitle">Объект №107</h5><p class="map__description">???</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/107/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Budennogo1 = '<div class="map__content_wrapper"><h4 class="map__header">д. Буденого уч.6236851916010000055</h4><h5 class="map__subtitle">Объект №108</h5><p class="map__description">???</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/108/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Semkovo = '<div class="map__content_wrapper"><h4 class="map__header">Беларучский с/с. д. Семково, ул. Солнечная,5</h4><h5 class="map__subtitle">Объект №109</h5><p class="map__description">???</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/109/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Yantarnaya = '<div class="map__content_wrapper"><h4 class="map__header">д. Дроздово, ул. Янтарная 12</h4><h5 class="map__subtitle">Объект №110</h5><p class="map__description">возведение монолитного душа, забора, а так же постройка гаража из герамзитобетонного блока </p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><input type="radio" id="button-3" name="buttons"><label for="button-3"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/110/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/110/2.png" alt="" class="map__slider_img"></li><li id="map_slide3"><img src="assets/img/map/110/3.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Vesnika = '<div class="map__content_wrapper"><h4 class="map__header">г. Минск ул. Веснинка</h4><h5 class="map__subtitle">Объект №111</h5><p class="map__description">устройсвто свайно-ростверкового фундамента, забивные сваи под дом и  баню, возведение забора</p><div id="map__slider-wrapper"><input type="radio" id="button-1" name="buttons" checked="checked"><label for="button-1"></label><input type="radio" id="button-2" name="buttons"><label for="button-2"></label><input type="radio" id="button-3" name="buttons"><label for="button-3"></label><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/111/1.png" alt="" class="map__slider_img"></li><li id="map_slide2"><img src="assets/img/map/111/2.png" alt="" class="map__slider_img"></li><li id="map_slide3"><img src="assets/img/map/111/3.png" alt="" class="map__slider_img"></li></ul></div></div> </div>';
+    var Dubinki = '<div class="map__content_wrapper"><h4 class="map__header">д. Дубинки у-6</h4><h5 class="map__subtitle">Объект №113</h5><p class="map__description">устройство свайно-ростверкового фундамента и черновой стяжки</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/113/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Brovki = '<div class="map__content_wrapper"><h4 class="map__header">д. Бровки ул. Рябинова, 8</h4><h5 class="map__subtitle">Объект №114</h5><p class="map__description">устройство плитного фундамента с ребрами вниз</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/114/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
+    var Yarshevichi = '<div class="map__content_wrapper"><h4 class="map__header">Яршевичи</h4><h5 class="map__subtitle">Объект №128</h5><p class="map__description">устройство свайно-ростверкового фундамента</p><div id="map__slider-wrapper"><div id="map__slider"><ul><li id="map_slide1"><img src="assets/img/map/128/1.png" alt=""  class="map__slider_img"></li></ul></div></div> </div>';
 
 
 
 
 
-    myMap.geoObjects.add(Busuny);
-    myMap.geoObjects.add(Chernica);
-    myMap.geoObjects.add(Novoselje);
-    myMap.geoObjects.add(Belica);
-    myMap.geoObjects.add(Elnica);
-    myMap.geoObjects.add(PrSloboda);
-    myMap.geoObjects.add(Vyprabavalnik);
-    myMap.geoObjects.add(Ozero);
-    myMap.geoObjects.add(Grinkevichi);
-    myMap.geoObjects.add(Novashino);
-    myMap.geoObjects.add(Cvetochnaya);
 
-    myMap.geoObjects.add(myPlacemarkWithContent);
+    // Создадим и добавим панель на карту.
+    var panel = document.getElementById('map_content');
+    // console.log(panel);
+    // map.controls.add(panel, {
+    //     float: 'left'
+    // });
+    // Создадим коллекцию геообъектов.
+    var collection = new ymaps.GeoObjectCollection(null, {
+        // Запретим появление балуна.
+        hasBalloon: false,
+        iconColor: '#FDC236'
+    });
+    // Добавим геообъекты в коллекцию.
+    collection
+        .add(new ymaps.Placemark([54.035688, 26.898597], {
+            balloonContent: Yarshevichi
+        }))
+        .add(new ymaps.Placemark([54.039173, 27.382498], {
+            balloonContent: Brovki
+        }))
+        .add(new ymaps.Placemark([53.664518, 27.600360], {
+            balloonContent: Dubinki
+        }))
+        .add(new ymaps.Placemark([53.942193, 27.473039], {
+            balloonContent: Vesnika
+        }))
+        .add(new ymaps.Placemark([53.989792, 27.633759], {
+            balloonContent: Yantarnaya
+        }))
+        .add(new ymaps.Placemark([54.020945, 27.427515], {
+            balloonContent: Semkovo
+        }))
+        .add(new ymaps.Placemark([54.081695, 27.740986], {
+            balloonContent: Budennogo1
+        }))
+        .add(new ymaps.Placemark([53.964959, 27.027357], {
+            balloonContent: Rakov
+        }))
+        .add(new ymaps.Placemark([53.915767, 27.861159], {
+            balloonContent: Abrikosovaja
+        }))
+        .add(new ymaps.Placemark([54.142729, 27.609114], {
+            balloonContent: Priselki
+        }))
+        .add(new ymaps.Placemark([53.825481, 27.570410], {
+            balloonContent: Koljadichi
+        }))
+        .add(new ymaps.Placemark([54.084043, 27.742290], {
+            balloonContent: Budennogo
+        }))
+        .add(new ymaps.Placemark([54.013200, 28.140140], {
+            balloonContent: Tanka
+        }))
+        .add(new ymaps.Placemark([53.938978, 27.425060], {
+            balloonContent: Degtjarevka
+        }))
+        .add(new ymaps.Placemark([53.680148, 27.244178], {
+            balloonContent: Stankovo
+        }))
+        .add(new ymaps.Placemark([53.942090, 27.386629], {
+            balloonContent: Zvezdnoe
+        }))
+        .add(new ymaps.Placemark([54.186687, 27.514870], {
+            balloonContent: Zhukovka
+        }))
+        .add(new ymaps.Placemark([53.952052, 27.412840], {
+            balloonContent: Vokzalnaja
+        }))
+        .add(new ymaps.Placemark([53.522734, 27.400303], {
+            balloonContent: Teljakovo
+        }))
+        .add(new ymaps.Placemark([54.014083, 27.046504], {
+            balloonContent: Ratkovskij
+        }))
+        .add(new ymaps.Placemark([53.782948, 27.394107], {
+            balloonContent: Chodakovo
+        }))
+        .add(new ymaps.Placemark([54.073064, 27.533902], {
+            balloonContent: Kasyn
+        }))
+        .add(new ymaps.Placemark([53.765006, 27.627639], {
+            balloonContent: Machulishi
+        }))
+        .add(new ymaps.Placemark([53.651830, 27.191349], {
+            balloonContent: Vinogradovka
+        }))
+        .add(new ymaps.Placemark([54.175617, 27.826717], {
+            balloonContent: Landysh
+        }))
+        .add(new ymaps.Placemark([54.030148, 27.960249], {
+            balloonContent: Luzhki
+        }))
+        .add(new ymaps.Placemark([53.998864, 27.820205], {
+            balloonContent: Slobodshina
+        }))
+        .add(new ymaps.Placemark([54.178550, 27.814235], {
+            balloonContent: Logozhesk
+        }))
+        .add(new ymaps.Placemark([53.936540, 27.721057], {
+            balloonContent: Vasilkovaja
+        }))
+        .add(new ymaps.Placemark([54.016438, 27.050763], {
+            balloonContent: Busuny100
+        }))
+        .add(new ymaps.Placemark([53.943649, 27.397045], {
+            balloonContent: Gaspadar2002
+        }))
+        .add(new ymaps.Placemark([53.750509, 27.805634], {
+            balloonContent: Felicianovo
+        }))
+        .add(new ymaps.Placemark([54.003733, 27.710691], {
+            balloonContent: Leskovka
+        }))
+        .add(new ymaps.Placemark([53.642612, 27.458881], {
+            balloonContent: Berezovaja
+        }))
+        .add(new ymaps.Placemark([54.096567, 27.574776], {
+            balloonContent: Belaruchi
+        }))
+        .add(new ymaps.Placemark([53.730215, 27.910506], {
+            balloonContent: Volat
+        }))
+        .add(new ymaps.Placemark([53.744058, 27.428862], {
+            balloonContent: Timoshki
+        }))
+        .add(new ymaps.Placemark([54.322626, 26.834402], {
+            balloonContent: Molodechno
+        }))
+        .add(new ymaps.Placemark([53.947159, 27.396594], {
+            balloonContent: Gaspadar
+        }))
+        .add(new ymaps.Placemark([53.804450, 27.281065], {
+            balloonContent: Grynkovo
+        }))
+        .add(new ymaps.Placemark([53.818229, 27.364125], {
+            balloonContent: Strochica
+        }))
+        .add(new ymaps.Placemark([53.899101, 27.778451], {
+            balloonContent: Kolodishi
+        }))
+        .add(new ymaps.Placemark([53.920036, 27.396442], {
+            balloonContent: Tarasovo
+        }))
+        .add(new ymaps.Placemark([53.708509, 27.310570], {
+            balloonContent: Pervomaj
+        }))
+        .add(new ymaps.Placemark([53.963791, 27.669934], {
+            balloonContent: Kopishi
+        }))
+        .add(new ymaps.Placemark([53.795353, 27.408048], {
+            balloonContent: Ptich
+        }))
+        .add(new ymaps.Placemark([53.939707, 27.184989], {
+            balloonContent: Vishnevka18
+        }))
+        .add(new ymaps.Placemark([54.216978, 27.575189], {
+            balloonContent: Charownica
+        }))
+        .add(new ymaps.Placemark([53.946963, 27.428085], {
+            balloonContent: Zhdanovichi
+        }))
+        .add(new ymaps.Placemark([54.208617, 27.354895], {
+            balloonContent: Dovborovo
+        }))
+        .add(new ymaps.Placemark([53.789305, 27.404123], {
+            balloonContent: Zabolotje
+        }))
+        .add(new ymaps.Placemark([53.939729, 27.185035], {
+            balloonContent: Vishnevka
+        }))
+        .add(new ymaps.Placemark([53.765207, 28.036636], {
+            balloonContent: Verchles
+        }))
+        .add(new ymaps.Placemark([53.975479, 27.921915], {
+            balloonContent: Goncharka
+        }))
+        .add(new ymaps.Placemark([53.679119, 28.567675], {
+            balloonContent: Velikopolje
+        }))
+        .add(new ymaps.Placemark([54.252794, 27.621291], {
+            balloonContent: Komuna
+        }))
+        .add(new ymaps.Placemark([53.756621, 27.392909], {
+            balloonContent: Shpilki
+        }))
+        .add(new ymaps.Placemark([54.039926, 27.459403], {
+            balloonContent: Mara
+        }))
+        .add(new ymaps.Placemark([53.860746, 27.927655], {
+            balloonContent: Sokol
+        }))
+        .add(new ymaps.Placemark([53.742880, 27.353695], {
+            balloonContent: Fanipol
+        }))
+        .add(new ymaps.Placemark([53.906943, 27.179945], {
+            balloonContent: Cvetochnaya
+        }))
+        .add(new ymaps.Placemark([54.050046, 27.276005], {
+            balloonContent: Novashino
+        }))
+        .add(new ymaps.Placemark([53.823515, 27.002338], {
+            balloonContent: Grinkevichi
+        }))
+        .add(new ymaps.Placemark([53.643145, 27.457049], {
+            balloonContent: Ozero
+        }))
+        .add(new ymaps.Placemark([53.776021, 27.784182], {
+            balloonContent: Vyprabavalnik
+        }))
+        .add(new ymaps.Placemark([54.049862, 27.330465], {
+            balloonContent: PrSloboda
+        }))
+        .add(new ymaps.Placemark([53.815866, 27.723702], {
+            balloonContent: Elnica
+        }))
+        .add(new ymaps.Placemark([53.999819, 28.128498], {
+            balloonContent: Chernica
+        }))
+        .add(new ymaps.Placemark([53.719365, 27.533801], {
+            balloonContent: Belica
+        }))
+        .add(new ymaps.Placemark([53.906697, 27.180229], {
+            balloonContent: Novoselje
+        }))
+        .add(new ymaps.Placemark([54.188348, 27.573399], {
+            balloonContent: Krynica
+        }))
+        .add(new ymaps.Placemark([54.188353, 27.573416], {
+            balloonContent: Busuny
+        }));
+    // Добавим коллекцию на карту.
+    map.geoObjects.add(collection);
+    // Подпишемся на событие клика по коллекции.
+    collection.events.add('click', function (e) {
+        // Получим ссылку на геообъект, по которому кликнул пользователь.
+        var target = e.get('target');
+        var content = target.properties.get('balloonContent');
+        var bg = document.getElementById('excursion');
+        var map_obj = document.getElementById('map_obj');
+        // Зададим контент боковой панели.
+        panel.insertAdjacentHTML('beforeend', content);
+        panel.removeChild(panel.firstElementChild);
+        map_obj.value = content;
+        console.log(map_obj.value);
+        bg.style.cssText = 'background: url(https://house.belikov.by/wp-content/themes/belikov/assets/img/desktop/backgrounds/popup_bg_active.png) no-repeat, #fff;';
+        
 
+        //Изменяем цвет метки при клике
+        //Цвет неактивных меток
+        for (j = 0; j < collection.getLength(); j++) {
+            var currentPm = collection.get(j);
+            currentPm.options.set(
+                'iconColor', '#FDC236'
+            );
+        }
 
-};
+        // Цвет текущей метки
+        target.options.set('iconColor', '#FF0000');
+        
 
-
-
-;
+        // Переместим центр карты по координатам метки с учётом заданных отступов.
+        // map.panTo(target.geometry.getCoordinates(), {useMapMargin: true});
+    });
+};;
     $(".show_tab").click(function() {
     event.preventDefault();
     var  mainTab= $(this).index();
@@ -558,51 +655,73 @@ $(document).focusout(function() {
 });
 ;
     //////////////////////main-screen///////////////////////////////////////////
+var youtube_src = $("#myModal iframe").attr("src");
 // открыть по кнопке
-$('.js-button-call').click(function() { 
-	
+$('.js-button-call').click(function () {
+
 	$('.js-overlay-call').fadeIn();
-    
+
 });
 
-$('.js-button-gift').click(function() { 
-	
+$('.js-button-gift').click(function () {
+
 	$('.js-overlay-gift').fadeIn();
-    
+
 });
 
-$('.js-button-questions').click(function() { 
-	
+$('.js-button-questions').click(function () {
+
 	$('.js-overlay-questions').fadeIn();
-    
+
 });
 
-$('.js-button-reasons').click(function() { 
-	
+$('.js-button-reasons').click(function () {
+
 	$('.js-overlay-reasons').fadeIn();
-    
+
 });
 
-$('.js-button-excursion').click(function() { 
-	
+$('.js-button-excursion').click(function () {
+
 	$('.js-overlay-excursion').fadeIn();
-    
+
 });
+
+$('.js-button-quiz').click(function () {
+
+	$('.js-overlay-quiz').fadeIn();
+
+});
+
+$('.js-button-quiz_modal').click(function () {
+
+	$('.js-overlay-quiz_modal').fadeIn();
+
+});
+
+
+$('.js-button-video').click(function () {
+	$("#myModal iframe").attr("src", youtube_src + "?autoplay=1");
+	$('.js-overlay-video').fadeIn();
+
+});
+
+
 
 // закрыть на крестик
-$('.js-close-campaign').click(function() { 
-    $('.js-overlay-call, .js-overlay-gift, .js-overlay-questions, .js-overlay-reasons, .js-overlay-excursion, .js-overlay-thanks').fadeOut();
-   
-	
+$('.js-close-campaign').click(function () {
+	$('.js-overlay-call, .js-overlay-gift, .js-overlay-questions, .js-overlay-reasons, .js-overlay-excursion, .js-overlay-quiz_modal, .js-overlay-video, .js-overlay-thanks').fadeOut();
+	$("#myModal iframe").attr("src", null);
+
 });
- 
+
 // закрыть по клику вне окна
-$(document).mouseup(function (e) { 
+$(document).mouseup(function (e) {
 	var popup = $('.js-popup-campaign');
-	if (e.target!=popup[0]&&popup.has(e.target).length === 0){
-        $('.js-overlay-call, .js-overlay-gift, .js-overlay-questions, .js-overlay-reasons, .js-overlay-excursion, .js-overlay-thanks').fadeOut();
-       
-		
+	if (e.target != popup[0] && popup.has(e.target).length === 0) {
+		$('.js-overlay-call, .js-overlay-gift, .js-overlay-questions, .js-overlay-reasons, .js-overlay-excursion, .js-overlay-quiz_modal, .js-overlay-video, .js-overlay-thanks').fadeOut();
+		$("#myModal iframe").attr("src", null);
+
 	}
 });
 
@@ -612,10 +731,34 @@ $(document).mouseup(function (e) {
 // 		if($('.js-overlay-campaign').hasClass('disabled')) {
 // 			return false;
 // 		} else {
-			
+
 // 			$(".js-overlay-campaign").fadeIn();
 // 		}
 // 	}, 5000);
+// });
+
+//  var youtube_src = $("#myModal iframe").attr("src");
+//    $('#myModal').on('shown.bs.modal', function () {
+//      $("#myModal iframe").attr("src", youtube_src + "?autoplay=1");
+//    });
+//    $("#myModal").on('hidden.bs.modal', function (e) {
+//      $("#myModal iframe").attr("src", null);
+//    });
+
+
+//    $('.js-button-video').click(function () {
+// 	$("#myModal iframe").attr("src", youtube_src + "?autoplay=1");
+//    });
+
+//    $('.popup__close-video').click(function () {
+// 	$("#myModal iframe").attr("src", null);
+//    })
+
+//    $(document).mouseup(function (e) {
+// 	var popup = $('.js-popup-campaign');
+// 	if (e.target != popup[0] && popup.has(e.target).length === 0) {
+// 		$("#myModal iframe").attr("src", null);
+// 	}
 // });;
     $(function() {
     var $li = $('.slider_crtf').find('.slider_crtf--item'),
@@ -720,18 +863,29 @@ $(document).mouseup(function (e) {
   
   
   ;
+    jQuery(document).ready(function($) {
+    $('input[type="tel"]').mask("+375-(99)-999-99-99",{placeholder:"_"});
+  });;
+    $(".finished_project_section--input-file[type=file]").change(function(){
+    var filename = $(this).val().replace(/.*\\/, "");
+    $("#filename").text(filename);
+    $("#projectname").text(filename);
+});
+
+;
     
    
 })
 
 var ua = navigator.userAgent,
-evens = (ua.match(/iPad/i)) ? "touchstart" : "click";
+  evens = (ua.match(/iPad/i)) ? "touchstart" : "click";
 
 var number = 0;
 var maxNumber = $(".quiz--page").length;
 var $element = $(".quiz--page").find("input, select, textarea");
 var btnNext = $('.quiz--next');
 var testTextNum = maxNumber;
+var discount = 1;
 var testText = $('.quiz--number');
 var $elementRadio = $(".quiz--page").not('.final, .no-focus').find("input[type='radio'], input[type='checkbox'] ");
 var isValid;
@@ -740,8 +894,7 @@ var activeSlede = [];
 
 var btnPrev = $('.quiz--prev');
 
-
-for(var i = 0; i< maxNumber; i++){
+for (var i = 0; i < maxNumber; i++) {
   activeSlede[i] = false;
 }
 
@@ -753,254 +906,245 @@ $element.on('change input', function (e) {
 });
 
 function btnActive(isValid) {
-  if(number === 0){
+  if (number === 0) {
     // btnPrev.prop('disabled', 'false');
     btnNext.prop('disabled', isValid);
-  }else{
+  } else {
     // btnPrev.prop('disabled', false);
-    if(activeSlede[number] === true || isValid === false){
+    if (activeSlede[number] === true || isValid === false) {
       btnNext.prop('disabled', false);
-    }else{
+    } else {
       btnNext.prop('disabled', true);
     }
-    
+
   }
 
 }
 
+
+$('.polzunok-5').click(function () {
+  btnNext.prop('disabled', false);
+})
+
 // sidebar
 var $barLevel = Math.floor(100 / (maxNumber));
-  var $barWidth = $barLevel;
+var $barWidth = $barLevel;
 
-  function progress(num){
-    var testBlock = ".quiz--block-" + num ;
-    var testCircle= ".quiz--circle-" + (num + 1) ;
-    $(testBlock).addClass('quiz--block-active');
-    $(testCircle).addClass('quiz--circle-active');
-    $(".quiz--progress").text($barWidth + '%');
-  }
-  progress(0);
+function progress(num) {
+  var testBlock = ".quiz--block-" + num;
+  var testCircle = ".quiz--circle-" + (num + 1);
+  $(testBlock).addClass('quiz--block-active');
+  $(testCircle).addClass('quiz--circle-active');
+  $(".quiz--progress").text($barWidth + '%');
+}
+progress(0);
 
-  function progress_prev(num) {
-    var testBlock_prev = ".quiz--block-" + num;
-    var testCircle_prev = ".quiz--circle-" + (num + 1);
-    jQuery(testBlock_prev).removeClass('quiz--block-active');
-    jQuery(testCircle_prev).removeClass('quiz--circle-active');
-    jQuery(".quiz--progress").text($barWidth + '%');
-  }
+function progress_prev(num) {
+  var testBlock_prev = ".quiz--block-" + num;
+  var testCircle_prev = ".quiz--circle-" + (num + 1);
+  jQuery(testBlock_prev).removeClass('quiz--block-active');
+  jQuery(testCircle_prev).removeClass('quiz--circle-active');
+  jQuery(".quiz--progress").text($barWidth + '%');
+}
 
 
- var otv = []; 
+var otv = [];
 // btn
 
 function btnClick() {
 
   btnNext.bind(evens, next);
   btnPrev.bind(evens, prev);
-  // $elementRadio.on('input, change',next);
+  $elementRadio.on('input, change', next);
   // $('.inp-next').on('input, change',next);
 }
 btnClick();
-function next(){
+function next() {
   event.preventDefault();
-    activeSlede[number] = true;
+  activeSlede[number] = true;
 
-    ++number;
-    
-    setTimeout(function(){
-      $(".quiz--page").hide();
-      $(".quiz--page").eq(number).fadeIn(1000);
-    },300);
-	$(".quiz--next").hide();
-  $(".quiz--next").eq(number).show();
-  $(".quiz--prev").hide();
-	$(".quiz--prev").eq(number).show();
-    
-    btnActive(!isValid);
-    if(activeSlede[number] === true){
-      btnNext.prop('disabled', false);
-    }else{
-      btnNext.prop('disabled', true);
-    }
+  ++number;
 
-    $barWidth += $barLevel;
-    if(number < maxNumber - 1){
-      $(".right__text-cont-item").hide();
-      $(".right__text-cont-item").eq(number).fadeIn(1000);
-    }else if(number > maxNumber - 1){
-      $barWidth = 100;
-    }
-
-    if(number === 6){
-      $('.test__righ-t1').hide();
-      $('.test__righ-t2').fadeIn();
-    }
-    if(number === 7){
-      $('.test__righ-t2').hide();
-      $('.test__righ-t3').fadeIn();
-      $('.present-img-item').attr({
-        "src": $('.gift-box-item_new img').attr('src'),
-      });
-
-      for(var i = 0; i < maxNumber ; i++){
-        var val = '' ;
-        $(".quiz--page").eq(i).find('input').each(function(index, el) {
-          if($(this).prop('checked')){
-            val = val + $(this).val() + ' ,';
-          }
-        });
-        otv[i] = val;
-      }
-
-      for(var i = 0; i < maxNumber ; i++){
-        var str = otv[i].substring(0, otv[i].length - 1);
-        $('.quiz--answers').append('<p class="quiz--item">'
-          +str+'</p>');
-      }
-      $('.quiz--btn_block').hide();
-      console.log(otv); 
-    }
-    // if(number === maxNumber - 1){
-    //      $(".quiz--btn_block").hide();
-    //      setTimeout(function(){
-    //        $(".quiz--page").hide();
-    //        $(".quiz--page").eq(number + 1).fadeIn(1000);
-    //        $(".test-item__number-furst").text(number + 1);
-    //        $barWidth += $barLevel;
-    //        progress(number);
-
-    //        animateTop ();
-    //      },2700);
-    // }else{
-       if(testTextNum != 1){
-        testTextNum -= 1;
-      if(testTextNum < 5 && testTextNum > 1){
-        testText.text( testTextNum + ' %');
-      }else if(testTextNum < 2){
-        testText.text( testTextNum + ' %');
-      }else{
-        testText.text( testTextNum + ' %');
-      }
-    }
-      setTimeout(function(){
-          $(".test-item__number-furst").text(number + 1);
-          // $barWidth += $barLevel;
-          progress(number);
-
-        //   animateTop ();
-      },300);
-    // }
-}
-
-function prev(){
-  event.preventDefault();
-    activeSlede[number] = true;
-
-    --number;
-    
-    setTimeout(function(){
-      $(".quiz--page").hide();
-      $(".quiz--page").eq(number).fadeIn(1000);
-    },300);
-	$(".quiz--next").hide();
+  setTimeout(function () {
+    $(".quiz--page").hide();
+    $(".quiz--page").eq(number).fadeIn(1000);
+  }, 300);
+  $(".quiz--next").hide();
   $(".quiz--next").eq(number).show();
   $(".quiz--prev").hide();
   $(".quiz--prev").eq(number).show();
-//   $("#not_vis").hide();
-    
-    btnActive(!isValid);
-    if(activeSlede[number] === true){
-      btnNext.prop('disabled', false);
-    }else{
-      btnNext.prop('disabled', true);
-    }
 
-    $barWidth -= $barLevel;
-    if(number < maxNumber - 1){
-      $(".right__text-cont-item").hide();
-      $(".right__text-cont-item").eq(number).fadeIn(1000);
-    }else if(number > maxNumber - 1){
-      $barWidth = 100;
-    }
+  discount += 1;
+  testText.text(discount + '%');
 
-    if(number === 6){
-      $('.test__righ-t1').hide();
-      $('.test__righ-t2').fadeIn();
-    }
-    if(number === 7){
-      $('.test__righ-t2').hide();
-      $('.test__righ-t3').fadeIn();
-      $('.present-img-item').attr({
-        "src": $('.gift-box-item_new img').attr('src'),
+  btnActive(!isValid);
+  if (activeSlede[number] === true) {
+    btnNext.prop('disabled', false);
+  } else {
+    btnNext.prop('disabled', true);
+  }
+
+  $barWidth += $barLevel;
+  if (number < maxNumber - 1) {
+    $(".right__text-cont-item").hide();
+    $(".right__text-cont-item").eq(number).fadeIn(1000);
+  } else if (number === maxNumber - 1) {
+    $barWidth = 100;
+  }
+
+  if (number === 6) {
+    $('.test__righ-t1').hide();
+    $('.test__righ-t2').fadeIn();
+  }
+  if (number === 7) {
+    $('.test__righ-t2').hide();
+    $('.test__righ-t3').fadeIn();
+    $('.present-img-item').attr({
+      "src": $('.gift-box-item_new img').attr('src'),
+    });
+
+    for (var i = 0; i < maxNumber; i++) {
+      var val = '';
+      $(".quiz--page").eq(i).find('input').each(function (index, el) {
+        if ($(this).prop('checked')) {
+          val = val + $(this).val() + ' ,';
+        }
       });
-
-      for(var i = 0; i < maxNumber ; i++){
-        var val = '' ;
-        $(".quiz--page").eq(i).find('input').each(function(index, el) {
-          if($(this).prop('checked')){
-            val = val + $(this).val() + ' ,';
-          }
-        });
-        otv[i] = val;
-      }
-
-      for(var i = 0; i < maxNumber ; i++){
-        var str = otv[i].substring(0, otv[i].length - 1);
-        $('.text-final-ul').append('<p class="text-small text-final-li">'
-          +str+'</p>');
-      }
-      $('.quiz--btn_block').hide();
-      // console.log(otv);
+      otv[i] = val;
     }
-    // if(number === maxNumber - 1){
-    //      $(".quiz--btn_block").hide();
-    //      setTimeout(function(){
-    //        $(".quiz--page").hide();
-    //        $(".quiz--page").eq(number + 1).fadeIn(1000);
-    //        $(".test-item__number-furst").text(number + 1);
-    //        $barWidth += $barLevel;
-    //        progress(number);
 
-    //        animateTop ();
-    //      },2700);
-    // }else{
-       if(testTextNum != 1){
-        testTextNum += 1;
-      if(testTextNum < 5 && testTextNum > 1){
-        testText.text( testTextNum + '%');
-      }else if(testTextNum < 2){
-        testText.text( testTextNum + '%');
-      }else{
-        testText.text( testTextNum + ' %');
-      }
+    for (var i = 0; i < maxNumber; i++) {
+      var str = otv[i].substring(0, otv[i].length - 1);
+      $('.quiz--answers').append('<p class="quiz--item">'
+        + str + '</p>');
     }
-      setTimeout(function(){
-          $(".test-item__number-furst").text(number + 1);
-          // $barWidth += $barLevel;
-          progress_prev(number+1);
+    $('.quiz--btn_block').hide();
+    console.log(otv);
+  }
+  setTimeout(function () {
+    $(".test-item__number-furst").text(number + 1);
+    // $barWidth += $barLevel;
+    progress(number);
 
-        //   animateTop ();
-      },300);
-    // }
+    //   animateTop ();
+  }, 300);
+  // }
+}
+
+
+function prev() {
+  event.preventDefault();
+  activeSlede[number] = true;
+
+  --number;
+
+  setTimeout(function () {
+    $(".quiz--page").hide();
+    $(".quiz--page").eq(number).fadeIn(1000);
+  }, 300);
+  $(".quiz--next").hide();
+  $(".quiz--next").eq(number).show();
+  $(".quiz--prev").hide();
+  $(".quiz--prev").eq(number).show();
+  //   $("#not_vis").hide();
+
+  discount -= 1;
+  testText.text(discount + '%');
+
+
+  btnActive(!isValid);
+  if (activeSlede[number] === true) {
+    btnNext.prop('disabled', false);
+  } else {
+    btnNext.prop('disabled', true);
+  }
+
+  $barWidth -= $barLevel;
+  if (number < maxNumber - 1) {
+    $(".right__text-cont-item").hide();
+    $(".right__text-cont-item").eq(number).fadeIn(1000);
+  } else if (number === maxNumber - 1) {
+    $barWidth = 100;
+  }
+
+  if (number === 6) {
+    $('.test__righ-t1').hide();
+    $('.test__righ-t2').fadeIn();
+  }
+  if (number === 7) {
+    $('.test__righ-t2').hide();
+    $('.test__righ-t3').fadeIn();
+    $('.present-img-item').attr({
+      "src": $('.gift-box-item_new img').attr('src'),
+    });
+
+    for (var i = 0; i < maxNumber; i++) {
+      var val = '';
+      $(".quiz--page").eq(i).find('input').each(function (index, el) {
+        if ($(this).prop('checked')) {
+          val = val + $(this).val() + ' ,';
+        }
+      });
+      otv[i] = val;
+    }
+
+    for (var i = 0; i < maxNumber; i++) {
+      var str = otv[i].substring(0, otv[i].length - 1);
+      $('.text-final-ul').append('<p class="text-small text-final-li">'
+        + str + '</p>');
+    }
+    $('.quiz--btn_block').hide();
+    // console.log(otv);
+  }
+  // if(number === maxNumber - 1){
+  //      $(".quiz--btn_block").hide();
+  //      setTimeout(function(){
+  //        $(".quiz--page").hide();
+  //        $(".quiz--page").eq(number + 1).fadeIn(1000);
+  //        $(".test-item__number-furst").text(number + 1);
+  //        $barWidth += $barLevel;
+  //        progress(number);
+
+  //        animateTop ();
+  //      },2700);
+  // }else{
+  //    if(testTextNum != 1){
+  //     testTextNum += 1;
+  //   if(testTextNum < 5 && testTextNum > 1){
+  //     testText.text( testTextNum + '%');
+  //   }else if(testTextNum < 2){
+  //     testText.text( testTextNum + '%');
+  //   }else{
+  //     testText.text( testTextNum + ' %');
+  //   }
+  // }
+  setTimeout(function () {
+    $(".test-item__number-furst").text(number + 1);
+    // $barWidth += $barLevel;
+    progress_prev(number + 1);
+
+    //   animateTop ();
+  }, 300);
+  // }
 }
 var inpTrue = false;
-$('.gift').find('input').on('change input', function() {
+$('.gift').find('input').on('change input', function () {
 
-      // $('.test__righ-t1').hide();
-      // $('.test__righ-t2').fadeIn();
-      $('.gift-box-item img').attr({
-        "src": $(this).parents('.item-wq-6').find('.iw6i').attr('src'),
-      });
-      $('.text-prs').text($(this).parents('.item-wq-6').find('.text-small-test').text().trim());
-      $('.title-presents-6').text($(this).val());
-      $('.present-img').css({display: 'none'});
-      $('.gift-title').css({
-        marginTop:'-2vw'
-      })
-      $('.gift-box').css({
-        marginTop:'18vw'
-      })
-  
+  // $('.test__righ-t1').hide();
+  // $('.test__righ-t2').fadeIn();
+  $('.gift-box-item img').attr({
+    "src": $(this).parents('.item-wq-6').find('.iw6i').attr('src'),
+  });
+  $('.text-prs').text($(this).parents('.item-wq-6').find('.text-small-test').text().trim());
+  $('.title-presents-6').text($(this).val());
+  $('.present-img').css({ display: 'none' });
+  $('.gift-title').css({
+    marginTop: '-2vw'
+  })
+  $('.gift-box').css({
+    marginTop: '18vw'
+  })
+
 });
 
 // $('.qw3-no-inp').on('change input', function() {
@@ -1009,26 +1153,46 @@ $('.gift').find('input').on('change input', function() {
 //   inpTrue = false;
 // });
 
-  
-function animateTop (){
+
+function animateTop() {
   var elem = $('.form-test');
   var top = elem.offset().top - 15;
-  $('body,html').animate({scrollTop: top}, 400);
+  $('body,html').animate({ scrollTop: top }, 400);
 }
 
-$('.popup__form, .finished_project_section--form').submit(function() { 
+$('.popup__form-simple, .quiz--form').submit(function () {
   $.ajax({
     type: "POST",
-    url: "http://belikov/wp-content/themes/belikov/assets/mail.php",
-    data: $(this).serialize()
-  }).done(function() {
+    url: "https://house.belikov.by/wp-content/themes/belikov/assets/mail.php",
+    data: $(this).serialize(),
+    dataType: 'json'
+  }).done(function () {
     $('.js-overlay-thanks').fadeIn();
     $('.popup__overlay-form').fadeOut();
     $(this).find('input').val('');
-    $('.popup__form, .finished_project_section--form').trigger('reset');
+    $('.popup__form-simple, .quiz--form').trigger('reset');
   });
   return false;
 });
+
+
+
+// $('.quiz__form').submit(function() { 
+//   $.ajax({
+//     type: "POST",
+//     url: "http://minigun-agency.by/wp-content/themes/minigun/assets/mail.php",
+//     data: $(this).serialize()
+//   }).done(function() {
+//     $('.quiz--thanks').fadeIn();
+//     $('.quiz--page-final, .quiz--proc, .quiz--visual').fadeOut();
+//     $('.quiz__for_mocup').removeClass('active');
+//     // $('.quiz__form').trigger('reset');
+//     // $('.quiz__page-final').hide();
+//     // $('.quiz__page-first, .quiz__prev-first, .quiz__next-first').fadeIn();
+//   });
+//   return false;
+// });
+
 
 
 // var nForm = false;
@@ -1043,7 +1207,7 @@ $('.popup__form, .finished_project_section--form').submit(function() {
 //     var ref = $(this).find(".inp-num");
 
 
-    
+
 //     var constr = [];
 //     var dopType = [];
 
@@ -1052,14 +1216,14 @@ $('.popup__form, .finished_project_section--form').submit(function() {
 //     });
 
 //     $('input[name="qw4"]').each(function(index, el) {
-    
+
 //       if($(this).prop('checked')){
 //         constr.push($(this).val().trim());
 //       }
 //     });
 
 //      $('input[name="qw3"]').each(function(index, el) {
-    
+
 //       if($(this).prop('checked')){
 //         dopType.push($(this).val().trim());
 //       }
@@ -1074,7 +1238,7 @@ $('.popup__form, .finished_project_section--form').submit(function() {
 //     fd.append('qw4', constr2);
 //     fd.append('qw3', dopType2);
 
-   
+
 //     $.ajax({
 //       url: 'http://belikov/wp-content/themes/belikov/assets/mail.php',
 //       type: 'POST',
@@ -1225,7 +1389,7 @@ $('.popup__form, .finished_project_section--form').submit(function() {
 //     $(".modal-video-body").append('<iframe></iframe>');
 //     var iframe = $(".modal-video-body").find('iframe');
 
-    
+
 //     $('html').addClass('stop');
 //     $('#video-modal').fadeIn().scrollTop(1);
 //     $('#video-modal').find('.overlay-wrap').height($('#video-modal').find('.modal-wrap').outerHeight(true));
@@ -1235,7 +1399,7 @@ $('.popup__form, .finished_project_section--form').submit(function() {
 //     var iframe_url = "https://www.youtube.com/embed/" + idVideo + "?enablejsapi=1&autoplay=1&autohide=1&rel=0";
 
 //     if ($(this).attr("data-params")) iframe_url += '&' + $(this).attr("data-params");
-    
+
 //     iframe.attr({
 //             src: iframe_url,
 //             frameborder: '0',
@@ -1247,7 +1411,7 @@ $('.popup__form, .finished_project_section--form').submit(function() {
 //         });
 
 //      $(".modal-video-body").children()[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-    
+
 // }
 
 
@@ -1273,41 +1437,329 @@ $('.popup__form, .finished_project_section--form').submit(function() {
 
 
 ;
-// Отправка заявки 
-// $(document).ready(function() {
-// 	$('.popup__form, .finished_project_section--form').submit(function() { // проверка на пустоту заполненных полей. Атрибут html5 — required не подходит (не поддерживается Safari)
-// 		if (document.form.name.value == '' || document.form.phone.value == '' ) {
-// 			valid = false;
-// 			return valid;
-// 		}
-// 		$.ajax({
-// 			type: "POST",
-// 			url: "http://belikov/wp-content/themes/belikov/assets/mail.php",
-// 			data: $(this).serialize()
-// 		}).done(function() {
-// 			$('.js-overlay-thanks').fadeIn();
-// 			$(this).find('input').val('');
-// 			$('.popup__form, .finished_project_section--form').trigger('reset');
-// 		});
-// 		return false;
-// 	});
+var ua = navigator.userAgent,
+evens = (ua.match(/iPad/i)) ? "touchstart" : "click";
+ 
+var number = 0;
+var maxNumber = $(".quiz_modal--page").length;
+var $element = $(".quiz_modal--page").find("input, select, textarea");
+var btnNext = $('.quiz_modal--next');
+var testTextNum = maxNumber;
+var discount = 1;
+var testText = $('.quiz_modal--number');
+var $elementRadio = $(".quiz_modal--page").not('.final, .no-focus').find("input[type='radio'], input[type='checkbox'] ");
+var isValid;
+var dataBlock;
+var activeSlede = [];
+
+var btnPrev = $('.quiz_modal--prev');
+
+for(var i = 0; i< maxNumber; i++){
+  activeSlede[i] = false;
+}
+
+$element.on('change input', function (e) {
+  var value = $(this).val().trim();
+  isValid = value !== "";
+  btnActive(!isValid);
+  $(".text-subbtn").hide();
+});
+
+function btnActive(isValid) {
+  if(number === 0){
+    // btnPrev.prop('disabled', 'false');
+    btnNext.prop('disabled', isValid);
+  }else{
+    // btnPrev.prop('disabled', false);
+    if(activeSlede[number] === true || isValid === false){
+      btnNext.prop('disabled', false);
+    }else{
+      btnNext.prop('disabled', true);
+    }
+    
+  }
+
+}
+
+
+$('.polzunok-5').click(function(){
+  btnNext.prop('disabled',false);
+})
+
+// sidebar
+var $barLevel = Math.floor(100 / (maxNumber));
+  var $barWidth = $barLevel;
+
+  function progress(num){
+    var testBlock = ".quiz_modal--block-" + num ;
+    var testCircle= ".quiz_modal--circle-" + (num + 1) ;
+    $(testBlock).addClass('quiz_modal--block-active');
+    $(testCircle).addClass('quiz_modal--circle-active');
+    $(".quiz_modal--progress").text($barWidth + '%');
+  }
+  progress(0); 
+
+  function progress_prev(num) {
+    var testBlock_prev = ".quiz_modal--block-" + num;
+    var testCircle_prev = ".quiz_modal--circle-" + (num + 1);
+    jQuery(testBlock_prev).removeClass('quiz_modal--block-active');
+    jQuery(testCircle_prev).removeClass('quiz_modal--circle-active');
+    jQuery(".quiz_modal--progress").text($barWidth + '%');
+  }
+
+
+ var otv = []; 
+// btn
+
+function btnClick() {
+
+  btnNext.bind(evens, next);
+  btnPrev.bind(evens, prev);
+  $elementRadio.on('input, change',next);
+  // $('.inp-next').on('input, change',next);
+}
+btnClick();
+function next(){
+  event.preventDefault();
+    activeSlede[number] = true;
+
+    ++number;
+    
+    setTimeout(function(){
+      $(".quiz_modal--page").hide();
+      $(".quiz_modal--page").eq(number).fadeIn(1000);
+    },300);
+	$(".quiz_modal--next").hide();
+  $(".quiz_modal--next").eq(number).show();
+  $(".quiz_modal--prev").hide();
+  $(".quiz_modal--prev").eq(number).show();
+  
+  discount += 1;
+  testText.text( discount + '%');
+    
+    btnActive(!isValid);
+    if(activeSlede[number] === true){
+      btnNext.prop('disabled', false);
+    }else{
+      btnNext.prop('disabled', true);
+    }
+
+    $barWidth += $barLevel;
+    if(number < maxNumber - 1){
+      $(".right__text-cont-item").hide();
+      $(".right__text-cont-item").eq(number).fadeIn(1000);
+    }else if(number === maxNumber - 1){
+      $barWidth = 100;
+    }
+
+    if(number === 6){
+      $('.test__righ-t1').hide();
+      $('.test__righ-t2').fadeIn();
+    }
+    if(number === 7){
+      $('.test__righ-t2').hide();
+      $('.test__righ-t3').fadeIn();
+      $('.present-img-item').attr({
+        "src": $('.gift-box-item_new img').attr('src'),
+      });
+
+      for(var i = 0; i < maxNumber ; i++){
+        var val = '' ;
+        $(".quiz_modal--page").eq(i).find('input').each(function(index, el) {
+          if($(this).prop('checked')){
+            val = val + $(this).val() + ' ,';
+          }
+        });
+        otv[i] = val;
+      }
+
+      for(var i = 0; i < maxNumber ; i++){
+        var str = otv[i].substring(0, otv[i].length - 1);
+        $('.quiz_modal--answers').append('<p class="quiz_modal--item">'
+          +str+'</p>');
+      }
+      $('.quiz_modal--btn_block').hide();
+      console.log(otv); 
+    }
+      setTimeout(function(){
+          $(".test-item__number-furst").text(number + 1);
+          // $barWidth += $barLevel;
+          progress(number);
+
+        //   animateTop ();
+      },300);
+    // }
+}
+
+
+function prev(){
+  event.preventDefault();
+    activeSlede[number] = true;
+
+    --number;
+    
+    setTimeout(function(){
+      $(".quiz_modal--page").hide();
+      $(".quiz_modal--page").eq(number).fadeIn(1000);
+    },300);
+	$(".quiz_modal--next").hide();
+  $(".quiz_modal--next").eq(number).show();
+  $(".quiz_modal--prev").hide();
+  $(".quiz_modal--prev").eq(number).show();
+//   $("#not_vis").hide();
+    
+discount -= 1;
+testText.text( discount + '%');
+
+
+    btnActive(!isValid);
+    if(activeSlede[number] === true){
+      btnNext.prop('disabled', false);
+    }else{
+      btnNext.prop('disabled', true);
+    }
+
+    $barWidth -= $barLevel;
+    if(number < maxNumber - 1){
+      $(".right__text-cont-item").hide();
+      $(".right__text-cont-item").eq(number).fadeIn(1000);
+    }else if(number === maxNumber - 1){
+      $barWidth = 100;
+    }
+
+    if(number === 6){
+      $('.test__righ-t1').hide();
+      $('.test__righ-t2').fadeIn();
+    }
+    if(number === 7){
+      $('.test__righ-t2').hide();
+      $('.test__righ-t3').fadeIn();
+      $('.present-img-item').attr({
+        "src": $('.gift-box-item_new img').attr('src'),
+      });
+
+      for(var i = 0; i < maxNumber ; i++){
+        var val = '' ;
+        $(".quiz_modal--page").eq(i).find('input').each(function(index, el) {
+          if($(this).prop('checked')){
+            val = val + $(this).val() + ' ,';
+          }
+        });
+        otv[i] = val;
+      }
+
+      for(var i = 0; i < maxNumber ; i++){
+        var str = otv[i].substring(0, otv[i].length - 1);
+        $('.text-final-ul').append('<p class="text-small text-final-li">'
+          +str+'</p>');
+      }
+      $('.quiz_modal--btn_block').hide();
+      // console.log(otv);
+    }
+    // if(number === maxNumber - 1){
+    //      $(".quiz_modal--btn_block").hide();
+    //      setTimeout(function(){
+    //        $(".quiz_modal--page").hide();
+    //        $(".quiz_modal--page").eq(number + 1).fadeIn(1000);
+    //        $(".test-item__number-furst").text(number + 1);
+    //        $barWidth += $barLevel;
+    //        progress(number);
+
+    //        animateTop ();
+    //      },2700);
+    // }else{
+    //    if(testTextNum != 1){
+    //     testTextNum += 1;
+    //   if(testTextNum < 5 && testTextNum > 1){
+    //     testText.text( testTextNum + '%');
+    //   }else if(testTextNum < 2){
+    //     testText.text( testTextNum + '%');
+    //   }else{
+    //     testText.text( testTextNum + ' %');
+    //   }
+    // }
+      setTimeout(function(){
+          $(".test-item__number-furst").text(number + 1);
+          // $barWidth += $barLevel;
+          progress_prev(number+1);
+
+        //   animateTop ();
+      },300);
+    // }
+}
+var inpTrue = false;
+$('.gift').find('input').on('change input', function() {
+
+      // $('.test__righ-t1').hide();
+      // $('.test__righ-t2').fadeIn();
+      $('.gift-box-item img').attr({
+        "src": $(this).parents('.item-wq-6').find('.iw6i').attr('src'),
+      });
+      $('.text-prs').text($(this).parents('.item-wq-6').find('.text-small-test').text().trim());
+      $('.title-presents-6').text($(this).val());
+      $('.present-img').css({display: 'none'});
+      $('.gift-title').css({
+        marginTop:'-2vw'
+      })
+      $('.gift-box').css({
+        marginTop:'18vw'
+      })
+  
+});
+
+// $('.qw3-no-inp').on('change input', function() {
+//   $('.test-qw3-inpt').hide();
+//   $('.test-qw3-inpt').find('input').val('');
+//   inpTrue = false;
 // });
 
-// Закрыть попап «спасибо»
-// $('.js-close-campaign').click(function() { // по клику на крестик
-// 	$('.js-overlay-thanks').fadeOut();
-// });
+  
+function animateTop (){
+  var elem = $('.form-test');
+  var top = elem.offset().top - 15;
+  $('body,html').animate({scrollTop: top}, 400);
+}
 
-// $(document).mouseup(function (e) { // по клику вне попапа
-//     var popup = $('.popup');
-//     if (e.target!=popup[0]&&popup.has(e.target).length === 0){
-//         $('.js-overlay-thanks').fadeOut();
-//     }
-// });
-
-// // Маска ввода номера телефона (плагин maskedinput)
-// $(function($){
-// 	$('[name="phone"]').mask("+7(999) 999-9999");
-// });
+$('.quiz_modal--form').submit(function() { 
+  $.ajax({
+    type: "POST",
+    url: "https://house.belikov.by/wp-content/themes/belikov/assets/mail.php",
+    data: $(this).serialize()
+  }).done(function() {
+    $('.js-overlay-thanks').fadeIn();
+    $('.popup__overlay-form').fadeOut();
+    $(this).find('input').val('');
+    $('.quiz_modal--form').trigger('reset');
+  });
+  return false;
+});
 
 ;
+function send(event, php){
+    console.log("Отправка запроса");
+    event.preventDefault ? event.preventDefault() : event.returnValue = false;
+    var req = new XMLHttpRequest();
+    req.open('POST', php, true);
+    req.onload = function() {
+        if (req.status >= 200 && req.status < 400) {
+        json = JSON.parse(this.response); // internet explorer 11
+            console.log(json);
+            
+            // ЗДЕСЬ УКАЗЫВАЕМ ДЕЙСТВИЯ В СЛУЧАЕ УСПЕХА ИЛИ НЕУДАЧИ
+            if (json.result == "success") {
+                // Если сообщение отправлено
+                // alert("Сообщение отправлено");
+                $('.js-overlay-thanks').fadeIn();
+                $('.popup__overlay-form').fadeOut();
+                $('.finished_project_section--form').trigger('reset');
+            } else {
+                // Если произошла ошибка
+                alert("Ошибка. Сообщение не отправлено");
+            }
+        // Если не удалось связаться с php файлом
+        } else {alert("Ошибка сервера. Номер: "+req.status);}}; 
+    
+    // Если не удалось отправить запрос. Стоит блок на хостинге
+    req.onerror = function() {alert("Ошибка отправки запроса");};
+    req.send(new FormData(event.target));
+    };
