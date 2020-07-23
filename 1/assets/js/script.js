@@ -601,12 +601,14 @@ function initExcursion() {
     $(".show_tab").click(function() {
     event.preventDefault();
     var  mainTab= $(this).index();
-  
-    $('.tabs--block').removeClass('active');
-    $('.tabs--block').eq(mainTab).addClass('active'); 
 
-    $('.tabs--item').removeClass('active');
-    $('.tabs--item').eq(mainTab).addClass('active');  
+
+    $(this).parent('.tabs--items').next('.tabs--body').children('.tabs--block').removeClass('active');
+    $(this).parent('.tabs--items').next('.tabs--body').children('.tabs--block').eq(mainTab).addClass('active');
+
+    $(this).parent('.tabs--items').next('.tabs--body').removeClass('active');
+    $(this).parent('.tabs--items').next('.tabs--body').eq(mainTab).addClass('active');
+
     
 });
 
@@ -873,6 +875,18 @@ $(document).mouseup(function (e) {
 });
 
 ;
+    $.each($('.calculator--label-c'), function(index, val){
+    if($(this).find('input').prop('checked')==true){
+        $(this).addClass('active');
+    }
+});
+$(document).on('click', '.calculator--label-c', function(event){
+    $(this).parents('.calculator--configuration').find('.calculator--label-c').removeClass('active');
+    $(this).parents('.calculator--configuration').find('.calculator--label-c input').prop('checked', false);
+    $(this).toggleClass('active');
+    $(this).find('input').prop('checked', true);
+    return false;
+});
     
    
 })
@@ -1437,44 +1451,44 @@ $('.popup__form-simple, .quiz--form').submit(function () {
 
 
 ;
-var ua = navigator.userAgent,
-evens = (ua.match(/iPad/i)) ? "touchstart" : "click";
+var ua_modal = navigator.userAgent,
+evens = (ua_modal.match(/iPad/i)) ? "touchstart" : "click";
  
-var number = 0;
-var maxNumber = $(".quiz_modal--page").length;
-var $element = $(".quiz_modal--page").find("input, select, textarea");
-var btnNext = $('.quiz_modal--next');
-var testTextNum = maxNumber;
-var discount = 1;
-var testText = $('.quiz_modal--number');
-var $elementRadio = $(".quiz_modal--page").not('.final, .no-focus').find("input[type='radio'], input[type='checkbox'] ");
-var isValid;
-var dataBlock;
-var activeSlede = [];
+var number_modal= 0;
+var maxNumber_modal = $(".quiz_modal--page").length;
+var $element_modal = $(".quiz_modal--page").find("input, select, textarea");
+var btnNext_modal = $('.quiz_modal--next');
+var testTextNum_modal = maxNumber_modal;
+var discount_modal = 1;
+var testText_modal= $('.quiz_modal--number');
+var $elementRadio_modal = $(".quiz_modal--page").not('.final, .no-focus').find("input[type='radio'], input[type='checkbox'] ");
+var isValid_modal;
+var dataBlock_modal;
+var activeSlede_modal = [];
 
-var btnPrev = $('.quiz_modal--prev');
+var btnPrev_modal = $('.quiz_modal--prev');
 
-for(var i = 0; i< maxNumber; i++){
-  activeSlede[i] = false;
+for(var i = 0; i< maxNumber_modal; i++){
+  activeSlede_modal[i] = false;
 }
 
-$element.on('change input', function (e) {
-  var value = $(this).val().trim();
-  isValid = value !== "";
-  btnActive(!isValid);
+$element_modal.on('change input', function (e) {
+  var value_modal = $(this).val().trim();
+  isValid_modal = value_modal !== "";
+  btnActive_modal(!isValid_modal);
   $(".text-subbtn").hide();
 });
 
-function btnActive(isValid) {
-  if(number === 0){
-    // btnPrev.prop('disabled', 'false');
-    btnNext.prop('disabled', isValid);
+function btnActive_modal(isValid_modal) {
+  if(number_modal=== 0){
+    // btnPrev_modal.prop('disabled', 'false');
+    btnNext_modal.prop('disabled', isValid_modal);
   }else{
-    // btnPrev.prop('disabled', false);
-    if(activeSlede[number] === true || isValid === false){
-      btnNext.prop('disabled', false);
+    // btnPrev_modal.prop('disabled', false);
+    if(activeSlede_modal[number_modal] === true || isValid_modal === false){
+      btnNext_modal.prop('disabled', false);
     }else{
-      btnNext.prop('disabled', true);
+      btnNext_modal.prop('disabled', true);
     }
     
   }
@@ -1483,211 +1497,211 @@ function btnActive(isValid) {
 
 
 $('.polzunok-5').click(function(){
-  btnNext.prop('disabled',false);
+  btnNext_modal.prop('disabled',false);
 })
 
 // sidebar
-var $barLevel = Math.floor(100 / (maxNumber));
-  var $barWidth = $barLevel;
+var $barLevel_modal = Math.floor(100 / (maxNumber_modal));
+  var $barWidth_modal = $barLevel_modal;
 
-  function progress(num){
-    var testBlock = ".quiz_modal--block-" + num ;
-    var testCircle= ".quiz_modal--circle-" + (num + 1) ;
-    $(testBlock).addClass('quiz_modal--block-active');
-    $(testCircle).addClass('quiz_modal--circle-active');
-    $(".quiz_modal--progress").text($barWidth + '%');
+  function progress_modal(num){
+    var testBlock_modal = ".quiz_modal--block-" + num ;
+    var testCircle_modal= ".quiz_modal--circle-" + (num + 1) ;
+    $(testBlock_modal).addClass('quiz_modal--block-active');
+    $(testCircle_modal).addClass('quiz_modal--circle-active');
+    $(".quiz_modal--progress").text($barWidth_modal + '%');
   }
-  progress(0); 
+  progress_modal(0); 
 
-  function progress_prev(num) {
-    var testBlock_prev = ".quiz_modal--block-" + num;
-    var testCircle_prev = ".quiz_modal--circle-" + (num + 1);
-    jQuery(testBlock_prev).removeClass('quiz_modal--block-active');
-    jQuery(testCircle_prev).removeClass('quiz_modal--circle-active');
-    jQuery(".quiz_modal--progress").text($barWidth + '%');
+  function progress_prev_modal(num) {
+    var testBlock_prev_modal = ".quiz_modal--block-" + num;
+    var testCircle_prev_modal = ".quiz_modal--circle-" + (num + 1);
+    jQuery(testBlock_prev_modal).removeClass('quiz_modal--block-active');
+    jQuery(testCircle_prev_modal).removeClass('quiz_modal--circle-active');
+    jQuery(".quiz_modal--progress").text($barWidth_modal + '%');
   }
 
 
- var otv = []; 
+ var otv_modal = []; 
 // btn
 
-function btnClick() {
+function btnClick_modal() {
 
-  btnNext.bind(evens, next);
-  btnPrev.bind(evens, prev);
-  $elementRadio.on('input, change',next);
+  btnNext_modal.bind(evens, next_modal);
+  btnPrev_modal.bind(evens, prev_modal);
+  $elementRadio_modal.on('input, change',next_modal);
   // $('.inp-next').on('input, change',next);
 }
-btnClick();
-function next(){
+btnClick_modal();
+function next_modal(){
   event.preventDefault();
-    activeSlede[number] = true;
+    activeSlede_modal[number_modal] = true;
 
-    ++number;
+    ++number_modal;
     
     setTimeout(function(){
       $(".quiz_modal--page").hide();
-      $(".quiz_modal--page").eq(number).fadeIn(1000);
+      $(".quiz_modal--page").eq(number_modal).fadeIn(1000);
     },300);
 	$(".quiz_modal--next").hide();
-  $(".quiz_modal--next").eq(number).show();
+  $(".quiz_modal--next").eq(number_modal).show();
   $(".quiz_modal--prev").hide();
-  $(".quiz_modal--prev").eq(number).show();
+  $(".quiz_modal--prev").eq(number_modal).show();
   
-  discount += 1;
-  testText.text( discount + '%');
+  discount_modal += 1;
+  testText_modal.text( discount_modal + '%');
     
-    btnActive(!isValid);
-    if(activeSlede[number] === true){
-      btnNext.prop('disabled', false);
+    btnActive_modal(!isValid_modal);
+    if(activeSlede_modal[number_modal] === true){
+      btnNext_modal.prop('disabled', false);
     }else{
-      btnNext.prop('disabled', true);
+      btnNext_modal.prop('disabled', true);
     }
 
-    $barWidth += $barLevel;
-    if(number < maxNumber - 1){
+    $barWidth_modal += $barLevel_modal;
+    if(number_modal< maxNumber_modal - 1){
       $(".right__text-cont-item").hide();
-      $(".right__text-cont-item").eq(number).fadeIn(1000);
-    }else if(number === maxNumber - 1){
-      $barWidth = 100;
+      $(".right__text-cont-item").eq(number_modal).fadeIn(1000);
+    }else if(number_modal=== maxNumber_modal - 1){
+      $barWidth_modal = 100;
     }
 
-    if(number === 6){
+    if(number_modal=== 6){
       $('.test__righ-t1').hide();
       $('.test__righ-t2').fadeIn();
     }
-    if(number === 7){
+    if(number_modal=== 7){
       $('.test__righ-t2').hide();
       $('.test__righ-t3').fadeIn();
       $('.present-img-item').attr({
         "src": $('.gift-box-item_new img').attr('src'),
       });
 
-      for(var i = 0; i < maxNumber ; i++){
-        var val = '' ;
+      for(var i = 0; i < maxNumber_modal ; i++){
+        var val_modal = '' ;
         $(".quiz_modal--page").eq(i).find('input').each(function(index, el) {
           if($(this).prop('checked')){
-            val = val + $(this).val() + ' ,';
+            val_modal = val_modal + $(this).val() + ' ,';
           }
         });
-        otv[i] = val;
+        otv_modal[i] = val_modal;
       }
 
-      for(var i = 0; i < maxNumber ; i++){
-        var str = otv[i].substring(0, otv[i].length - 1);
+      for(var i = 0; i < maxNumber_modal ; i++){
+        var str_modal = otv_modal[i].substring(0, otv_modal[i].length - 1);
         $('.quiz_modal--answers').append('<p class="quiz_modal--item">'
-          +str+'</p>');
+          +str_modal+'</p>');
       }
       $('.quiz_modal--btn_block').hide();
-      console.log(otv); 
+      console.log(otv_modal); 
     }
       setTimeout(function(){
-          $(".test-item__number-furst").text(number + 1);
-          // $barWidth += $barLevel;
-          progress(number);
+          $(".test-item__number-furst").text(number_modal+ 1);
+          // $barWidth_modal += $barLevel_modal;
+          progress_modal(number_modal);
 
-        //   animateTop ();
+        //   animateTop_modal ();
       },300);
     // }
 }
 
 
-function prev(){
+function prev_modal(){
   event.preventDefault();
-    activeSlede[number] = true;
+    activeSlede_modal[number_modal] = true;
 
-    --number;
+    --number_modal;
     
     setTimeout(function(){
       $(".quiz_modal--page").hide();
-      $(".quiz_modal--page").eq(number).fadeIn(1000);
+      $(".quiz_modal--page").eq(number_modal).fadeIn(1000);
     },300);
 	$(".quiz_modal--next").hide();
-  $(".quiz_modal--next").eq(number).show();
+  $(".quiz_modal--next").eq(number_modal).show();
   $(".quiz_modal--prev").hide();
-  $(".quiz_modal--prev").eq(number).show();
+  $(".quiz_modal--prev").eq(number_modal).show();
 //   $("#not_vis").hide();
     
-discount -= 1;
-testText.text( discount + '%');
+discount_modal -= 1;
+testText_modal.text( discount_modal + '%');
 
 
-    btnActive(!isValid);
-    if(activeSlede[number] === true){
-      btnNext.prop('disabled', false);
+    btnActive_modal(!isValid_modal);
+    if(activeSlede_modal[number_modal] === true){
+      btnNext_modal.prop('disabled', false);
     }else{
-      btnNext.prop('disabled', true);
+      btnNext_modal.prop('disabled', true);
     }
 
-    $barWidth -= $barLevel;
-    if(number < maxNumber - 1){
+    $barWidth_modal -= $barLevel_modal;
+    if(number_modal< maxNumber_modal - 1){
       $(".right__text-cont-item").hide();
-      $(".right__text-cont-item").eq(number).fadeIn(1000);
-    }else if(number === maxNumber - 1){
-      $barWidth = 100;
+      $(".right__text-cont-item").eq(number_modal).fadeIn(1000);
+    }else if(number_modal=== maxNumber_modal - 1){
+      $barWidth_modal = 100;
     }
 
-    if(number === 6){
+    if(number_modal=== 6){
       $('.test__righ-t1').hide();
       $('.test__righ-t2').fadeIn();
     }
-    if(number === 7){
+    if(number_modal=== 7){
       $('.test__righ-t2').hide();
       $('.test__righ-t3').fadeIn();
       $('.present-img-item').attr({
         "src": $('.gift-box-item_new img').attr('src'),
       });
 
-      for(var i = 0; i < maxNumber ; i++){
-        var val = '' ;
+      for(var i = 0; i < maxNumber_modal ; i++){
+        var val_modal = '' ;
         $(".quiz_modal--page").eq(i).find('input').each(function(index, el) {
           if($(this).prop('checked')){
-            val = val + $(this).val() + ' ,';
+            val_modal = val_modal + $(this).val() + ' ,';
           }
         });
-        otv[i] = val;
+        otv_modal[i] = val_modal;
       }
 
-      for(var i = 0; i < maxNumber ; i++){
-        var str = otv[i].substring(0, otv[i].length - 1);
+      for(var i = 0; i < maxNumber_modal ; i++){
+        var str_modal = otv_modal[i].substring(0, otv_modal[i].length - 1);
         $('.text-final-ul').append('<p class="text-small text-final-li">'
-          +str+'</p>');
+          +str_modal+'</p>');
       }
       $('.quiz_modal--btn_block').hide();
-      // console.log(otv);
+      // console.log(otv_modal);
     }
-    // if(number === maxNumber - 1){
+    // if(number_modal=== maxNumber_modal - 1){
     //      $(".quiz_modal--btn_block").hide();
     //      setTimeout(function(){
     //        $(".quiz_modal--page").hide();
-    //        $(".quiz_modal--page").eq(number + 1).fadeIn(1000);
-    //        $(".test-item__number-furst").text(number + 1);
-    //        $barWidth += $barLevel;
-    //        progress(number);
+    //        $(".quiz_modal--page").eq(number_modal+ 1).fadeIn(1000);
+    //        $(".test-item__number-furst").text(number_modal+ 1);
+    //        $barWidth_modal += $barLevel_modal;
+    //        progress_modal(number_modal);
 
-    //        animateTop ();
+    //        animateTop_modal ();
     //      },2700);
     // }else{
-    //    if(testTextNum != 1){
-    //     testTextNum += 1;
-    //   if(testTextNum < 5 && testTextNum > 1){
-    //     testText.text( testTextNum + '%');
-    //   }else if(testTextNum < 2){
-    //     testText.text( testTextNum + '%');
+    //    if(testTextNum_modal != 1){
+    //     testTextNum_modal += 1;
+    //   if(testTextNum_modal < 5 && testTextNum_modal > 1){
+    //     testText_modal.text( testTextNum_modal + '%');
+    //   }else if(testTextNum_modal < 2){
+    //     testText_modal.text( testTextNum_modal + '%');
     //   }else{
-    //     testText.text( testTextNum + ' %');
+    //     testText_modal.text( testTextNum_modal + ' %');
     //   }
     // }
       setTimeout(function(){
-          $(".test-item__number-furst").text(number + 1);
-          // $barWidth += $barLevel;
-          progress_prev(number+1);
+          $(".test-item__number-furst").text(number_modal+ 1);
+          // $barWidth_modal += $barLevel_modal;
+          progress_prev_modal(number_modal+1);
 
-        //   animateTop ();
+        //   animateTop_modal ();
       },300);
     // }
 }
-var inpTrue = false;
+var inpTrue_modal = false;
 $('.gift').find('input').on('change input', function() {
 
       // $('.test__righ-t1').hide();
@@ -1710,14 +1724,14 @@ $('.gift').find('input').on('change input', function() {
 // $('.qw3-no-inp').on('change input', function() {
 //   $('.test-qw3-inpt').hide();
 //   $('.test-qw3-inpt').find('input').val('');
-//   inpTrue = false;
+//   inpTrue_modal = false;
 // });
 
   
-function animateTop (){
-  var elem = $('.form-test');
-  var top = elem.offset().top - 15;
-  $('body,html').animate({scrollTop: top}, 400);
+function animateTop_modal (){
+  var elem_modal = $('.form-test');
+  var top_modal  = elem_modal.offset().top - 15;
+  $('body,html').animate({scrollTop: top_modal}, 400);
 }
 
 $('.quiz_modal--form').submit(function() { 
