@@ -609,8 +609,31 @@ function initExcursion() {
     $(this).parent('.tabs--items').next('.tabs--body').removeClass('active');
     $(this).parent('.tabs--items').next('.tabs--body').eq(mainTab).addClass('active');
 
+    $(this).parent('.tabs--items').children('.tabs--item').removeClass('active');
+    $(this).parent('.tabs--items').children('.tabs--item').eq(mainTab).addClass('active');
     
 });
+
+$('.show_equipment_tab').click(function() {
+    event.preventDefault();
+    var  mainTab= $(this).index();
+
+
+    $(this).parent('.equipment_tabs--items').next('.equipment_tabs--body').children('.equipment_tabs--block').removeClass('active');
+    $(this).parent('.equipment_tabs--items').next('.equipment_tabs--body').children('.equipment_tabs--block').eq(mainTab).addClass('active');
+
+    $(this).parent('.equipment_tabs--items').next('.equipment_tabs--body').removeClass('active');
+    $(this).parent('.equipment_tabs--items').next('.equipment_tabs--body').eq(mainTab).addClass('active');
+
+    $(this).parent('.equipment_tabs--items').children('.equipment_tabs--item').removeClass('active');
+    $(this).parent('.equipment_tabs--items').children('.equipment_tabs--item').eq(mainTab).addClass('active');
+
+    $(this).parent('.equipment_tabs--items').children('.equipment_tabs--item').children('.equipment_tabs--title').removeClass('active');
+    $(this).parent('.equipment_tabs--items').children('.equipment_tabs--item').children('.equipment_tabs--title').eq(mainTab).addClass('active');
+
+    
+});
+
 
 ;
     $(".polzunok-5").slider({
