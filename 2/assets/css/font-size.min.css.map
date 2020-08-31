@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAqCA,AAAA,gBAAgB,AAAC,CAbf,SAAS,CAcc,IAAI,CAC5B,AAbC,MAAM,EAAE,SAAS,EAAE,KAAK,EAW1B,AAAA,gBAAgB,AAAC,CATX,SAAS,CAUqC,IAAI,CARpD,SAAS,CAXJ,2BAA6B,CAoBrC,CAPC,MAAM,EAAE,SAAS,EAAE,MAAM,EAK3B,AAAA,gBAAgB,AAAC,CAJb,SAAS,CAKkB,IAAI,CAClC",
+    "sources": [
+        "../../scss/font-size.scss"
+    ],
+    "names": [],
+    "file": "font-size.min.css"
+}
