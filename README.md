@@ -1,4 +1,4 @@
-[https://reginayashina.github.io/belikov](https://reginayashina.github.io/belikov)
+
 
 [https://reginayashina.github.io/animation](https://reginayashina.github.io/animation)
 
