@@ -1,7 +1,22 @@
 function email_test(input) {
 	return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
 }
+//TABS
+$(".show_tab").click(function () {
+	event.preventDefault();
+	var mainTab = $(this).index();
 
+
+	$(this).parent('.tabs__items').next('.tabs__body').children('.tabs__block').removeClass('active');
+	$(this).parent('.tabs__items').next('.tabs__body').children('.tabs__block').eq(mainTab).addClass('active');
+
+	$(this).parent('.tabs__items').next('.tabs__body').removeClass('active');
+	$(this).parent('.tabs__items').next('.tabs__body').eq(mainTab).addClass('active');
+
+	$(this).parent('.tabs__items').children('.tabs__item').removeClass('active');
+	$(this).parent('.tabs__items').children('.tabs__item').eq(mainTab).addClass('active');
+
+});
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
