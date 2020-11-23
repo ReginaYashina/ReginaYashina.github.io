@@ -1137,7 +1137,6 @@ h1 {
 .main-screen {
   position: relative;
   padding: 17.76042vw 0px 0px 0px;
-  height: 76.25vw;
 }
 
 .main-screen__column--v {
@@ -1391,7 +1390,7 @@ h1 {
 }
 
 .window__tabs-items {
-  margin: 0 auto;
+  margin: 2.60417vw auto 0;
   width: 24.16667vw;
   height: 3.38542vw;
   display: -webkit-box;
@@ -1521,6 +1520,10 @@ h1 {
 @media (max-width: 992px) {
   h1 {
     font-size: 1.25rem;
+  }
+
+  .main-screen__title {
+    font-size: 1.5625rem;
   }
 }
 
