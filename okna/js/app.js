@@ -1365,3 +1365,33 @@ function scroll_animate(event) {
 	//If native scroll
 	//disableScroll();
 }
+
+$(document).ready(function () {
+	$('.pix-slider').slick({
+		arrows: true,
+		dots: false,
+		// centerMode: true,
+		slidesToShow: 4,
+		// centerPadding: '100px',
+		autoplay: false,
+		speed: 1000,
+		autoplaySpeed: 800
+
+
+		// responsive: [
+		// 	{
+		// 		breakpoint: 1024,
+		// 		settings: {
+		// 			adaptiveHeight: true
+		// 		}
+		// 	}
+		// 	{
+		// 		breakpoint: 550,
+		// 		settings: {
+		// 			slidesToShow:1
+		// 		}
+		// 	}
+		// ]
+	})
+})
+
