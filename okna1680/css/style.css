@@ -3816,11 +3816,6 @@ input:focus:-ms-input-placeholder {
   animation: shine 0.75s;
 }
 
-.pix-slider__item:hover img {
-  width: 20.35714vw;
-  height: 20.35714vw;
-}
-
 .map-section {
   padding: 4.7619vw 0 4.7619vw;
   height: 65.47619vw;
