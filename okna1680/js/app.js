@@ -45,6 +45,7 @@ $(function () {
 		$next = $('.next'),
 		$prev = $('.prev'),
 		$overlay = $('.overlay'),
+		$close = $('.close'),
 		liIndex,
 		targetImg;
 
@@ -78,6 +79,7 @@ $(function () {
 	}
 
 	$overlay.click(closeLigtbox);
+	$close.click(closeLigtbox);
 
 	$links.click(function (e) {
 		e.preventDefault();
@@ -111,7 +113,36 @@ $(function () {
 
 
 });
-
+//
+if ($(window).width() <= 768) {
+	$('.window__p br').remove();
+}
+if ($(window).width() > 768) {
+	$('.flats-title br').remove();
+}
+//SWITCH
+$(function () {
+	$('#switch-btn, #switch-btn-t').click(function () {
+		$(this).toggleClass('switch-on');
+		if ($(this).hasClass('switch-on')) {
+			$(this).trigger('on.switch');
+		} else {
+			$(this).trigger('off.switch');
+		}
+	});
+	$('#switch-btn, #switch-btn-t').on('on.switch', function () {
+		$('#block-1, #block-1-t').addClass('bl-hide');
+		$('#block-2, #block-2-t').removeClass('bl-hide');
+		$('.switch-btn__title-2').addClass('active');
+		$('.switch-btn__title-1').removeClass('active');
+	});
+	$('.switch-btn').on('off.switch', function () {
+		$('#block-1, #block-1-t').removeClass('bl-hide');
+		$('#block-2, #block-2-t').addClass('bl-hide');
+		$('.switch-btn__title-1').addClass('active');
+		$('.switch-btn__title-2').removeClass('active');
+	});
+});
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
@@ -1473,7 +1504,7 @@ $(document).ready(function () {
 		arrows: true,
 		dots: false,
 		// centerMode: true,
-		slidesToShow: 4,
+		slidesToShow: 3,
 		// centerPadding: '100px',
 		autoplay: false,
 		speed: 1000,
@@ -1494,6 +1525,31 @@ $(document).ready(function () {
 		// 		}
 		// 	}
 		// ]
+	})
+	$('.flat-window__row').slick({
+		arrows: false,
+		dots: false,
+		slidesToShow: 4,
+		autoplay: false,
+		speed: 1000,
+		autoplaySpeed: 800,
+		responsive: [
+			{
+				breakpoint: 769,
+				settings: {
+					// adaptiveHeight: true
+					dots: true,
+					slidesToShow: 2,
+					appendDots: $('.flat-window__dots')
+				}
+			}
+			// {
+			// 	breakpoint: 550,
+			// 	settings: {
+			// 		slidesToShow:1
+			// 	}
+			// }
+		]
 	})
 })
 
