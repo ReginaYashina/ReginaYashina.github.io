@@ -32,8 +32,6 @@ $(".show_tab-colors").click(function () {
 	$(this).parent('.tabs__items').children('.tabs__item').eq(mainTabColor).addClass('active');
 
 });
-
-
 //CUSTOM RADIO
 $(document).ready(function () {
 	$.each($('.popup__label'), function () {
@@ -52,7 +50,6 @@ $(document).ready(function () {
 		return false;
 	});
 });
-
 //LIGHTBOX
 $(function () {
 	var $li = $('.pix-slider').find('.pix-slider__item'),
@@ -159,7 +156,6 @@ $(function () {
 		$('.switch-btn__title-2').removeClass('active');
 	});
 });
-
 //RANGE
 $(".polzunok-5").slider({
 	min: 25,
@@ -171,7 +167,22 @@ $(".polzunok-5").slider({
 		$(".calc__value").val(ui.value);
 	}
 });
-$(".calc__value").val($(".polzunok-5").slider("value"));    
+$(".calc__value").val($(".polzunok-5").slider("value"));
+//SPOILER
+$('.spoiler__title').click(function (event) {
+	if ($('.spoiler').hasClass('one')) {
+		$('.spoiler__title').not($(this)).removeClass('active');
+		$('.spoiler__text').not($(this).next()).slideUp(300);
+	}
+	$(this).toggleClass('active').next().slideToggle(300);
+})
+$('.spoiler-inner__title').click(function (event) {
+	if ($('.spoiler-inner').hasClass('one')) {
+		$('.spoiler-inner__title').not($(this)).removeClass('active');
+		$('.spoiler-inner__text').not($(this).next()).slideUp(300);
+	}
+	$(this).toggleClass('active').next().slideToggle(300);
+})
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
@@ -1569,6 +1580,31 @@ $(document).ready(function () {
 					// adaptiveHeight: true
 					dots: true,
 					slidesToShow: 2,
+					appendDots: $('.flat-window__dots')
+				}
+			}
+			// {
+			// 	breakpoint: 550,
+			// 	settings: {
+			// 		slidesToShow:1
+			// 	}
+			// }
+		]
+	})
+	$('.panoramic-window__row').slick({
+		arrows: false,
+		dots: false,
+		slidesToShow: 3,
+		autoplay: false,
+		speed: 1000,
+		autoplaySpeed: 800,
+		responsive: [
+			{
+				breakpoint: 769,
+				settings: {
+					// adaptiveHeight: true
+					dots: true,
+					slidesToShow: 1,
 					appendDots: $('.flat-window__dots')
 				}
 			}
