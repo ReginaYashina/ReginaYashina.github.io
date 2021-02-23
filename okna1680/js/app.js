@@ -48,6 +48,452 @@ if ($(window).width() <= 567) {
 
 	});
 }
+
+//TABS-KIT
+
+// $(".show_tab_el").click(function () {
+// 	var mainTabEl = $(this).index();
+
+// 	$(this).parent('.design__tabs-items').parent('.design__tabs--el').next('.design__colors-tabs-body').children('.design__tabs--color').removeClass('active');
+
+// 	$(this).parent('.design__tabs-items').parent('.design__tabs--el').next('.design__colors-tabs-body').children('.design__tabs--color').eq(mainTabEl).addClass('active');
+
+// 	$(this).parent('.design__tabs-items').parent('.design__tabs--el').next('.design__colors-tabs-body').removeClass('active');
+// 	$(this).parent('.design__tabs-items').parent('.design__tabs--el').next('.design__colors-tabs-body').eq(mainTabEl).addClass('active');
+
+// 	$(this).parent('.design__tabs-items').children('.design__tabs-item--el').removeClass('active');
+// 	$(this).parent('.design__tabs-items').children('.design__tabs-item--el').eq(mainTabEl).addClass('active');
+
+// })
+
+//KIT ( :/ ыыыыыыыыыыы )
+//меню
+$("#show-rama").click(function () {
+	$('#rama').css({ 'display': 'block', 'z-index': '10' });
+	$('#fit,#ton,#lay,#slop,#sill').css({ 'display': 'none', 'z-index': '0' });
+	$("#show-rama").addClass('active');
+	$('#show-fit,#show-ton,#show-lay,#show-slop,#show-sill').removeClass('active');
+})
+$("#show-ton").click(function () {
+	$('#ton').css({ 'display': 'block', 'z-index': '10' });
+	$('#fit,#rama,#lay,#slop,#sill').css({ 'display': 'none', 'z-index': '0' });
+	$("#show-ton").addClass('active');
+	$('#show-fit,#show-rama,#show-lay,#show-slop,#show-sill').removeClass('active');
+})
+$("#show-fit").click(function () {
+	$('#fit').css({ 'display': 'block', 'z-index': '10' });
+	$('#ton,#rama,#lay,#slop,#sill').css({ 'display': 'none', 'z-index': '0' });
+	$("#show-fit").addClass('active');
+	$('#show-ton,#show-rama,#show-lay,#show-slop,#show-sill').removeClass('active');
+})
+$("#show-lay").click(function () {
+	$('#lay').css({ 'display': 'block', 'z-index': '10' });
+	$('#fit,#ton,#rama,#slop,#sill').css({ 'display': 'none', 'z-index': '0' });
+	$("#show-lay").addClass('active');
+	$('#show-fit,#show-ton,#show-rama,#show-slop,#show-sill').removeClass('active');
+})
+$("#show-slop").click(function () {
+	$('#slop').css({ 'display': 'block', 'z-index': '10' });
+	$('#fit,#ton,#rama,#lay,#sill').css({ 'display': 'none', 'z-index': '0' });
+	$("#show-slop").addClass('active');
+	$('#show-fit,#show-ton,#show-rama,#show-lay,#show-sill').removeClass('active');
+})
+$("#show-sill").click(function () {
+	$('#sill').css({ 'display': 'block', 'z-index': '10' });
+	$('#fit,#ton,#rama,#lay,#slop').css({ 'display': 'none', 'z-index': '0' });
+	$("#show-sill").addClass('active');
+	$('#show-fit,#show-ton,#show-rama,#show-lay,#show-slop').removeClass('active');
+})
+//рама
+$("#sh0rama").click(function () {
+	$('#0rama').css('display', 'block');
+	$('#1rama,#2rama,#3rama,#4rama,#5rama,#6rama,#7rama,#8rama,#9rama,#10rama').css('display', 'none');
+	$("#sh0rama").addClass('active-color');
+	$('#sh1rama,#sh2rama,#sh3rama,#sh4rama,#sh5rama,#sh6rama,#sh7rama,#sh8rama,#sh9rama,#sh10rama').removeClass('active-color');
+})
+$("#sh1rama").click(function () {
+	$('#1rama').css('display', 'block');
+	$('#0rama,#2rama,#3rama,#4rama,#5rama,#6rama,#7rama,#8rama,#9rama,#10rama').css('display', 'none');
+	$("#sh1rama").addClass('active-color');
+	$('#sh0rama,#sh2rama,#sh3rama,#sh4rama,#sh5rama,#sh6rama,#sh7rama,#sh8rama,#sh9rama,#sh10rama').removeClass('active-color');
+})
+$("#sh2rama").click(function () {
+	$('#2rama').css('display', 'block');
+	$('#1rama,#0rama,#3rama,#4rama,#5rama,#6rama,#7rama,#8rama,#9rama,#10rama').css('display', 'none');
+	$("#sh2rama").addClass('active-color');
+	$('#sh1rama,#sh0rama,#sh3rama,#sh4rama,#sh5rama,#sh6rama,#sh7rama,#sh8rama,#sh9rama,#sh10rama').removeClass('active-color');
+})
+$("#sh3rama").click(function () {
+	$('#3rama').css('display', 'block');
+	$('#1rama,#2rama,#0rama,#4rama,#5rama,#6rama,#7rama,#8rama,#9rama,#10rama').css('display', 'none');
+	$("#sh3rama").addClass('active-color');
+	$('#sh1rama,#sh2rama,#sh0rama,#sh4rama,#sh5rama,#sh6rama,#sh7rama,#sh8rama,#sh9rama,#sh10rama').removeClass('active-color');
+})
+$("#sh4rama").click(function () {
+	$('#4rama').css('display', 'block');
+	$('#1rama,#2rama,#3rama,#0rama,#5rama,#6rama,#7rama,#8rama,#9rama,#10rama').css('display', 'none');
+	$("#sh4rama").addClass('active-color');
+	$('#sh1rama,#sh2rama,#sh3rama,#sh0rama,#sh5rama,#sh6rama,#sh7rama,#sh8rama,#sh9rama,#sh10rama').removeClass('active-color');
+})
+$("#sh5rama").click(function () {
+	$('#5rama').css('display', 'block');
+	$('#1rama,#2rama,#3rama,#4rama,#0rama,#6rama,#7rama,#8rama,#9rama,#10rama').css('display', 'none');
+	$("#sh5rama").addClass('active-color');
+	$('#sh1rama,#sh2rama,#sh3rama,#sh4rama,#sh0rama,#sh6rama,#sh7rama,#sh8rama,#sh9rama,#sh10rama').removeClass('active-color');
+})
+$("#sh6rama").click(function () {
+	$('#6rama').css('display', 'block');
+	$('#1rama,#2rama,#3rama,#4rama,#5rama,#0rama,#7rama,#8rama,#9rama,#10rama').css('display', 'none');
+	$("#sh6rama").addClass('active-color');
+	$('#sh1rama,#sh2rama,#sh3rama,#sh4rama,#sh5rama,#sh0rama,#sh7rama,#sh8rama,#sh9rama,#sh10rama').removeClass('active-color');
+})
+$("#sh7rama").click(function () {
+	$('#7rama').css('display', 'block');
+	$('#1rama,#2rama,#3rama,#4rama,#5rama,#6rama,#0rama,#8rama,#9rama,#10rama').css('display', 'none');
+	$("#sh7rama").addClass('active-color');
+	$('#sh1rama,#sh2rama,#sh3rama,#sh4rama,#sh5rama,#sh6rama,#sh0rama,#sh8rama,#sh9rama,#sh10rama').removeClass('active-color');
+})
+$("#sh8rama").click(function () {
+	$('#8rama').css('display', 'block');
+	$('#1rama,#2rama,#3rama,#4rama,#5rama,#6rama,#7rama,#0rama,#9rama,#10rama').css('display', 'none');
+	$("#sh8rama").addClass('active-color');
+	$('#sh1rama,#sh2rama,#sh3rama,#sh4rama,#sh5rama,#sh6rama,#sh7rama,#sh0rama,#sh9rama,#sh10rama').removeClass('active-color');
+})
+$("#sh9rama").click(function () {
+	$('#9rama').css('display', 'block');
+	$('#1rama,#2rama,#3rama,#4rama,#5rama,#6rama,#7rama,#8rama,#0rama,#10rama').css('display', 'none');
+	$("#sh9rama").addClass('active-color');
+	$('#sh1rama,#sh2rama,#sh3rama,#sh4rama,#sh5rama,#sh6rama,#sh7rama,#sh8rama,#sh0rama,#sh10rama').removeClass('active-color');
+})
+$("#sh10rama").click(function () {
+	$('#10rama').css('display', 'block');
+	$('#1rama,#2rama,#3rama,#4rama,#5rama,#6rama,#7rama,#8rama,#9rama,#0rama').css('display', 'none');
+	$("#sh10rama").addClass('active-color');
+	$('#sh1rama,#sh2rama,#sh3rama,#sh4rama,#sh5rama,#sh6rama,#sh7rama,#sh8rama,#sh9rama,#sh0rama').removeClass('active-color');
+})
+//фурнитура
+$("#sh0fit").click(function () {
+	$('#0fit').css('display', 'block');
+	$('#1fit,#2fit,#3fit,#4fit,#5fit,#6fit,#7fit,#8fit,#9fit,#10fit').css('display', 'none');
+	$("#sh0fit").addClass('active-color');
+	$('#sh1fit,#sh2fit,#sh3fit,#sh4fit,#sh5fit,#sh6fit,#sh7fit,#sh8fit,#sh9fit,#sh10fit').removeClass('active-color');
+})
+$("#sh1fit").click(function () {
+	$('#1fit').css('display', 'block');
+	$('#0fit,#2fit,#3fit,#4fit,#5fit,#6fit,#7fit,#8fit,#9fit,#10fit').css('display', 'none');
+	$("#sh1fit").addClass('active-color');
+	$('#sh0fit,#sh2fit,#sh3fit,#sh4fit,#sh5fit,#sh6fit,#sh7fit,#sh8fit,#sh9fit,#sh10fit').removeClass('active-color');
+})
+$("#sh2fit").click(function () {
+	$('#2fit').css('display', 'block');
+	$('#1fit,#0fit,#3fit,#4fit,#5fit,#6fit,#7fit,#8fit,#9fit,#10fit').css('display', 'none');
+	$("#sh2fit").addClass('active-color');
+	$('#sh1fit,#sh0fit,#sh3fit,#sh4fit,#sh5fit,#sh6fit,#sh7fit,#sh8fit,#sh9fit,#sh10fit').removeClass('active-color');
+})
+$("#sh3fit").click(function () {
+	$('#3fit').css('display', 'block');
+	$('#1fit,#2fit,#0fit,#4fit,#5fit,#6fit,#7fit,#8fit,#9fit,#10fit').css('display', 'none');
+	$("#sh3fit").addClass('active-color');
+	$('#sh1fit,#sh2fit,#sh0fit,#sh4fit,#sh5fit,#sh6fit,#sh7fit,#sh8fit,#sh9fit,#sh10fit').removeClass('active-color');
+})
+$("#sh4fit").click(function () {
+	$('#4fit').css('display', 'block');
+	$('#1fit,#2fit,#3fit,#0fit,#5fit,#6fit,#7fit,#8fit,#9fit,#10fit').css('display', 'none');
+	$("#sh4fit").addClass('active-color');
+	$('#sh1fit,#sh2fit,#sh3fit,#sh0fit,#sh5fit,#sh6fit,#sh7fit,#sh8fit,#sh9fit,#sh10fit').removeClass('active-color');
+})
+$("#sh5fit").click(function () {
+	$('#5fit').css('display', 'block');
+	$('#1fit,#2fit,#3fit,#4fit,#0fit,#6fit,#7fit,#8fit,#9fit,#10fit').css('display', 'none');
+	$("#sh5fit").addClass('active-color');
+	$('#sh1fit,#sh2fit,#sh3fit,#sh4fit,#sh0fit,#sh6fit,#sh7fit,#sh8fit,#sh9fit,#sh10fit').removeClass('active-color');
+})
+$("#sh6fit").click(function () {
+	$('#6fit').css('display', 'block');
+	$('#1fit,#2fit,#3fit,#4fit,#5fit,#0fit,#7fit,#8fit,#9fit,#10fit').css('display', 'none');
+	$("#sh6fit").addClass('active-color');
+	$('#sh1fit,#sh2fit,#sh3fit,#sh4fit,#sh5fit,#sh0fit,#sh7fit,#sh8fit,#sh9fit,#sh10fit').removeClass('active-color');
+})
+$("#sh7fit").click(function () {
+	$('#7fit').css('display', 'block');
+	$('#1fit,#2fit,#3fit,#4fit,#5fit,#6fit,#0fit,#8fit,#9fit,#10fit').css('display', 'none');
+	$("#sh7fit").addClass('active-color');
+	$('#sh1fit,#sh2fit,#sh3fit,#sh4fit,#sh5fit,#sh6fit,#sh0fit,#sh8fit,#sh9fit,#sh10fit').removeClass('active-color');
+})
+$("#sh8fit").click(function () {
+	$('#8fit').css('display', 'block');
+	$('#1fit,#2fit,#3fit,#4fit,#5fit,#6fit,#7fit,#0fit,#9fit,#10fit').css('display', 'none');
+	$("#sh8fit").addClass('active-color');
+	$('#sh1fit,#sh2fit,#sh3fit,#sh4fit,#sh5fit,#sh6fit,#sh7fit,#sh0fit,#sh9fit,#sh10fit').removeClass('active-color');
+})
+$("#sh9fit").click(function () {
+	$('#9fit').css('display', 'block');
+	$('#1fit,#2fit,#3fit,#4fit,#5fit,#6fit,#7fit,#8fit,#0fit,#10fit').css('display', 'none');
+	$("#sh9fit").addClass('active-color');
+	$('#sh1fit,#sh2fit,#sh3fit,#sh4fit,#sh5fit,#sh6fit,#sh7fit,#sh8fit,#sh0fit,#sh10fit').removeClass('active-color');
+})
+$("#sh10fit").click(function () {
+	$('#10fit').css('display', 'block');
+	$('#1fit,#2fit,#3fit,#4fit,#5fit,#6fit,#7fit,#8fit,#9fit,#0fit').css('display', 'none');
+	$("#sh10fit").addClass('active-color');
+	$('#sh1fit,#sh2fit,#sh3fit,#sh4fit,#sh5fit,#sh6fit,#sh7fit,#sh8fit,#sh9fit,#sh0fit').removeClass('active-color');
+})
+//стекло
+$("#sh0ton").click(function () {
+	$('#0ton').css('display', 'block');
+	$('#1ton,#2ton,#3ton,#4ton,#5ton,#6ton,#7ton,#8ton,#9ton,#10ton,#11ton').css('display', 'none');
+	$("#sh0ton").addClass('active-color');
+	$('#sh1ton,#sh2ton,#sh3ton,#sh4ton,#sh5ton,#sh6ton,#sh7ton,#sh8ton,#sh9ton,#sh10ton,#11ton').removeClass('active-color');
+})
+$("#sh1ton").click(function () {
+	$('#1ton').css('display', 'block');
+	$('#0ton,#2ton,#3ton,#4ton,#5ton,#6ton,#7ton,#8ton,#9ton,#10ton').css('display', 'none');
+	$("#sh1ton").addClass('active-color');
+	$('#sh0ton,#sh2ton,#sh3ton,#sh4ton,#sh5ton,#sh6ton,#sh7ton,#sh8ton,#sh9ton,#sh10ton').removeClass('active-color');
+})
+$("#sh2ton").click(function () {
+	$('#2ton').css('display', 'block');
+	$('#1ton,#0ton,#3ton,#4ton,#5ton,#6ton,#7ton,#8ton,#9ton,#10ton').css('display', 'none');
+	$("#sh2ton").addClass('active-color');
+	$('#sh1ton,#sh0ton,#sh3ton,#sh4ton,#sh5ton,#sh6ton,#sh7ton,#sh8ton,#sh9ton,#sh10ton').removeClass('active-color');
+})
+$("#sh3ton").click(function () {
+	$('#3ton').css('display', 'block');
+	$('#1ton,#2ton,#0ton,#4ton,#5ton,#6ton,#7ton,#8ton,#9ton,#10ton').css('display', 'none');
+	$("#sh3ton").addClass('active-color');
+	$('#sh1ton,#sh2ton,#sh0ton,#sh4ton,#sh5ton,#sh6ton,#sh7ton,#sh8ton,#sh9ton,#sh10ton').removeClass('active-color');
+})
+$("#sh4ton").click(function () {
+	$('#4ton').css('display', 'block');
+	$('#1ton,#2ton,#3ton,#0ton,#5ton,#6ton,#7ton,#8ton,#9ton,#10ton').css('display', 'none');
+	$("#sh4ton").addClass('active-color');
+	$('#sh1ton,#sh2ton,#sh3ton,#sh0ton,#sh5ton,#sh6ton,#sh7ton,#sh8ton,#sh9ton,#sh10ton').removeClass('active-color');
+})
+$("#sh5ton").click(function () {
+	$('#5ton').css('display', 'block');
+	$('#1ton,#2ton,#3ton,#4ton,#0ton,#6ton,#7ton,#8ton,#9ton,#10ton').css('display', 'none');
+	$("#sh5ton").addClass('active-color');
+	$('#sh1ton,#sh2ton,#sh3ton,#sh4ton,#sh0ton,#sh6ton,#sh7ton,#sh8ton,#sh9ton,#sh10ton').removeClass('active-color');
+})
+$("#sh6ton").click(function () {
+	$('#6ton').css('display', 'block');
+	$('#1ton,#2ton,#3ton,#4ton,#5ton,#0ton,#7ton,#8ton,#9ton,#10ton').css('display', 'none');
+	$("#sh6ton").addClass('active-color');
+	$('#sh1ton,#sh2ton,#sh3ton,#sh4ton,#sh5ton,#sh0ton,#sh7ton,#sh8ton,#sh9ton,#sh10ton').removeClass('active-color');
+})
+$("#sh7ton").click(function () {
+	$('#7ton').css('display', 'block');
+	$('#1ton,#2ton,#3ton,#4ton,#5ton,#6ton,#0ton,#8ton,#9ton,#10ton').css('display', 'none');
+	$("#sh7ton").addClass('active-color');
+	$('#sh1ton,#sh2ton,#sh3ton,#sh4ton,#sh5ton,#sh6ton,#sh0ton,#sh8ton,#sh9ton,#sh10ton').removeClass('active-color');
+})
+$("#sh8ton").click(function () {
+	$('#8ton').css('display', 'block');
+	$('#1ton,#2ton,#3ton,#4ton,#5ton,#6ton,#7ton,#0ton,#9ton,#10ton').css('display', 'none');
+	$("#sh8ton").addClass('active-color');
+	$('#sh1ton,#sh2ton,#sh3ton,#sh4ton,#sh5ton,#sh6ton,#sh7ton,#sh0ton,#sh9ton,#sh10ton').removeClass('active-color');
+})
+$("#sh9ton").click(function () {
+	$('#9ton').css('display', 'block');
+	$('#1ton,#2ton,#3ton,#4ton,#5ton,#6ton,#7ton,#8ton,#0ton,#10ton').css('display', 'none');
+	$("#sh9ton").addClass('active-color');
+	$('#sh1ton,#sh2ton,#sh3ton,#sh4ton,#sh5ton,#sh6ton,#sh7ton,#sh8ton,#sh0ton,#sh10ton').removeClass('active-color');
+})
+$("#sh10ton").click(function () {
+	$('#10ton').css('display', 'block');
+	$('#1ton,#2ton,#3ton,#4ton,#5ton,#6ton,#7ton,#8ton,#9ton,#0ton').css('display', 'none');
+	$("#sh10ton").addClass('active-color');
+	$('#sh1ton,#sh2ton,#sh3ton,#sh4ton,#sh5ton,#sh6ton,#sh7ton,#sh8ton,#sh9ton,#sh0ton').removeClass('active-color');
+})
+//раскладка
+$("#sh0lay").click(function () {
+	$('#1lay,#2lay,#3lay,#4lay,#5lay,#6lay,#7lay,#8lay,#9lay,#10lay').css('display', 'none');
+	$("#sh0lay").addClass('active-color');
+	$('#sh1lay,#sh2lay,#sh3lay,#sh4lay,#sh5lay,#sh6lay,#sh7lay,#sh8lay,#sh9lay,#sh10lay').removeClass('active-color');
+})
+$("#sh1lay").click(function () {
+	$('#1lay').css('display', 'block');
+	$('#0lay,#2lay,#3lay,#4lay,#5lay,#6lay,#7lay,#8lay,#9lay,#10lay').css('display', 'none');
+	$("#sh1lay").addClass('active-color');
+	$('#sh0lay,#sh2lay,#sh3lay,#sh4lay,#sh5lay,#sh6lay,#sh7lay,#sh8lay,#sh9lay,#sh10lay').removeClass('active-color');
+})
+$("#sh2lay").click(function () {
+	$('#2lay').css('display', 'block');
+	$('#1lay,#0lay,#3lay,#4lay,#5lay,#6lay,#7lay,#8lay,#9lay,#10lay').css('display', 'none');
+	$("#sh2lay").addClass('active-color');
+	$('#sh1lay,#sh0lay,#sh3lay,#sh4lay,#sh5lay,#sh6lay,#sh7lay,#sh8lay,#sh9lay,#sh10lay').removeClass('active-color');
+})
+$("#sh3lay").click(function () {
+	$('#3lay').css('display', 'block');
+	$('#1lay,#2lay,#0lay,#4lay,#5lay,#6lay,#7lay,#8lay,#9lay,#10lay').css('display', 'none');
+	$("#sh3lay").addClass('active-color');
+	$('#sh1lay,#sh2lay,#sh0lay,#sh4lay,#sh5lay,#sh6lay,#sh7lay,#sh8lay,#sh9lay,#sh10lay').removeClass('active-color');
+})
+$("#sh4lay").click(function () {
+	$('#4lay').css('display', 'block');
+	$('#1lay,#2lay,#3lay,#0lay,#5lay,#6lay,#7lay,#8lay,#9lay,#10lay').css('display', 'none');
+	$("#sh4lay").addClass('active-color');
+	$('#sh1lay,#sh2lay,#sh3lay,#sh0lay,#sh5lay,#sh6lay,#sh7lay,#sh8lay,#sh9lay,#sh10lay').removeClass('active-color');
+})
+$("#sh5lay").click(function () {
+	$('#5lay').css('display', 'block');
+	$('#1lay,#2lay,#3lay,#4lay,#0lay,#6lay,#7lay,#8lay,#9lay,#10lay').css('display', 'none');
+	$("#sh5lay").addClass('active-color');
+	$('#sh1lay,#sh2lay,#sh3lay,#sh4lay,#sh0lay,#sh6lay,#sh7lay,#sh8lay,#sh9lay,#sh10lay').removeClass('active-color');
+})
+$("#sh6lay").click(function () {
+	$('#6lay').css('display', 'block');
+	$('#1lay,#2lay,#3lay,#4lay,#5lay,#0lay,#7lay,#8lay,#9lay,#10lay').css('display', 'none');
+	$("#sh6lay").addClass('active-color');
+	$('#sh1lay,#sh2lay,#sh3lay,#sh4lay,#sh5lay,#sh0lay,#sh7lay,#sh8lay,#sh9lay,#sh10lay').removeClass('active-color');
+})
+$("#sh7lay").click(function () {
+	$('#7lay').css('display', 'block');
+	$('#1lay,#2lay,#3lay,#4lay,#5lay,#6lay,#0lay,#8lay,#9lay,#10lay').css('display', 'none');
+	$("#sh7lay").addClass('active-color');
+	$('#sh1lay,#sh2lay,#sh3lay,#sh4lay,#sh5lay,#sh6lay,#sh0lay,#sh8lay,#sh9lay,#sh10lay').removeClass('active-color');
+})
+$("#sh8lay").click(function () {
+	$('#8lay').css('display', 'block');
+	$('#1lay,#2lay,#3lay,#4lay,#5lay,#6lay,#7lay,#0lay,#9lay,#10lay').css('display', 'none');
+	$("#sh8lay").addClass('active-color');
+	$('#sh1lay,#sh2lay,#sh3lay,#sh4lay,#sh5lay,#sh6lay,#sh7lay,#sh0lay,#sh9lay,#sh10lay').removeClass('active-color');
+})
+//откосы
+$("#sh0slop").click(function () {
+	$('#0slop').css('display', 'block');
+	$('#1slop,#2slop,#3slop,#4slop,#5slop,#6slop,#7slop,#8slop,#9slop,#10slop').css('display', 'none');
+	$("#sh0slop").addClass('active-color');
+	$('#sh1slop,#sh2slop,#sh3slop,#sh4slop,#sh5slop,#sh6slop,#sh7slop,#sh8slop,#sh9slop,#sh10slop').removeClass('active-color');
+})
+$("#sh1slop").click(function () {
+	$('#1slop').css('display', 'block');
+	$('#0slop,#2slop,#3slop,#4slop,#5slop,#6slop,#7slop,#8slop,#9slop,#10slop').css('display', 'none');
+	$("#sh1slop").addClass('active-color');
+	$('#sh0slop,#sh2slop,#sh3slop,#sh4slop,#sh5slop,#sh6slop,#sh7slop,#sh8slop,#sh9slop,#sh10slop').removeClass('active-color');
+})
+$("#sh2slop").click(function () {
+	$('#2slop').css('display', 'block');
+	$('#1slop,#0slop,#3slop,#4slop,#5slop,#6slop,#7slop,#8slop,#9slop,#10slop').css('display', 'none');
+	$("#sh2slop").addClass('active-color');
+	$('#sh1slop,#sh0slop,#sh3slop,#sh4slop,#sh5slop,#sh6slop,#sh7slop,#sh8slop,#sh9slop,#sh10slop').removeClass('active-color');
+})
+$("#sh3slop").click(function () {
+	$('#3slop').css('display', 'block');
+	$('#1slop,#2slop,#0slop,#4slop,#5slop,#6slop,#7slop,#8slop,#9slop,#10slop').css('display', 'none');
+	$("#sh3slop").addClass('active-color');
+	$('#sh1slop,#sh2slop,#sh0slop,#sh4slop,#sh5slop,#sh6slop,#sh7slop,#sh8slop,#sh9slop,#sh10slop').removeClass('active-color');
+})
+$("#sh4slop").click(function () {
+	$('#4slop').css('display', 'block');
+	$('#1slop,#2slop,#3slop,#0slop,#5slop,#6slop,#7slop,#8slop,#9slop,#10slop').css('display', 'none');
+	$("#sh4slop").addClass('active-color');
+	$('#sh1slop,#sh2slop,#sh3slop,#sh0slop,#sh5slop,#sh6slop,#sh7slop,#sh8slop,#sh9slop,#sh10slop').removeClass('active-color');
+})
+$("#sh5slop").click(function () {
+	$('#5slop').css('display', 'block');
+	$('#1slop,#2slop,#3slop,#4slop,#0slop,#6slop,#7slop,#8slop,#9slop,#10slop').css('display', 'none');
+	$("#sh5slop").addClass('active-color');
+	$('#sh1slop,#sh2slop,#sh3slop,#sh4slop,#sh0slop,#sh6slop,#sh7slop,#sh8slop,#sh9slop,#sh10slop').removeClass('active-color');
+})
+$("#sh6slop").click(function () {
+	$('#6slop').css('display', 'block');
+	$('#1slop,#2slop,#3slop,#4slop,#5slop,#0slop,#7slop,#8slop,#9slop,#10slop').css('display', 'none');
+	$("#sh6slop").addClass('active-color');
+	$('#sh1slop,#sh2slop,#sh3slop,#sh4slop,#sh5slop,#sh0slop,#sh7slop,#sh8slop,#sh9slop,#sh10slop').removeClass('active-color');
+})
+$("#sh7slop").click(function () {
+	$('#7slop').css('display', 'block');
+	$('#1slop,#2slop,#3slop,#4slop,#5slop,#6slop,#0slop,#8slop,#9slop,#10slop').css('display', 'none');
+	$("#sh7slop").addClass('active-color');
+	$('#sh1slop,#sh2slop,#sh3slop,#sh4slop,#sh5slop,#sh6slop,#sh0slop,#sh8slop,#sh9slop,#sh10slop').removeClass('active-color');
+})
+$("#sh8slop").click(function () {
+	$('#8slop').css('display', 'block');
+	$('#1slop,#2slop,#3slop,#4slop,#5slop,#6slop,#7slop,#0slop,#9slop,#10slop').css('display', 'none');
+	$("#sh8slop").addClass('active-color');
+	$('#sh1slop,#sh2slop,#sh3slop,#sh4slop,#sh5slop,#sh6slop,#sh7slop,#sh0slop,#sh9slop,#sh10slop').removeClass('active-color');
+})
+$("#sh9slop").click(function () {
+	$('#9slop').css('display', 'block');
+	$('#1slop,#2slop,#3slop,#4slop,#5slop,#6slop,#7slop,#8slop,#0slop,#10slop').css('display', 'none');
+	$("#sh9slop").addClass('active-color');
+	$('#sh1slop,#sh2slop,#sh3slop,#sh4slop,#sh5slop,#sh6slop,#sh7slop,#sh8slop,#sh0slop,#sh10slop').removeClass('active-color');
+})
+$("#sh10slop").click(function () {
+	$('#10slop').css('display', 'block');
+	$('#1slop,#2slop,#3slop,#4slop,#5slop,#6slop,#7slop,#8slop,#9slop,#0slop').css('display', 'none');
+	$("#sh10slop").addClass('active-color');
+	$('#sh1slop,#sh2slop,#sh3slop,#sh4slop,#sh5slop,#sh6slop,#sh7slop,#sh8slop,#sh9slop,#sh0slop').removeClass('active-color');
+})
+//подоконники
+$("#sh0sill").click(function () {
+	$('#0sill').css('display', 'block');
+	$('#1sill,#2sill,#3sill,#4sill,#5sill,#6sill,#7sill,#8sill,#9sill,#10sill').css('display', 'none');
+	$("#sh0sill").addClass('active-color');
+	$('#sh1sill,#sh2sill,#sh3sill,#sh4sill,#sh5sill,#sh6sill,#sh7sill,#sh8sill,#sh9sill,#sh10sill').removeClass('active-color');
+})
+$("#sh1sill").click(function () {
+	$('#1sill').css('display', 'block');
+	$('#0sill,#2sill,#3sill,#4sill,#5sill,#6sill,#7sill,#8sill,#9sill,#10sill').css('display', 'none');
+	$("#sh1sill").addClass('active-color');
+	$('#sh0sill,#sh2sill,#sh3sill,#sh4sill,#sh5sill,#sh6sill,#sh7sill,#sh8sill,#sh9sill,#sh10sill').removeClass('active-color');
+})
+$("#sh2sill").click(function () {
+	$('#2sill').css('display', 'block');
+	$('#1sill,#0sill,#3sill,#4sill,#5sill,#6sill,#7sill,#8sill,#9sill,#10sill').css('display', 'none');
+	$("#sh2sill").addClass('active-color');
+	$('#sh1sill,#sh0sill,#sh3sill,#sh4sill,#sh5sill,#sh6sill,#sh7sill,#sh8sill,#sh9sill,#sh10sill').removeClass('active-color');
+})
+$("#sh3sill").click(function () {
+	$('#3sill').css('display', 'block');
+	$('#1sill,#2sill,#0sill,#4sill,#5sill,#6sill,#7sill,#8sill,#9sill,#10sill').css('display', 'none');
+	$("#sh3sill").addClass('active-color');
+	$('#sh1sill,#sh2sill,#sh0sill,#sh4sill,#sh5sill,#sh6sill,#sh7sill,#sh8sill,#sh9sill,#sh10sill').removeClass('active-color');
+})
+$("#sh4sill").click(function () {
+	$('#4sill').css('display', 'block');
+	$('#1sill,#2sill,#3sill,#0sill,#5sill,#6sill,#7sill,#8sill,#9sill,#10sill').css('display', 'none');
+	$("#sh4sill").addClass('active-color');
+	$('#sh1sill,#sh2sill,#sh3sill,#sh0sill,#sh5sill,#sh6sill,#sh7sill,#sh8sill,#sh9sill,#sh10sill').removeClass('active-color');
+})
+$("#sh5sill").click(function () {
+	$('#5sill').css('display', 'block');
+	$('#1sill,#2sill,#3sill,#4sill,#0sill,#6sill,#7sill,#8sill,#9sill,#10sill').css('display', 'none');
+	$("#sh5sill").addClass('active-color');
+	$('#sh1sill,#sh2sill,#sh3sill,#sh4sill,#sh0sill,#sh6sill,#sh7sill,#sh8sill,#sh9sill,#sh10sill').removeClass('active-color');
+})
+$("#sh6sill").click(function () {
+	$('#6sill').css('display', 'block');
+	$('#1sill,#2sill,#3sill,#4sill,#5sill,#0sill,#7sill,#8sill,#9sill,#10sill').css('display', 'none');
+	$("#sh6sill").addClass('active-color');
+	$('#sh1sill,#sh2sill,#sh3sill,#sh4sill,#sh5sill,#sh0sill,#sh7sill,#sh8sill,#sh9sill,#sh10sill').removeClass('active-color');
+})
+$("#sh7sill").click(function () {
+	$('#7sill').css('display', 'block');
+	$('#1sill,#2sill,#3sill,#4sill,#5sill,#6sill,#0sill,#8sill,#9sill,#10sill').css('display', 'none');
+	$("#sh7sill").addClass('active-color');
+	$('#sh1sill,#sh2sill,#sh3sill,#sh4sill,#sh5sill,#sh6sill,#sh0sill,#sh8sill,#sh9sill,#sh10sill').removeClass('active-color');
+})
+$("#sh8sill").click(function () {
+	$('#8sill').css('display', 'block');
+	$('#1sill,#2sill,#3sill,#4sill,#5sill,#6sill,#7sill,#0sill,#9sill,#10sill').css('display', 'none');
+	$("#sh8sill").addClass('active-color');
+	$('#sh1sill,#sh2sill,#sh3sill,#sh4sill,#sh5sill,#sh6sill,#sh7sill,#sh0sill,#sh9sill,#sh10sill').removeClass('active-color');
+})
+$("#sh9sill").click(function () {
+	$('#9sill').css('display', 'block');
+	$('#1sill,#2sill,#3sill,#4sill,#5sill,#6sill,#7sill,#8sill,#0sill,#10sill').css('display', 'none');
+	$("#sh9sill").addClass('active-color');
+	$('#sh1sill,#sh2sill,#sh3sill,#sh4sill,#sh5sill,#sh6sill,#sh7sill,#sh8sill,#sh0sill,#sh10sill').removeClass('active-color');
+})
+$("#sh10sill").click(function () {
+	$('#10sill').css('display', 'block');
+	$('#1sill,#2sill,#3sill,#4sill,#5sill,#6sill,#7sill,#8sill,#9sill,#0sill').css('display', 'none');
+	$("#sh10sill").addClass('active-color');
+	$('#sh1sill,#sh2sill,#sh3sill,#sh4sill,#sh5sill,#sh6sill,#sh7sill,#sh8sill,#sh9sill,#sh0sill').removeClass('active-color');
+})
+///
 //CUSTOM RADIO
 $(document).ready(function () {
 	$.each($('.popup__label'), function () {
@@ -1942,10 +2388,35 @@ $(document).ready(function () {
 
 
 
+	var kitSliders = $('#rama, #fit, #ton, #lay, #slop, #sill').slick({
+		arrows: true,
+		dots: false,
+		// centerMode: true,
+		slidesToShow: 9,
+		// centerPadding: '100px',
+		autoplay: false,
+		speed: 1000,
+		autoplaySpeed: 800,
+		responsive: [
+			{
+				breakpoint: 568,
+				settings: {
+					slidesToShow: 4
+				}
+			}
+			// {
+			// 		breakpoint: 550,
+			// 		settings: {
+			// 			slidesToShow:1
+			// 		}
+			// 	}
+		]
+	})
 
 
-
-
+	$(".show_tab_el").click(function () {
+		kitSliders.slick('refresh');
+	})
 
 
 
