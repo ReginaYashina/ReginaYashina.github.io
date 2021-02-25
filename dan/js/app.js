@@ -1,7 +1,21 @@
 function email_test(input) {
 	return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
 }
+//TABS
+$(".show_tab").click(function () {
+	event.preventDefault();
+	var mainTab = $(this).index();
 
+	$(this).parent('.tabs__items').next('.tabs__body').children('.tabs__block').removeClass('active');
+	$(this).parent('.tabs__items').next('.tabs__body').children('.tabs__block').eq(mainTab).addClass('active');
+
+	$(this).parent('.tabs__items').next('.tabs__body').removeClass('active');
+	$(this).parent('.tabs__items').next('.tabs__body').eq(mainTab).addClass('active');
+
+	$(this).parent('.tabs__items').children('.tabs__item').removeClass('active');
+	$(this).parent('.tabs__items').children('.tabs__item').eq(mainTab).addClass('active');
+
+});
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
@@ -1350,3 +1364,171 @@ function scroll_animate(event) {
 	//If native scroll
 	//disableScroll();
 }
+
+//BildSlider
+// let sliders = document.querySelectorAll('._swiper');
+// if (sliders) {
+// 	for (let index = 0; index < sliders.length; index++) {
+// 		let slider = sliders[index];
+// 		if (!slider.classList.contains('swiper-bild')) {
+// 			let slider_items = slider.children;
+// 			if (slider_items) {
+// 				for (let index = 0; index < slider_items.length; index++) {
+// 					let el = slider_items[index];
+// 					el.classList.add('swiper-slide');
+// 				}
+// 			}
+// 			let slider_content = slider.innerHTML;
+// 			let slider_wrapper = document.createElement('div');
+// 			slider_wrapper.classList.add('swiper-wrapper');
+// 			slider_wrapper.innerHTML = slider_content;
+// 			slider.innerHTML = '';
+// 			slider.appendChild(slider_wrapper);
+// 			slider.classList.add('swiper-bild');
+// 		}
+// 		if (slider.classList.contains('_gallery')) {
+// 			//slider.data('lightGallery').destroy(true);
+// 		}
+// 	}
+// 	sliders_bild_callback();
+// }
+
+// function sliders_bild_callback(params) { }
+
+// let slider_about = new Swiper('.about__slider', {
+// 	/*
+// 	effect: 'fade',
+// 	autoplay: {
+// 		delay: 3000,
+// 		disableOnInteraction: false,
+// 	},
+// 	*/
+// 	observer: true,
+// 	observeParents: true,
+// 	slidesPerView: 1,
+// 	spaceBetween: 0,
+// 	autoHeight: true,
+// 	speed: 800,
+// 	//touchRatio: 0,
+// 	//simulateTouch: false,
+// 	//loop: true,
+// 	//preloadImages: false,
+// 	//lazy: true,
+// 	// Dotts
+// 	//pagination: {
+// 	//	el: '.slider-quality__pagging',
+// 	//	clickable: true,
+// 	//},
+// 	// Arrows
+// 	navigation: {
+// 		nextEl: '.about__more .more__item_next',
+// 		prevEl: '.about__more .more__item_prev',
+// 	},
+// 	/*
+// 	breakpoints: {
+// 		320: {
+// 			slidesPerView: 1,
+// 			spaceBetween: 0,
+// 			autoHeight: true,
+// 		},
+// 		768: {
+// 			slidesPerView: 2,
+// 			spaceBetween: 20,
+// 		},
+// 		992: {
+// 			slidesPerView: 3,
+// 			spaceBetween: 20,
+// 		},
+// 		1268: {
+// 			slidesPerView: 4,
+// 			spaceBetween: 30,
+// 		},
+// 	},
+// 	*/
+// 	on: {
+// 		lazyImageReady: function () {
+// 			ibg();
+// 		},
+// 	}
+// 	// And if we need scrollbar
+// 	//scrollbar: {
+// 	//	el: '.swiper-scrollbar',
+// 	//},
+// });
+
+
+//SLICK-SLIDER
+$(document).ready(function () {
+
+
+	$('.windows__row').slick({
+		arrows: true,
+		dots: false,
+		centerMode: true,
+		slidesToShow: 3,
+		centerPadding: '0px',
+		variableWidth: true,
+		autoplay: false,
+		speed: 1000,
+		autoplaySpeed: 800,
+
+
+		responsive: [
+			{
+				breakpoint: 1025,
+				settings: {
+					centerMode: true,
+					slidesToShow: 1,
+					centerPadding: '0px',
+					variableWidth: true,
+				}
+			},
+			{
+				breakpoint: 568,
+				settings: {
+					slidesToShow: 1,
+
+				}
+			}
+		]
+	})
+
+
+
+
+	var accessories = $('.accessories__row').slick({
+		arrows: true,
+		dots: false,
+		slidesToShow: 4,
+		variableWidth: true,
+		responsive: [
+			{
+				breakpoint: 1025,
+				settings: {
+					slidesToShow: 3
+				}
+			},
+			{
+				breakpoint: 568,
+				settings: {
+					centerMode: true,
+					slidesToShow: 1,
+					centerPadding: '0px',
+					variableWidth: true
+
+				}
+			}
+		]
+	})
+
+
+	$(".show_tab").click(function () {
+		accessories.slick('refresh');
+	})
+
+
+
+
+
+
+})
